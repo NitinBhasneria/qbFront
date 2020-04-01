@@ -47,7 +47,7 @@ class SignUp2 extends React.Component {
 
     handleSubmit(event) {
         event.preventDefault();
-    
+        console.log(this.props.location.state)
         this.setState({ submitted: true });
         
     }
@@ -99,9 +99,7 @@ class SignUp2 extends React.Component {
                             </div>
                         </div>
                         <div className='form-group RegisterBtn'>
-                            <Link to="/register_2" className='btn btn-primary  RegisterBtnBtn'>
-                                <button className='btn btn-primary  RegisterBtnBtn' onClick={this.handleSubmit}>Register</button>
-                            </Link>
+                                <button className='RegisterBtnBtn' onClick={this.handleSubmit}>REGISTER</button>
                         </div>
                     </div>
                 </div>

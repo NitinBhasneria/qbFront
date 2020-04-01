@@ -3,6 +3,7 @@ import { Link, Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { login, logout } from '../../actions/auth';
 import AuthNav from './authNav';
+import history from './../../history'
 
 class LoginForm extends Component {
   constructor(props) {
@@ -10,7 +11,7 @@ class LoginForm extends Component {
     this.props.logout();
     this.state = {
       user: {
-          username: '',
+          email: '',
           password: ''
       },
       submitted: false,
@@ -18,6 +19,23 @@ class LoginForm extends Component {
   };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleValid = this.handleValid.bind(this);
+}
+
+handleValid() {
+  const { user } = this.state;
+  if(!user.email){
+      this.setState({error: 'Email-ID is Required', submitForm: false})
+      document.querySelector('.text-danger').style.display = 'block';
+  }   
+  else if(!user.password){
+  this.setState({error: 'Password Required', submitForm: false})
+  document.querySelector('.text-danger').style.display = 'block';
+  }
+  else{
+      this.setState({error: '', submitForm: true})
+      document.querySelector('.text-danger').style.display = 'none';
+  }
 }
 
 handleChange(event) {
@@ -27,22 +45,25 @@ handleChange(event) {
       user: {
           ...user,
           [name]: value
-      }
+      },
+      submitted: false
   });
 }
 
 handleSubmit(e) {
     e.preventDefault();
+    this.handleValid();
     this.setState({ submitted: true });
     const { user } = this.state;
-    if (user.username && user.password) {
+    if (user.email && user.password) {
         this.props.login(user);
+        history.push("/");
     }    
 }
 
   render() {
     if (this.props.isAuthenticated) {
-      return <Redirect to='/' />;
+       return <Redirect to='/' />;
     }
     const { user, submitted, error} = this.state;
     return (
@@ -52,6 +73,7 @@ handleSubmit(e) {
                     <div className="loginForm">
                         <div className='fromGroup'>
                             <h2 className='loginHead'>Login</h2>
+                            <div className='text-danger'>{error}</div>
                             <div className='text-danger'>{error}</div>
                             <div className={'form-group name' + (submitted && !user.email ? ' form-control is-invalid' : '')}>
                                         <input type="text" placeholder='Email-ID' className='form-control-register' name="email" value={user.email} onChange={this.handleChange} />
@@ -65,10 +87,8 @@ handleSubmit(e) {
                             </div>
                     </div>
                     <div className='form-group LoginBtn'>
-                            <Link to="/register_2" className='btn btn-primary  RegisterBtnBtn'>
-                                <button className='btn btn-primary  RegisterBtnBtn' onClick={this.handleSubmit}>Login</button>
-                            </Link>
-                            </div>
+                        <button className='RegisterBtnBtn' onClick={this.handleSubmit}>LOGIN</button>
+                    </div>
                 </div>
             </div>
       <div>

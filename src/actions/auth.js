@@ -30,7 +30,7 @@ export const loadUser = () => async (dispatch, getState) => {
 };
 
 // LOGIN USER
-export const login = ({ username, password }) => async dispatch => {
+export const login = ({ email, password }) => async dispatch => {
   // Headers
   const config = {
     headers: {
@@ -39,10 +39,10 @@ export const login = ({ username, password }) => async dispatch => {
   };
 
   // Request Body
-  const body = JSON.stringify({ username, password });
+  const body = JSON.stringify({ email, password });
 
   try {
-    const res = await axios.post(`${API_URL}/auth/login`, body, config);
+    const res = await axios.post('http://127.0.0.1:8000/auth/login', body, config);
     dispatch({
       type: LOGIN_SUCCESS,
       payload: res.data
@@ -55,7 +55,7 @@ export const login = ({ username, password }) => async dispatch => {
 };
 
 // REGISTER USER
-export const register = ({ username, email, password }) => async dispatch => {
+export const register = ({ email, password }) => async dispatch => {
   // Headers
   const config = {
     headers: {
@@ -64,7 +64,7 @@ export const register = ({ username, email, password }) => async dispatch => {
   };
 
   // Request Body
-  const body = JSON.stringify({ username, email, password });
+  const body = JSON.stringify({ email, password });
 
   try {
     const res = await axios.post(`${API_URL}/auth/register/`, body, config);

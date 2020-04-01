@@ -11,6 +11,7 @@ import {
 import './auth.css';
 import LoginForm from './login';
 import RegisterPage from './register';
+import HomePage from '../home/homeMain';
 
 class AuthNav extends Component {
     constructor(props) {
@@ -33,8 +34,24 @@ class AuthNav extends Component {
                             <img className='logoTQB' src={tqbLogo} alt='Logo'></img>
                         </div>
                         <div className='btnCont'>
-                            <NavLink className='navAuthBtn' exact to="/login"><p className='btnText'>Login</p></NavLink>
-                            <NavLink className='navAuthBtn' exact to="/register_1"><p className='btnText'>Signup</p></NavLink>
+                            <Switch>
+                                <Route exact path='/'>
+                                    <NavLink className='navAuthBtn' exact to="/"><p className='btnText'>About us</p></NavLink>
+                                    <NavLink className='navAuthBtn' exact to="/login"><p className='btnText'>Login</p></NavLink>
+                                </Route>
+                                <Route exact path='/login'>
+                                    <NavLink className='navAuthBtn' exact to="/login"><p className='btnText'>Login</p></NavLink>
+                                    <NavLink className='navAuthBtn' exact to="/register_1"><p className='btnText'>Signup</p></NavLink>
+                                </Route>
+                                <Route exact path='/register_1'>
+                                    <NavLink className='navAuthBtn' exact to="/login"><p className='btnText'>Login</p></NavLink>
+                                    <NavLink className='navAuthBtn' exact to="/register_1"><p className='btnText'>Signup</p></NavLink>
+                                </Route>
+                                <Route exact path='/register_2'>
+                                    <NavLink className='navAuthBtn' exact to="/login"><p className='btnText'>Login</p></NavLink>
+                                    <NavLink className='navAuthBtn' exact to="/register_1"><p className='btnText'>Signup</p></NavLink>
+                                </Route> 
+                            </Switch>
                         </div>
                     </div>
                     <Switch>
@@ -46,6 +63,9 @@ class AuthNav extends Component {
                         </Route>
                         <Route exact path='/register_2'>
                             <RegisterPage />
+                        </Route>
+                        <Route exact path='/'>
+                            <HomePage />
                         </Route>
                     </Switch>
                 </div>

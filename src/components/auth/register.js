@@ -18,16 +18,16 @@ class RegisterPage extends React.Component {
         this.state = {
             user: {
                 email: '',
-                firstName: '',
-                lastName: '',
                 password: '',
+                firstName: '',
                 confirmPass: '',
                 phone: '',
-                class_id: ''
+                class_id: 'Class 10',
+                syllabus_id: 'CBSE'
             },
             submitted: false,
             error: '',
-            submitForm: false
+            emailAlready: false
         };
 
         this.handleChange = this.handleChange.bind(this);
@@ -37,38 +37,38 @@ class RegisterPage extends React.Component {
 
     handleValid() {
         const { user } = this.state;
-        console.log('hiih');
+        let re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
         if(!user.firstName){
-            this.setState({error: 'First Name Required', submitForm: false});
-            document.querySelector('.text-danger').style.display = 'block';
-        }
-        else if(!user.lastName){
-            this.setState({error: 'Last Name Required', submitForm: false})
+            this.setState({error: 'First Name Required'});
             document.querySelector('.text-danger').style.display = 'block';
         }
         else if(!user.email){
-            this.setState({error: 'Email-ID is Required', submitForm: false})
+            this.setState({error: 'Email-ID is Required'})
             document.querySelector('.text-danger').style.display = 'block';
         }   
         else if(!user.password){
-        this.setState({error: 'Password Required', submitForm: false})
+        this.setState({error: 'Password Required'})
         document.querySelector('.text-danger').style.display = 'block';
-    }   
+        }   
         else if(!user.confirmPass){
-            this.setState({error: 'Confirm the password', submitForm: false})
+            this.setState({error: 'Confirm the password'})
             document.querySelector('.text-danger').style.display = 'block';
         }
         else if(user.confirmPass!=user.password){
-            this.setState({error: 'Password do not match', submitForm: false})
+            this.setState({error: 'Password do not match'})
             document.querySelector('.text-danger').style.display = 'block';
         }
         else if(!user.phone){
             document.querySelector('.text-danger').style.display = 'block';
-            this.setState({error: 'Phone Number is required', submitForm: false})
+            this.setState({error: 'Phone Number is required'})
+        }
+        else if(!(re.test(this.state.user.email))){
+            document.querySelector('.text-danger').style.display = 'block';
+            this.setState({error: 'Email is not valid'})
         }
         else{
-            this.setState({error: '', submitForm: true})
-            document.querySelector('.text-danger').style.display = 'none';
+            document.querySelector('.text-danger').style.display = 'block';
+            this.setState({error: 'Email is already Taken'})
         }
     }
 
@@ -80,33 +80,25 @@ class RegisterPage extends React.Component {
                 ...user,
                 [name]: value
             },
-            submitted:false
+            submitted:false,
+            emailAlready:false
         });
     }
 
     handleSubmit(event) {
         event.preventDefault();
-    
+        
         this.setState({ submitted: true });
-        this.handleValid();
         const { user } = this.state;
-        let re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-        if (re.test(user.email)) {
-            if (this.state.submitForm) {
-                this.props.register(user).then(
-                    (res) => {
-                        if (res)
-                            history.push('/login');
-                        else
-                            this.emailAlready = true;
-                    })
-            }
-        }
-        else {
-            this.emailValid = false
-        }
-
-
+        console.log(user);
+        this.props.register(user).then(
+            (res) => {
+                if (res)
+                    history.push('/register_2');
+                else{
+                    this.handleValid();
+                }
+            })        
     }
 
     render() {
@@ -128,10 +120,6 @@ class RegisterPage extends React.Component {
                                         <input type="text" placeholder='First Name' className='form-control-register' name="firstName" value={user.firstName} onChange={this.handleChange} />
 
                                     </div>
-                                    <div className={'form-group name' + (submitted && !user.lastName ? ' form-control is-invalid' : '')}>
-                                        <input type="text" placeholder='Last Name' className='form-control-register' name="lastName" value={user.lastName} onChange={this.handleChange} />
-
-                                    </div>
                                     <div className={'form-group name' + (submitted && !user.email ? ' form-control is-invalid' : '')}>
                                         <input type="text" placeholder='Email-ID' className='form-control-register' name="email" value={user.email} onChange={this.handleChange} />
                                     </div>
@@ -145,12 +133,12 @@ class RegisterPage extends React.Component {
                                         <input placeholder='Phone' className='form-control-register' name="phone" value={user.phone} onChange={this.handleChange} />
                                     </div>
                                     <div className={'form-group nameSy'}>
-                                        <select className='form-control-register' name='Syllabus' id='Syllabus'>
+                                        <select className='form-control-register' name='syllabus_id' id='Syllabus' onChange={this.handleChange}>
                                             <option value='CBSE'>CBSE</option>
                                         </select>
                                     </div>
                                     <div className={'form-group nameClass'}>
-                                        <select className='form-control-register' name="class" id="class">
+                                        <select className='form-control-register' name="class_id" id="class" onChange={this.handleChange}>
                                             <option value='Class 10'>Class 10</option>
                                             <option value='Class 12'>Class 12</option>
                                         </select>
@@ -161,9 +149,7 @@ class RegisterPage extends React.Component {
                                     </div>
                                 </div>
                                 <div className='form-group RegisterBtn'>
-                                    <Link to="/register_2" className='btn btn-primary  RegisterBtnBtn'>
-                                        <button className='btn btn-primary  RegisterBtnBtn' onClick={this.handleSubmit}>Register</button>
-                                    </Link>
+                                    <button className=' RegisterBtnBtn' onClick={this.handleSubmit}>REGISTER</button>
                                 </div>
                             </div>
                         </div>
