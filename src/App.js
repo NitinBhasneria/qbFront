@@ -13,8 +13,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 import history from './history';
 import rootPersistReducer from './reducers';
 import './App.css';
-import LoginForm from './components/auth/login'; // added
-import registerFrom from './components/auth/register';
+import authNav from './components/auth/authNav'; // added
 
 let store = createStore(rootPersistReducer, composeWithDevTools(applyMiddleware(reduxThunk)))
 let persistor = persistStore(store)
@@ -26,8 +25,9 @@ function App() {
       <Router history={history}>
       <Switch>
             {/* <Route exact path='/' component={home} /> // updated */}
-            <Route exact path='/login' component={LoginForm} />
-            <Route exact path='/register' component={registerFrom} />
+            <Route exact path='/login' component={authNav} />
+            <Route exact path='/register_1' component={authNav} />
+            <Route exact path='/register_2' component={authNav} />
           </Switch>
         </Router>
       </PersistGate>
