@@ -28,6 +28,7 @@ function App() {
             <Route exact path='/login' component={authNav} />
             <Route exact path='/register_1' component={authNav} />
             <Route exact path='/register_2' component={authNav} />
+            <Route exact path='/profile' component={authNav} />
           </Switch>
         </Router>
       </PersistGate>

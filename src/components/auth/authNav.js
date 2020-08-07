@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { login, logout } from '../../actions/auth';
 import { connect } from 'react-redux';
 import tqbLogo from './../../statics/images/TQB.png';
+import Profile from './../profile/profile';
 import {
     BrowserRouter as Router,
     Switch,
@@ -51,6 +52,10 @@ class AuthNav extends Component {
                                     <NavLink className='navAuthBtn' exact to="/login"><p className='btnText'>Login</p></NavLink>
                                     <NavLink className='navAuthBtn' exact to="/register_1"><p className='btnText'>Signup</p></NavLink>
                                 </Route> 
+                                <Route exact path='/profile'>
+                                    <NavLink className='navAuthBtn' exact to="/login"><p className='btnText'>Login</p></NavLink>
+                                    <NavLink className='navAuthBtn' exact to="/register_1"><p className='btnText'>Signup</p></NavLink>
+                                </Route> 
                             </Switch>
                         </div>
                     </div>
@@ -66,6 +71,9 @@ class AuthNav extends Component {
                         </Route>
                         <Route exact path='/'>
                             <HomePage />
+                        </Route>
+                        <Route exact path='/profile'>
+                            <Profile />
                         </Route>
                     </Switch>
                 </div>

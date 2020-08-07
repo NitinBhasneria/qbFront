@@ -1,0 +1,162 @@
+.ProfileCont {
+    height: 90vh;
+    display: flex;
+    width: 100vw;
+}
+
+.profileSideNav {
+    background-color: #FAFAFA;
+    width: 20%;
+    height: 100%;
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+}
+
+.linksProfile {
+    display: flex;
+    flex-direction: column;
+    margin-top: 8vh;
+    height: 73vh;
+}
+
+.accountDetailBtn {
+    background-image: url('./../../statics/images/accountDetail.png');
+}
+
+.logout {
+    height: 8vh;
+}
+
+.linkBtn {
+    background-color: none;
+    color: black;
+    height: 8vh;
+    background-position-y: center;
+    background-repeat: no-repeat;
+    background-position-x: 15%;
+}
+
+.linkBtn:hover {
+    color: black !important;
+}
+
+.linkBtnClick {
+    color: white;
+    background-color: #10C7B6;
+}
+
+.linkBtnClick:focus {
+    outline: none !important;
+    outline-offset: none !important;
+    text-decoration: none;
+    color: white;
+}
+
+.linkBtnClick:hover {
+    color: white !important;
+    background-color: #10C7B6;
+}
+
+.linkBtn:focus {
+    outline: none !important;
+    outline-offset: none !important;
+    text-decoration: none;
+    color: black;
+}
+
+.accountDetailBtnClick {
+    background-image: url('./../../statics/images/accountDetailActive.png');
+}
+
+.progressBtnClick {
+    background-image: url('./../../statics/images/progressClick.zip');
+}
+
+.progressBtn {
+    background-image: url('./../../statics/images/progress.png');
+}
+
+.btnText {    
+    font-weight: 500;
+    font-size: 18px;
+    text-align: center;
+    line-height: 8vh !important;
+    margin-left: 30%;
+    text-align: left;
+}
+
+.logoutProfile {
+    background-image: url('./../../statics/images/logoutProfile.png');
+    color: black;
+    height: 8vh;
+    background-position-y: center;
+    background-repeat: no-repeat;
+    background-position-x: 35px;
+}
+
+hr {
+    margin-top: 1rem;
+    margin-bottom: 0rem;
+}
+
+.AccountCont {
+    margin-left: 20%;
+    justify-content: space-evenly;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 80%;
+}
+
+.StuImage {
+    display: flex;
+    justify-content: center;
+}
+
+.Image {
+    border-radius: 50%;
+}
+
+.StuDetail {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.StuName {
+    font-weight: 500;
+    font-size: 24px;
+    text-align: center ;
+}
+
+.componentDetail {
+    margin: 0% 2%;
+    color: rgba(0, 0, 0, 0.87);
+}
+
+.editBtn {
+    height: 6vh;
+    border: 1px solid #10C7B6;
+    box-sizing: border-box;
+    width: 15%;
+    font-weight: 500;
+    font-size: 14px;
+    color: #10C7B6;
+    background: none;
+}
+.edit {
+    display: flex;
+    justify-content: center;
+}
+.Class {
+    font-weight: 600;
+    font-size: 20px;
+    color: #10C7B6;
+    text-align: center;
+}
+
+.Subjects {
+    display: flex;
+    justify-content: center;
+}
