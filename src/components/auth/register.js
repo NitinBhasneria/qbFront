@@ -1,8 +1,9 @@
 import React from 'react';
-import { Link, Redirect } from 'react-router-dom';
+import { Link, Redirect, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
-import history from './../../history';
-import { register } from '../../actions/auth';
+import {  register, login } from '../../actions/auth';
+import { CreateStudentProfile } from './../../actions/studentDetail';
+import history from './../../history'
 import {
     BrowserRouter as Router,
     Switch,
@@ -19,11 +20,11 @@ class RegisterPage extends React.Component {
             user: {
                 email: '',
                 password: '',
-                firstName: '',
                 confirmPass: '',
+                student_name: '',
                 phone: '',
-                class_id: 'Class 10',
-                syllabus_id: 'CBSE'
+                syllabus: 'CBSE',
+                Class: 'Class 10',
             },
             submitted: false,
             error: '',
@@ -38,7 +39,7 @@ class RegisterPage extends React.Component {
     handleValid() {
         const { user } = this.state;
         let re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-        if(!user.firstName){
+        if(!user.student_name){
             this.setState({error: 'First Name Required'});
             document.querySelector('.text-danger').style.display = 'block';
         }
@@ -52,10 +53,6 @@ class RegisterPage extends React.Component {
         }   
         else if(!user.confirmPass){
             this.setState({error: 'Confirm the password'})
-            document.querySelector('.text-danger').style.display = 'block';
-        }
-        else if(user.confirmPass!=user.password){
-            this.setState({error: 'Password do not match'})
             document.querySelector('.text-danger').style.display = 'block';
         }
         else if(!user.phone){
@@ -91,22 +88,34 @@ class RegisterPage extends React.Component {
         this.setState({ submitted: true });
         const { user } = this.state;
         console.log(user);
-        this.props.register(user).then(
-            (res) => {
-                if (res)
-                    history.push('/register_2');
-                else{
-                    this.handleValid();
+        if(user.confirmPass!=user.password){
+            this.setState({error: 'Password do not match'})
+            document.querySelector('.text-danger').style.display = 'block';
+        }
+        else {
+            this.props.register(user).then(
+                (res) => {
+                    if (res){
+                        this.props.login(user).then(
+                            ()=> {
+                                this.props.CreateStudentProfile(user.student_name, user.phone, user.syllabus, user.Class, res);
+                                history.push('/register_2');
+                                window.location.reload(false)
+                            }
+                        );
+                    }
+                    else{
+                        this.handleValid();
+                    }
                 }
-            })        
+            )        
+        }
     }
 
     render() {
-        if (this.props.isAuthenticated) {
-            return <Redirect to='/' />;
-        }
         const { user, submitted, error } = this.state;
         return (
+            <Router>
             <div className='registerPage'>
                 <Switch>
                     <Route exact path='/register_1'>
@@ -116,8 +125,8 @@ class RegisterPage extends React.Component {
                                 <div className='fromGroup'>
                                     <h2 className='registerHead'>Register</h2>
                                     <div className='text-danger'>{error}</div>
-                                    <div className={'form-group name' + (submitted && !user.firstName ? ' form-control is-invalid' : '')}>
-                                        <input type="text" placeholder='First Name' className='form-control-register' name="firstName" value={user.firstName} onChange={this.handleChange} />
+                                    <div className={'form-group name' + (submitted && !user.student_name ? ' form-control is-invalid' : '')}>
+                                        <input type="text" placeholder='Name' className='form-control-register' name="student_name" value={user.student_name} onChange={this.handleChange} />
 
                                     </div>
                                     <div className={'form-group name' + (submitted && !user.email ? ' form-control is-invalid' : '')}>
@@ -133,12 +142,12 @@ class RegisterPage extends React.Component {
                                         <input placeholder='Phone' className='form-control-register' name="phone" value={user.phone} onChange={this.handleChange} />
                                     </div>
                                     <div className={'form-group nameSy'}>
-                                        <select className='form-control-register' name='syllabus_id' id='Syllabus' onChange={this.handleChange}>
+                                        <select className='form-control-register' name='syllabus' id='Syllabus' onChange={this.handleChange}>
                                             <option value='CBSE'>CBSE</option>
                                         </select>
                                     </div>
                                     <div className={'form-group nameClass'}>
-                                        <select className='form-control-register' name="class_id" id="class" onChange={this.handleChange}>
+                                        <select className='form-control-register' name="student_name" id="class" onChange={this.handleChange}>
                                             <option value='Class 10'>Class 10</option>
                                             <option value='Class 12'>Class 12</option>
                                         </select>
@@ -159,6 +168,7 @@ class RegisterPage extends React.Component {
                     </Route>
                 </Switch>
             </div>
+            </Router>
         );
     }
 }
@@ -170,7 +180,7 @@ const mapStateToProps = state => ({
 
 RegisterPage = connect(
     mapStateToProps,
-    { register },
+    { register, login, CreateStudentProfile },
 )(RegisterPage);
 
 export default RegisterPage;

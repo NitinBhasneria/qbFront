@@ -57,7 +57,6 @@ handleSubmit(e) {
     const { user } = this.state;
     if (user.email && user.password) {
         this.props.login(user);
-        history.push("/");
     }    
 }
 

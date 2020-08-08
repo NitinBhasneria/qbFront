@@ -11,6 +11,7 @@
     position: fixed;
     display: flex;
     flex-direction: column;
+    box-shadow: 6px 1px 16px rgba(0, 0, 0, 0.1);
 }
 
 .linksProfile {
@@ -62,7 +63,6 @@
     outline: none !important;
     outline-offset: none !important;
     text-decoration: none;
-    color: black;
 }
 
 .accountDetailBtnClick {
@@ -77,7 +77,7 @@
     background-image: url('./../../statics/images/progress.png');
 }
 
-.btnText {    
+.btnTextProfile {    
     font-weight: 500;
     font-size: 18px;
     text-align: center;
@@ -93,6 +93,7 @@
     background-position-y: center;
     background-repeat: no-repeat;
     background-position-x: 35px;
+    cursor: pointer;
 }
 
 hr {
@@ -115,6 +116,8 @@ hr {
 }
 
 .Image {
+    margin-left: 4%;
+    height: fit-content;
     border-radius: 50%;
 }
 
@@ -159,4 +162,11 @@ hr {
 .Subjects {
     display: flex;
     justify-content: center;
+}
+
+.editImage {
+    height: fit-content;
+    position: relative;
+    right: 60px;
+    top: 106px;
 }

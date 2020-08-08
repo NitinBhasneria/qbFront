@@ -1,6 +1,6 @@
 //packages import 
 import React from 'react'
-import { Router, Route, Switch } from "react-router-dom";
+import {BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { Provider } from 'react-redux'
 import { createStore, applyMiddleware } from 'redux';
 import { composeWithDevTools } from 'redux-devtools-extension';
@@ -22,7 +22,7 @@ function App() {
   return (
     <Provider store={store}>
       <PersistGate loading={null} persistor={persistor}>
-      <Router history={history}>
+      <Router history={history} forceRefresh={true}>
       <Switch>
             <Route exact path='/' component={authNav} /> // updated
             <Route exact path='/login' component={authNav} />

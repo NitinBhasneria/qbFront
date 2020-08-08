@@ -5,9 +5,15 @@ import storage from 'redux-persist/lib/storage';
 
 //reducers
 import auth from './auth'; // added
+import studentDetail from './studentDetail';
+import syllabus from './syllabus'
+import subjects from './subjects';
 
 const appReducer = combineReducers({
     auth: auth,
+    studentdetail: studentDetail,
+    syllabus: syllabus,
+    subjects: subjects
   });
   
   const rootPersistConfig = {

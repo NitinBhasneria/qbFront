@@ -20,13 +20,13 @@ class ProfileSideNav extends React.Component {
         return (
             <div className='profileSideNav'>
                 <div className='linksProfile'>
-                    <NavLink activeClassName='accountDetailBtnClick linkBtnClick' className='accountDetailBtn linkBtn' exact to="/profile"><p className='btnText'>Account details</p></NavLink>
+                    <NavLink activeClassName='accountDetailBtnClick linkBtnClick' className='accountDetailBtn linkBtn' exact to="/profile"><p className='btnTextProfile'>Account details</p></NavLink>
                     {/* <NavLink activeClassName='paymentBtnClick linkBtnClick' className='paymentBtn linkBtn' exact to="/payment"><p className='btnText'>Payment</p></NavLink> */}
-                    <NavLink activeClassName='progressBtnClick linkBtnClick' className='progressBtn linkBtn' exact to="/progress"><p className='btnText'>Your Progress</p></NavLink>
+                    <NavLink activeClassName='progressBtnClick linkBtnClick' className='progressBtn linkBtn' exact to="/progress"><p className='btnTextProfile'>Your Progress</p></NavLink>
                 </div>
                 <div className='logout'>
                     <hr style={{border:" 0.5px solid rgba(0, 0, 0, 0.54)"}}></hr>
-                    <div className='logoutProfile'><p className='btnText'>Logout</p></div>
+                    <div className='logoutProfile'><p className='btnTextProfile'>Logout</p></div>
                 </div>
             </div>
         );

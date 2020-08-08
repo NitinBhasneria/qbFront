@@ -2,6 +2,10 @@ body {
     overflow: hidden; /* Hide scrollbars */
   }
   
+
+.authPage{
+    overflow: hidden !important;
+}
 .navBar {
     height: 10vh;
     width: 100vw;
@@ -37,6 +41,14 @@ body {
     font-size: 20px;
     line-height: 20px;
     font-family: sans-serif;
+}
+
+.navAuthBtn:focus {
+    outline: none;
+    color: white;
+    text-decoration: none;
+    border: none;
+    outline-offset: 0;
 }
 
 .btnCont {
@@ -141,6 +153,7 @@ a:hover {
     border: none;
     outline: none;
     padding: 0;
+    box-shadow: none !important;
     height: 8%;
     text-decoration: none;
     height: auto;
@@ -154,6 +167,7 @@ a:hover {
     padding: 0px 3%;
     color: #dc3545 !important;
     display: none;
+    font-size: 13px;
 }
 .password{
     width: 49%;
@@ -216,6 +230,7 @@ a:hover {
     margin-bottom: auto;
     display: flex;
     height: 0;
+    font-size: 12px
 }
 .registerImage {
     background-image: url('./../../statics/images/registerImage.png');

@@ -40,7 +40,7 @@ export const login = ({ email, password }) => async dispatch => {
 
   // Request Body
   const body = JSON.stringify({ email, password });
-
+  console.log('login');
   try {
     const res = await axios.post('http://127.0.0.1:8000/auth/login', body, config);
     dispatch({

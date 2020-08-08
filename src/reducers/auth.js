@@ -38,7 +38,6 @@ import {
           user: action.payload,
         };
       case LOGIN_SUCCESS:
-        console.log(state);
         return {
           ...state,
           isLoading: false,
