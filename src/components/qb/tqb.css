@@ -1,0 +1,234 @@
+.TQB {
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.tqbNav {
+    display: flex;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.3);
+    height: 5vh;
+}
+.tqbNavBtn {
+    background: no-repeat;
+    border: none;
+    font-size: 15px;
+    color: #3892DC;
+    margin: 0 1vw 0 0;
+}
+.parra{
+    margin-left: 8vw;;
+}
+
+.qbCont{
+    height: 85vh;
+    display: flex;
+}
+
+.qbSideBar{
+    position: fixed;
+    width: 22%;
+    height: 100%;
+    background: #FAFAFA;
+    box-shadow: 6px 1px 16px rgba(0, 0, 0, 0.1);
+}
+
+.questions {
+    margin-left: 22%;
+    width: 78%;
+    height: 100%;
+}
+
+/* Dropdown Button */
+.dropbtn {
+    background-color: #3498DB;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+  }
+ul{
+    max-height: 0;
+    transition: max-height 0.5s;
+}
+ul.show {
+    max-height: 250px;
+}
+
+li:hover {
+        background: #efefef;
+    }
+li:focus {
+        background: #ffffff;
+}
+
+.selectedOption-up {
+    background-image: url('./../../statics/images/arrowUp.png') !important;
+    background-repeat: no-repeat !important;
+    background-position-y: center !important;
+    background-position-x: 18vw !important;
+}
+.selectedOption-down {
+    background-image: url('./../../statics/images/arrowDown.png') !important;
+    background-repeat: no-repeat !important;
+    background-position-y: center !important;
+    background-position-x: 18vw !important;
+}
+
+.filterYear {
+    display: flex;
+    flex-direction: column;
+    margin-top: 5vh;
+}
+
+.filterHead {
+    font-weight: bold;
+    font-size: 24px;
+    margin-bottom: -2vh;
+    color: black;
+    margin-left: 2vw;
+}
+
+.chooseHead {
+    font-weight: 600;
+    font-size: 18px;
+    color: #1B95A2;
+    margin-top: 6vh;
+    margin-bottom: 2vh;
+    margin-left: 2vw;
+}
+
+.inputSelect{
+    height: 15px;
+    width: 15px;
+    background-color: transparent;
+    border-radius: 20px;
+    border: 1px solid rgba(0, 0, 0, 0.54);
+}
+
+.year {
+    margin-left: 10px;
+    font-weight: 500;
+    font-size: 16px;
+}
+
+.yearList {
+    margin-left: 2vw;
+    display: flex;
+    height: 2vh;
+    width: 30%;
+}
+
+.topicList{
+    margin-left: 2vw;
+    display: flex;
+    height: 2vh;
+    width: 100%;
+}
+.solved{
+    display: flex;
+    height: 10vh;
+    width: 100%;
+}
+.solvedinputSelect {
+    height: 20px;
+    width: 20px;
+    position: relative;
+    border-radius: 20px;
+    top: 6vh;
+    left: 9vw;
+}
+
+.applyFilter {
+    height: 6vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 4vh;
+}
+
+.applyBtn {
+    border: none;
+    width: 50%;
+    height: 100%;
+    background-color: #10C7B6;
+    color: white;
+    border-radius: 4px;
+    font-weight: 600;
+    font-size: 14px;
+}
+.applyBtn.focus{
+    border: none;
+    outline: none !important;
+}
+
+button:focus {
+    outline: none !important;
+}
+.questionAnswerCont {
+    width: 80%;
+    margin: 10%;
+    height: max-content;
+    display: flex;
+    flex-direction: column;
+}
+
+.questionHead {
+    font-weight: 500;
+    font-size: 18px;
+    color: #10C7B6;
+    display: flex;
+    justify-content: space-between;
+}
+.bookmark{
+    height: 80%;
+}
+
+.question {
+    margin-top: 20px;
+    font-weight: 500;
+    font-size: 16px;
+}
+
+.solutionBtn {
+    margin-top: 20px;
+    text-align: center;
+    line-height: 5vh;
+    width: 9vw;
+    border: 1.5px solid #10C7B6;
+    box-sizing: border-box;
+    border-radius: 4px;
+    height: 5vh;
+    font-weight: 500;
+    color: #10C7B6;
+    cursor: pointer;
+    font-size: 12px;
+}
+
+.answer {
+    padding: 20px;
+    background: rgba(16, 199, 182, 0.1);
+    margin-top: 2vh;
+}
+
+.solutionHead {
+    font-size: 18px;
+    line-height: 22px;
+    color: #10C7B6;
+    display: flex;
+    justify-content: space-between;
+}
+.solution{
+    font-size: 16px;
+}
+
+.endBar {
+    border: 0.5px solid rgba(0, 0, 0, 0.54);
+    width: 100%;
+    margin-top: 2vh;
+}
+
+.cross {
+    height: 80%;
+}

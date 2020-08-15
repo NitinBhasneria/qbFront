@@ -29,22 +29,15 @@ class SignUp2 extends React.Component {
             syllabus_id: '',
             submitted: false,
             error: '',
-            syllabusLoaded: false,
             submitForm: false
         };
         this.props.loadSyllabus();
         this.props.loadDetail(this.props.auth.id);
-        this.syllabusID = this.syllabusID.bind(this);
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
     }
     
-    syllabusID() {
-        for(var i=0;i<this.props.syllabus.length;i++){
-            if((this.props.syllabus[i].classes == this.props.detail.Class) && (this.props.syllabus[i].syllabus == this.props.detail.syllabus))
-                return this.props.syllabus[i].id;
-        }
-    }
+
 
     handleChange(event) {
         const { name, value } = event.target;
@@ -101,12 +94,6 @@ class SignUp2 extends React.Component {
     }
 
     render(){
-        if(!this.state.syllabusLoaded){
-            this.props.getSubject(this.syllabusID());
-            this.setState({
-                syllabusLoaded: true,
-            })
-        }
         var subjectsTotal = [];
         subjectsTotal.push(this.props.subjects[0].subject1)
         subjectsTotal.push(this.props.subjects[0].subject2)

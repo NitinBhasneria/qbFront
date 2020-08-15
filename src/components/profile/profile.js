@@ -16,14 +16,18 @@ class Profile extends React.Component {
     constructor(props) {
         super(props);
 
-        this.state = {}
+        this.state = {
+        }
     }
 
     render() {
+        if (!this.props.isAuthenticated) {
+            return <Redirect to='/login' />;
+        }
         return (
             <div className='ProfileCont'>
                 <ProfileSideNav />
-                <AccountDetail />
+                <AccountDetail />                
             </div>
         );
     }
@@ -32,6 +36,10 @@ class Profile extends React.Component {
 
 const mapStateToProps = state => ({
     isAuthenticated: state.auth.isAuthenticated,
+    auth: state.auth.user,
+    syllabus: state.syllabus.data,
+    detail: state.studentdetail.data,
+    subjects: state.subjects.data
 });
 
 Profile = connect(

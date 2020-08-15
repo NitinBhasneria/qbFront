@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link, Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
+import { logout } from './../../actions/auth';
 import history from '../../history';
 import {
     BrowserRouter as Router,
@@ -13,7 +14,23 @@ class ProfileSideNav extends React.Component {
     constructor(props) {
         super(props);
 
-        this.state = {}
+        this.state = {
+            logOut: false,
+        }
+        this.logoutProfile = this.logoutProfile.bind(this);
+        this.logoutProfileCancel = this.logoutProfileCancel.bind(this);
+    }
+
+    logoutProfile(){
+        this.setState({
+            logOut: true,
+        });
+    }
+
+    logoutProfileCancel(){
+        this.setState({
+            logOut: false,
+        });
     }
 
     render() {
@@ -26,8 +43,31 @@ class ProfileSideNav extends React.Component {
                 </div>
                 <div className='logout'>
                     <hr style={{border:" 0.5px solid rgba(0, 0, 0, 0.54)"}}></hr>
-                    <div className='logoutProfile'><p className='btnTextProfile'>Logout</p></div>
+                    <div className='logoutProfile' onClick={this.logoutProfile}><p className='btnTextProfile'>Logout</p></div>
                 </div>
+                {this.state.logOut && 
+                <div className='edit'>
+                    <div className='editProfile'></div>
+                    <div className='logoutProfilePopup'>
+                        <div className='editProfileBox logoutProfileBox'>
+                            <div className='logoutformProfile'>
+                            <h2 className='registerHead'>Edit profile</h2>
+                            <div className='form-group name'>
+                                <p className='logoutSure' >Are you sure you want to logout?</p>
+                            </div>
+                            </div>
+                            <div className='popupBtn'>
+                                <div className='form-group CancelBtn'>
+                                    <button className=' cancel' onClick={this.logoutProfileCancel}>CANCEL</button>
+                                </div>
+                                <div className='form-group LogoutBtn'>
+                                    <button className=' RegisterBtnBtn' onClick={this.props.logout}>LOGOUT</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                }
             </div>
         );
     }
@@ -40,7 +80,7 @@ const mapStateToProps = state => ({
 
 ProfileSideNav = connect(
     mapStateToProps,
-    {  },
+    { logout },
 )(ProfileSideNav);
 
 export default ProfileSideNav;

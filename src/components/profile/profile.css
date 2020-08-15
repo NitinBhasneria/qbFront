@@ -139,6 +139,7 @@ hr {
 }
 
 .editBtn {
+    cursor: pointer;
     height: 6vh;
     border: 1px solid #10C7B6;
     box-sizing: border-box;
@@ -148,6 +149,11 @@ hr {
     color: #10C7B6;
     background: none;
 }
+
+.editBtn:focus {
+    outline: none;
+}
+
 .edit {
     display: flex;
     justify-content: center;
@@ -169,4 +175,151 @@ hr {
     position: relative;
     right: 60px;
     top: 106px;
+}
+
+.editProfile {
+    background-color: #454545;
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    top: 0px;
+    width: 100vw;
+    height: 100vw;
+    opacity: 0.4;
+}
+
+.editProfilePopup {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    left: 0px;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    bottom: 0px;
+}
+.editProfileBox {
+    background-color: white;
+    height: 33%;
+    align-self: center;
+    width: 25%;
+    flex-wrap: wrap;
+    color: rgba(0, 0, 0, 0.54);
+    display: flex;
+    flex-direction: row;
+    background: #FFFFFF;
+    box-shadow: 0px 8px 32px rgba(0, 0, 0, 0.12);
+    border-radius: 4px;
+}
+
+.formProfile {
+    width: 100%;
+    flex-direction: column;
+    display: flex;
+    height: 65%;
+    margin: 5%;
+    justify-content: space-between;
+}
+
+.SaveBtn {
+    width: 100%;
+    background-color: #45d0bd;
+    color: white;
+    height: 20%;
+}
+
+.logoutProfilePopup {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    left: 0px;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    position: absolute;
+    right: 0px;
+    top: -10vh;
+    bottom: 0px;
+}
+
+.logoutProfileBox {
+    height: 22%;
+}
+
+.logoutSure {
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 1rem;
+    width: 100%;
+    font-size: 18px;
+}
+
+.popupBtn {
+    display: flex;
+    width: 100%;
+    height: 29%;
+}
+
+.CancelBtn {
+    width: 50%;
+    color: white;
+    height: 100%;
+    background-color: #EFEFEF !important;
+    border-radius: 0px 0px 4px 0px;
+}
+
+.cancel {
+    background-color: #EFEFEF !important;
+    color: #808080 !important;
+    border: 0;
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    height: 100%;
+    width: 100%;
+}
+.cancel:hover {
+    background-color: #EFEFEF !important;
+    color: #808080 !important;
+}
+.cancel:focus {
+    outline: none;
+}
+.LogoutBtn {
+    width: 50%;
+    background-color: #45d0bd;
+    color: white;
+    border-radius: 0px 0px 4px 0px;
+    height: 100%;
+}
+
+.logoutformProfile {
+    width: 100%;
+    flex-direction: column;
+    display: flex;
+    height: 50%;
+    margin: 5%;
+    justify-content: space-between;
+}
+
+.subjectProfileBox{
+    height: 50%;
+}
+
+.subjectfromProfile {
+    height: 76%;
+}
+
+.subjectSaveBtn{
+    height: 14%;
+}
+
+.editHead {
+    font-weight: 500;
+    font-size: 14px;
 }

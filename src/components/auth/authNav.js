@@ -2,8 +2,10 @@ import React, { Component } from 'react';
 import { login, logout } from '../../actions/auth';
 import { connect } from 'react-redux';
 import tqbLogo from './../../statics/images/TQB.png';
+import profileLogo from './../../statics/images/profile.png'
 import Profile from './../profile/profile';
-import history from './../../history'
+import history from './../../history';
+import QB from './../qb/qbHome';
 import {
     BrowserRouter as Router,
     Switch,
@@ -31,7 +33,7 @@ class AuthNav extends Component {
         return(
             <Router history={history}>
                 <div className='authPage'>
-                    <div className='navBar'>
+                    <div className='tqbnavBar'>
                         <div className='logoCont'>
                             <img className='logoTQB' src={tqbLogo} alt='Logo'></img>
                         </div>
@@ -57,6 +59,9 @@ class AuthNav extends Component {
                                     <NavLink className='navAuthBtn' exact to="/login"><p className='btnText'>Login</p></NavLink>
                                     <NavLink className='navAuthBtn' exact to="/register_1"><p className='btnText'>Signup</p></NavLink>
                                 </Route> 
+                                <Route exact path='/qb'>
+                                    <img className='logoTQB' src={profileLogo} alt='Logo'></img>
+                                </Route> 
                             </Switch>
                         </div>
                     </div>
@@ -75,6 +80,9 @@ class AuthNav extends Component {
                         </Route>
                         <Route exact path='/profile'>
                             <Profile />
+                        </Route>
+                        <Route exact path='/qb'>
+                            <QB />
                         </Route>
                     </Switch>
                 </div>

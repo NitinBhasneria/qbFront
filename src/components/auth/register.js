@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link, Redirect, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
+import { loadSyllabus } from './../../actions/syllabus'
+import { getSubject } from './../../actions/subject';
 import {  register, login } from '../../actions/auth';
 import { CreateStudentProfile } from './../../actions/studentDetail';
 import history from './../../history'
@@ -31,6 +33,8 @@ class RegisterPage extends React.Component {
             emailAlready: false
         };
 
+        this.props.loadSyllabus();
+        this.syllabusID = this.syllabusID.bind(this);
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleValid = this.handleValid.bind(this);
@@ -80,6 +84,14 @@ class RegisterPage extends React.Component {
             submitted:false,
             emailAlready:false
         });
+        document.querySelector('.text-danger').style.display = 'none';
+    }
+
+    syllabusID() {
+        for(var i=0;i<this.props.syllabus.length;i++){
+            if((this.props.syllabus[i].classes == this.state.user.Class) && (this.props.syllabus[i].syllabus == this.state.user.syllabus))
+                return this.props.syllabus[i].id;
+        }
     }
 
     handleSubmit(event) {
@@ -98,9 +110,11 @@ class RegisterPage extends React.Component {
                     if (res){
                         this.props.login(user).then(
                             ()=> {
-                                this.props.CreateStudentProfile(user.student_name, user.phone, user.syllabus, user.Class, res);
-                                history.push('/register_2');
-                                window.location.reload(false)
+                                this.props.CreateStudentProfile(user.student_name, user.phone, user.syllabus, user.Class, res)
+                                this.props.getSubject(this.syllabusID()).then(()=>{
+                                    history.push('./register_2');
+                                    window.location.reload(false);
+                                })
                             }
                         );
                     }
@@ -147,7 +161,7 @@ class RegisterPage extends React.Component {
                                         </select>
                                     </div>
                                     <div className={'form-group nameClass'}>
-                                        <select className='form-control-register' name="student_name" id="class" onChange={this.handleChange}>
+                                        <select className='form-control-register' name="Class" id="class" onChange={this.handleChange}>
                                             <option value='Class 10'>Class 10</option>
                                             <option value='Class 12'>Class 12</option>
                                         </select>
@@ -176,11 +190,14 @@ class RegisterPage extends React.Component {
 
 const mapStateToProps = state => ({
     isAuthenticated: state.auth.isAuthenticated,
+    syllabus: state.syllabus.data,
+    detail: state.studentdetail.data,
+    subjects: state.subjects.data
 });
 
 RegisterPage = connect(
     mapStateToProps,
-    { register, login, CreateStudentProfile },
+    { register, login, CreateStudentProfile, getSubject, loadSyllabus},
 )(RegisterPage);
 
 export default RegisterPage;

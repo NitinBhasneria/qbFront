@@ -82,7 +82,8 @@ export const register = ({ email, password }) => async dispatch => {
 
 // LOGOUT USER
 export const logout = () => async (dispatch, getState) => {
-    await axios.post(`${API_URL}/auth/logout`, null, tokenConfig(getState));
+    // await axios.post(`${API_URL}/auth/logout`, null, tokenConfig(getState));
+    console.log('logout');
     dispatch({
       type: LOGOUT_SUCCESS
     });

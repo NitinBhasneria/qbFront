@@ -31,7 +31,7 @@ class HomePage extends React.Component {
                 <About />
                 <Why />
                 <QBA />
-                <Testimonial />
+                <Testimonial />z
                 <Footer />
             </div>
         );
