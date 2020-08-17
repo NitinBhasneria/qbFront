@@ -1,16 +1,19 @@
 import React from 'react';
-import { Link, Redirect } from 'react-router-dom';
+// import { Link, Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
-import history from '../../history';
+// import history from '../../history';
 import './tqb.css';
 import Bookmark from './../../statics/images/bookmark.png'
 import Cross from './../../statics/images/cross.png'
-import {
-    BrowserRouter as Router,
-    Switch,
-    Route,
-    NavLink,
-} from "react-router-dom";
+import {loadDetail} from './../../actions/studentDetail'
+import { getYear } from './../../actions/years'
+import { getTopic } from './../../actions/topics'
+// import {
+//     BrowserRouter as Router,
+//     Switch,
+//     Route,
+//     NavLink,
+// } from "react-router-dom";
 
 class SelectDropdown extends React.Component {
     constructor(props) {
@@ -18,8 +21,8 @@ class SelectDropdown extends React.Component {
   
       this.state = {
         selectedOption: props.selectedOption || props.defaultOption,
-        showDropdown: false
-      }
+        showDropdown: false,
+      };
     }
   
     toggleDropdown = () => {
@@ -41,9 +44,7 @@ class SelectDropdown extends React.Component {
   
     render() {
       const { showDropdown, selectedOption } = this.state
-      const { options, name } = this.props
-      const optionKeys = Object.keys(options)
-  
+      const {options,  name } = this.props
       let styles = {
         dropdown: {
           fontFamily: 'Helvetica',
@@ -125,15 +126,15 @@ class SelectDropdown extends React.Component {
       return (
         <div style={styles.dropdown} tabIndex={1}>
           <div className={`selectedOption-${showDropdown ? 'down' : 'up'}`} style={styles.selectedOption} onClick={this.toggleDropdown}>
-            <a style={styles.selectedOptionLink}>{options[selectedOption]}</a>
+            <a style={styles.selectedOptionLink}>{selectedOption}</a>
             <i className={`fa fa-chevron-${showDropdown ? 'up' : 'down'}`} style={styles.icon} />
           </div>
           <ul className={`${showDropdown ? 'show' : ''}`} style={styles.list}>
             {
-              optionKeys.map((optionKey, index) => (
-                <li style={styles.listItem} key={index} name={name} value={optionKey} onClick={this.setSelectedOption}>
-                  {options[optionKey]}
-                  <i className={`far fa-${selectedOption === optionKey ? 'dot-circle' : 'circle'}`} style={styles.listItem.icon} />
+              options.map((option, index) => (
+                <li style={styles.listItem} key={index} name={name} value={option} onClick={this.setSelectedOption}>
+                  {option}
+                  <i className={`far fa-${selectedOption === option ? 'dot-circle' : 'circle'}`} style={styles.listItem.icon} />
                 </li>
               ))
             }
@@ -142,48 +143,37 @@ class SelectDropdown extends React.Component {
       )
     }
   }
-  
-class Demo extends React.Component {
-    constructor(props) {
-      super(props)
-  
-      this.state = {
-        selectedOption: 'red'
-      }
-    }
-  
-    setOption = (selectedOption) => {
-      this.setState({ selectedOption })
-    }
-
-    render() {
-      const name = 'select'
-      const selectedOption = this.state.selectedOption
-      const options = {
-        red: 'Red',
-        blue: 'Blue',
-        green: 'Green'
-      }
-  
-      return (
-        <SelectDropdown
-          name={name}
-          onChange={this.setOption}
-          options={options}
-          selectedOption={selectedOption}
-        />
-      )
-    }
-}
 
 class QBA extends React.Component {
     constructor(props) {
         super(props);
 
         this.state = {
+            selectedOption: 'Subject',
+            optionLoaded: false,
             click: true,
+            year: 2019,
+            topic: ''
         };
         this.myClick = this.myClick.bind(this);
+        this.props.loadDetail(this.props.auth.user.user.id);
+        if(this.props.details.data.Class == 'Class 10') {
+          this.props.getYear('class10');
+          this.props.getTopic('class10');
+        }
+        this.yearsChange = this.yearsChange.bind(this);
+    }
+
+    yearsChange(e){
+      const { name, value } = e.target;
+      this.setState({
+        ...this.state,
+        [name]: value
+      });
+    };
+
+    setOption = (selectedOption) => {
+      this.setState({ selectedOption })
     }
 
     myClick(){
@@ -202,7 +192,33 @@ class QBA extends React.Component {
     }
 
     render() {
-        
+
+        var options = []
+        var subject = this.props.details.data;
+        if(subject.sub1!=='')
+          options.push(subject.sub1)
+        if(subject.sub2!=='')
+          options.push(subject.sub2)
+        if(subject.sub3!=='')
+          options.push(subject.sub3)
+        if(subject.sub4!=='')
+          options.push(subject.sub4)
+        if(subject.sub5!=='')
+          options.push(subject.sub5)
+        const name = 'select'
+        const selectedOption = this.state.selectedOption
+        var years = []
+        for(var i=0;i<this.props.years.length;i++){
+          years.push(<div className='yearsInput'><input className='inputSelect' value={this.props.years[i].years} type="radio" name="year" onChange={this.yearsChange}></input>
+          <p className='year'>{this.props.years[i].years}</p></div>)
+        }
+
+        var topics = []
+        for(var i=0;i<this.props.topic.length;i++){
+          topics.push(<div className='yearsInput'><input className='inputSelect' value={this.props.topic[i].topic} type="radio" name="topic" onChange={this.yearsChange}></input>
+          <p className='year'>{this.props.topic[i].topic}</p></div>)
+        }
+
         return (
             <div className='TQB'>
                 <div className='tqbNav'>
@@ -212,18 +228,21 @@ class QBA extends React.Component {
                 </div>
                 <div className='qbCont'>
                     <div className='qbSideBar'>
-                    <Demo />            
+                    <SelectDropdown
+                      name={name}
+                      onChange={this.setOption}
+                      options={options}
+                      selectedOption={selectedOption}
+                    />           
                     <div className='filterYear'>
                         <h1 className='filterHead'>Filters</h1>
                         <h2 className='chooseHead'>Choose by year</h2>
                         <div className='yearList'>
-                            <input className='inputSelect' type="radio" name="radio"></input>
-                            <p className='year'>2019</p>
+                            {years}
                         </div>
                         <h2 className='chooseHead'>Choose the topic</h2>
                         <div className='topicList'>
-                            <input className='inputSelect' type="radio" name="radio1"></input>
-                            <p className='year'>Permutation and Combination</p>
+                            {topics}
                         </div>
                         <div className='solved'>
                             <h2 className='chooseHead'>Solved Questions</h2>
@@ -263,11 +282,15 @@ class QBA extends React.Component {
 
 const mapStateToProps = state => ({
     isAuthenticated: state.auth.isAuthenticated,
+    auth: state.auth,
+    details: state.studentdetail,
+    years: state.years.data,
+    topic: state.topics.data
 });
 
 QBA = connect(
     mapStateToProps,
-    {  },
+    { loadDetail, getYear, getTopic },
 )(QBA);
 
 

@@ -1,17 +1,17 @@
 import React from 'react';
-import { Link, Redirect } from 'react-router-dom';
+// import { Link, Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
-import history from '../../history';
+// import history from '../../history';
 import Demo from './../../statics/images/stuImageDemo.png';
 import Edit from './../../statics/images/editImage.png'
 import { getSubject } from './../../actions/subject';
 import { updateDetail } from './../../actions/studentDetail'
-import {
-    BrowserRouter as Router,
-    Switch,
-    Route,
-    NavLink,
-} from "react-router-dom";
+// import {
+//     BrowserRouter as Router,
+//     Switch,
+//     Route,
+//     NavLink,
+// } from "react-router-dom";
 import { loadDetail } from './../../actions/studentDetail'
 
 class AccountDetail extends React.Component {
@@ -66,11 +66,11 @@ class AccountDetail extends React.Component {
 
     editProfileDetail() {
         const { edit } = this.state;
-        if(edit.student_name=='' && edit.phone=='')
+        if(edit.student_name==='' && edit.phone==='')
             this.setState({
                 editProfile: false,
             })
-        if(edit.student_name!='' && edit.phone=='')
+        if(edit.student_name!=='' && edit.phone==='')
             this.props.updateDetail(
                 this.props.detail.id,
                 this.state.edit.student_name,

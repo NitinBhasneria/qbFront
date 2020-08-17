@@ -11,7 +11,7 @@ import {
 export const getSubject = (syllabus_id) => async (dispatch) => {
     dispatch({type: SUBJECT_LOADING });
     try{
-        const res = await axios.get(`${API_URL}/students/subject/${syllabus_id}/`)
+        const res = await axios.get(`${API_URL}/students/subject/1/`)
         dispatch({
             type: SUBJECT_LOADED,
             payload: res.data,

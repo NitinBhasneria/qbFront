@@ -113,11 +113,18 @@ li:focus {
     font-size: 16px;
 }
 
+.yearsInput {
+    display: flex;
+    margin-right: 1vw;
+}
+
 .yearList {
     margin-left: 2vw;
     display: flex;
-    height: 2vh;
-    width: 30%;
+    flex-direction: row;
+    width: 95%;
+    height: max-content;
+    flex-wrap: wrap;
 }
 
 .topicList{

@@ -8,12 +8,16 @@ import auth from './auth'; // added
 import studentDetail from './studentDetail';
 import syllabus from './syllabus'
 import subjects from './subjects';
+import years from './years';
+import topics from './topics';
 
 const appReducer = combineReducers({
     auth: auth,
     studentdetail: studentDetail,
     syllabus: syllabus,
-    subjects: subjects
+    subjects: subjects,
+    years: years,
+    topics: topics
   });
   
   const rootPersistConfig = {

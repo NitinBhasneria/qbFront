@@ -1,15 +1,15 @@
 import React from 'react';
-import { Link, Redirect } from 'react-router-dom';
+// import { Link, Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
-import history from '../../history';
+// import history from '../../history';
 import ImageTestimonial from './../../statics/images/testimonial1.png'
 import TestimonialArrow from './../../statics/images/testimonialArrow.png'
-import {
-    BrowserRouter as Router,
-    Switch,
-    Route,
-    NavLink,
-} from "react-router-dom";
+// import {
+//     BrowserRouter as Router,
+//     Switch,
+//     Route,
+//     NavLink,
+// } from "react-router-dom";
 
 class Testimonial extends React.Component {
     constructor(props) {
