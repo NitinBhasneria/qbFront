@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, Redirect, withRouter } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { loadSyllabus } from './../../actions/syllabus'
 import { getSubject } from './../../actions/subject';
@@ -10,7 +10,7 @@ import {
     BrowserRouter as Router,
     Switch,
     Route,
-    NavLink,
+    // NavLink,
 } from "react-router-dom";
 import SignUp2 from './SignUp2'
 
@@ -34,7 +34,6 @@ class RegisterPage extends React.Component {
         };
 
         this.props.loadSyllabus();
-        this.syllabusID = this.syllabusID.bind(this);
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleValid = this.handleValid.bind(this);
@@ -87,20 +86,13 @@ class RegisterPage extends React.Component {
         document.querySelector('.text-danger').style.display = 'none';
     }
 
-    syllabusID() {
-        for(var i=0;i<this.props.syllabus.length;i++){
-            if((this.props.syllabus[i].classes == this.state.user.Class) && (this.props.syllabus[i].syllabus == this.state.user.syllabus))
-                return this.props.syllabus[i].id;
-        }
-    }
-
     handleSubmit(event) {
         event.preventDefault();
         
         this.setState({ submitted: true });
         const { user } = this.state;
         console.log(user);
-        if(user.confirmPass!=user.password){
+        if(user.confirmPass !== user.password){
             this.setState({error: 'Password do not match'})
             document.querySelector('.text-danger').style.display = 'block';
         }
@@ -111,7 +103,12 @@ class RegisterPage extends React.Component {
                         this.props.login(user).then(
                             ()=> {
                                 this.props.CreateStudentProfile(user.student_name, user.phone, user.syllabus, user.Class, res)
-                                this.props.getSubject(this.syllabusID()).then(()=>{
+                                var Class;
+                                if(user.Class == 'Class 10')
+                                    Class = 'class10'
+                                else
+                                    Class = 'class12'
+                                this.props.getSubject(Class).then(()=>{
                                     history.push('./register_2');
                                     window.location.reload(false);
                                 })

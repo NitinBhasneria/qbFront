@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, Redirect } from 'react-router-dom';
+// import { Link, Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 import history from './../../history';
 import { loadDetail } from './../../actions/studentDetail'
@@ -9,9 +9,9 @@ import { getSubject } from './../../actions/subject';
 import { updateDetail } from './../../actions/studentDetail'
 import {
     BrowserRouter as Router,
-    Switch,
-    Route,
-    NavLink,
+    // Switch,
+    // Route,
+    // NavLink,
 } from "react-router-dom";
 
 class SignUp2 extends React.Component {
@@ -31,7 +31,6 @@ class SignUp2 extends React.Component {
             error: '',
             submitForm: false
         };
-        this.props.loadSyllabus();
         this.props.loadDetail(this.props.auth.id);
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -55,20 +54,20 @@ class SignUp2 extends React.Component {
         event.preventDefault();
         var subjects = [];
         const { user }= this.state;
-        if(!(subjects.includes(user.sub1))&&(user.sub1!='')){
+        if(!(subjects.includes(user.sub1))&&(user.sub1!=='')){
             subjects.push(user.sub1);
         }
         else subjects.push('');
-        if(!(subjects.includes(user.sub2))&&(user.sub2!='')){
+        if(!(subjects.includes(user.sub2))&&(user.sub2!=='')){
             subjects.push(user.sub2);
         }         else subjects.push('');
-        if(!(subjects.includes(user.sub3))&&(user.sub3!='')){
+        if(!(subjects.includes(user.sub3))&&(user.sub3!=='')){
             subjects.push(user.sub3);
         }        else subjects.push('');
-        if(!(subjects.includes(user.sub4))&&(user.sub4!='')){
+        if(!(subjects.includes(user.sub4))&&(user.sub4!=='')){
             subjects.push(user.sub4);
         }        else subjects.push('');
-        if(!(subjects.includes(user.sub5))&&(user.sub5!='')){
+        if(!(subjects.includes(user.sub5))&&(user.sub5!=='')){
             subjects.push(user.sub5);
         }        else subjects.push('');
         console.log(subjects)
@@ -84,7 +83,8 @@ class SignUp2 extends React.Component {
             subjects[2],
             subjects[3],
             subjects[4],
-            this.props.detail.user
+            this.props.detail.user,
+            this.props.detail.image
         ).then(
             (res) => {
                 history.push('/');
@@ -94,17 +94,10 @@ class SignUp2 extends React.Component {
     }
 
     render(){
-        var subjectsTotal = [];
-        subjectsTotal.push(this.props.subjects[0].subject1)
-        subjectsTotal.push(this.props.subjects[0].subject2)
-        subjectsTotal.push(this.props.subjects[0].subject3)
-        subjectsTotal.push(this.props.subjects[0].subject4)
-        subjectsTotal.push(this.props.subjects[0].subject5)
-
         var options = [];
-        for(var j=0;j<subjectsTotal.length;j++){
-            if(subjectsTotal[j]!=''){
-                options.push(<option value={subjectsTotal[j]}>{subjectsTotal[j]}</option>)
+        for(var j=0;j<this.props.subjects.length;j++){
+            if(this.props.subjects[j].subject !== ''){
+                options.push(<option value={this.props.subjects[j].subject}>{this.props.subjects[j].subject}</option>)
             }
         }
         var SubjectList = [];
@@ -118,7 +111,7 @@ class SignUp2 extends React.Component {
             </div>
             )
         }
-        const { user, submitted, error } = this.state;
+        const {/*user, submitted,*/ error } = this.state;
         return (
             <Router>
             <div className='registerPage'>

@@ -34,12 +34,31 @@ export const loadDetail = (id) => async (dispatch) => {
     }
   };
 
-export const updateDetail = (id, student_name, phone, syllabus, Class, sub1, sub2, sub3, sub4, sub5, user ) => async (dispatch) => {
-  const body = JSON.stringify({id, student_name, phone, syllabus, Class, sub1, sub2, sub3, sub4, sub5, user });
-  console.log(body);
+export const updateDetail = (id, student_name, phone, syllabus, Class, sub1, sub2, sub3, sub4, sub5, user, image) => async (dispatch) => {
+  var form_data = new FormData();
+  form_data.append('image', image);
+  form_data.append('id', id);
+  form_data.append('student_name', student_name);
+  form_data.append('phone', phone);
+  form_data.append('syllabus', syllabus);
+  form_data.append('Class', Class);
+  form_data.append('sub1', sub1);
+  form_data.append('sub2', sub2);
+  form_data.append('sub3', sub3);
+  form_data.append('sub4', sub4);
+  form_data.append('sub5', sub5);
+  form_data.append('user', user);
+  // for (var pair of form_data.entries()) {
+  //   console.log(pair[0]+ ', ' + pair[1]); 
+  // }
+
   dispatch({ type: DETAIL_LOADING });
   try {
-    const res = await axios.put(`${API_URL}/students/detail/${user}`, body, config);
+    const res = await axios.put(`${API_URL}/students/detail/${user}`, form_data, {
+      headers: {
+        'content-type': 'multipart/form-data'
+      }
+    })
     dispatch({
       type: DETAIL_LOADED,
       payload: res.data,

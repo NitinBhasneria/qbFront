@@ -36,6 +36,7 @@
 .questions {
     margin-left: 22%;
     width: 78%;
+    overflow-x: hidden;
     height: 100%;
 }
 
@@ -214,6 +215,7 @@ button:focus {
 }
 
 .answer {
+    display: none;
     padding: 20px;
     background: rgba(16, 199, 182, 0.1);
     margin-top: 2vh;

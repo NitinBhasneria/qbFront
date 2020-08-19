@@ -3,7 +3,7 @@ import {
     SYLLABUS_LOADED,
     SYLLABUS_LOADING
 } from './../actions/types'
-import action from 'redux-form/lib/actions';
+// import action from 'redux-form/lib/actions';
 
 const initialState = {
     isLoading: false,

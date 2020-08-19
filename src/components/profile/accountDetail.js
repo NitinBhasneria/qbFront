@@ -17,12 +17,18 @@ import { loadDetail } from './../../actions/studentDetail'
 class AccountDetail extends React.Component {
     constructor(props) {
         super(props);
-
+        this.props.loadDetail(this.props.auth.id);
         this.state = {
             edit: {
                 student_name: '',
                 phone: ''
             },
+            subb1: this.props.detail.sub1,
+            subb2: this.props.detail.sub2,
+            subb3: this.props.detail.sub3,
+            subb4: this.props.detail.sub4,
+            subb5: this.props.detail.sub5,
+            image: '',
             editProfile: false,
             editSubject: false
         };
@@ -32,7 +38,57 @@ class AccountDetail extends React.Component {
         this.editSubjectBtn = this.editSubjectBtn.bind(this);
         this.editProfileDetail = this.editProfileDetail.bind(this);
         this.handleChangeProfile = this.handleChangeProfile.bind(this);
+        this.handleImageChange = this.handleImageChange.bind(this);
+        this.handleChangeSubject = this.handleChangeSubject.bind(this);
+        this.updateSubject = this.updateSubject.bind(this);
     }
+
+    updateSubject() {
+        this.props.updateDetail(
+            this.props.detail.id,
+            this.props.detail.student_name,
+            this.props.detail.phone,
+            this.props.detail.syllabus, 
+            this.props.detail.Class,
+            this.state.sub1,
+            this.state.sub2,
+            this.state.sub3,
+            this.state.sub4,
+            this.state.sub5,
+            this.props.detail.user,
+        )
+    }
+
+    handleChangeSubject = (e) => {
+        const { name, value } = e.target;
+        console.log(value);
+        this.setState({
+            ...this.state,
+            [name]: value,
+        });
+    }
+
+    handleImageChange = (e) => {
+        this.setState({
+            ...this.state,
+          image: e.target.files[0]
+        })
+        console.log(e.target.files[0]);
+        this.props.updateDetail(
+            this.props.detail.id,
+            this.props.detail.student_name,
+            this.props.detail.phone,
+            this.props.detail.syllabus, 
+            this.props.detail.Class,
+            this.props.detail.sub1,
+            this.props.detail.sub2,
+            this.props.detail.sub3,
+            this.props.detail.sub4,
+            this.props.detail.sub5,
+            this.props.detail.user,
+            e.target.files[0]
+        )
+    };
 
     handleChangeProfile(event) {
         const { name, value } = event.target;
@@ -47,7 +103,7 @@ class AccountDetail extends React.Component {
 
     syllabusID() {
         for(var i=0;i<this.props.syllabus.length;i++){
-            if((this.props.syllabus[i].classes == this.props.detail.Class) && (this.props.syllabus[i].syllabus == this.props.detail.syllabus))
+            if((this.props.syllabus[i].classes === this.props.detail.Class) && (this.props.syllabus[i].syllabus === this.props.detail.syllabus))
                 return this.props.syllabus[i].id;
         }
     }
@@ -82,7 +138,8 @@ class AccountDetail extends React.Component {
                 this.props.detail.sub3,
                 this.props.detail.sub4,
                 this.props.detail.sub5,
-                this.props.detail.user
+                this.props.detail.user,
+                this.props.detail.image
             ).then( () => {            
                 this.setState({
                     edit: {
@@ -91,7 +148,7 @@ class AccountDetail extends React.Component {
                     },
                 editProfile: false,
             })})
-        if(edit.student_name=='' && edit.phone!='')
+        if(edit.student_name==='' && edit.phone!=='')
             this.props.updateDetail(
                 this.props.detail.id,
                 this.props.detail.student_name,
@@ -103,7 +160,8 @@ class AccountDetail extends React.Component {
                 this.props.detail.sub3,
                 this.props.detail.sub4,
                 this.props.detail.sub5,
-                this.props.detail.user
+                this.props.detail.user,
+                this.props.detail.image
             ).then( () => {            
                 this.setState({
                     edit: {
@@ -124,7 +182,8 @@ class AccountDetail extends React.Component {
             this.props.detail.sub3,
             this.props.detail.sub4,
             this.props.detail.sub5,
-            this.props.detail.user
+            this.props.detail.user,
+            this.props.detail.image
         ).then( () => {            
             this.setState({
                 edit: {
@@ -136,45 +195,40 @@ class AccountDetail extends React.Component {
     }
     
     render() {
+        var Class;
+        if(this.props.auth.Class == 'Class 10')
+            Class = 'class10'
+        else
+            Class = 'class12'
+        if(!this.props.subjects)
+            this.props.getSubject(Class)
         var subjects = [];
         subjects.push(this.props.detail.sub1);
         subjects.push(this.props.detail.sub2);
         subjects.push(this.props.detail.sub3);
         subjects.push(this.props.detail.sub4);
         subjects.push(this.props.detail.sub5);
-        var subjectList = []
-        for(var i=0;i<subjects.length;i++)
-            if(subjects[i]!=''){
+        var subjectList = [];
+        for(var i=0;i<subjects.length;i++){
+            if(subjects[i]!==''){
                 subjectList.push(<h2 className='componentDetail'>{subjects[i]}</h2>)
-                if(i!=(subjects.length-1))
+                if(i!==(subjects.length-1))
                 subjectList.push(<h2 className='componentDetail'>|</h2>)
             }
+        }
 
-            if(!this.state.syllabusLoaded){
-                this.props.getSubject(this.syllabusID());
-                this.setState({
-                    syllabusLoaded: true,
-                })
-            }
-        var subjectsTotal = [];
-        subjectsTotal.push(this.props.subjects[0].subject1)
-        subjectsTotal.push(this.props.subjects[0].subject2)
-        subjectsTotal.push(this.props.subjects[0].subject3)
-        subjectsTotal.push(this.props.subjects[0].subject4)
-        subjectsTotal.push(this.props.subjects[0].subject5)
-    
         var options = [];
-        for(var j=0;j<subjectsTotal.length;j++){
-            if(subjectsTotal[j]!=''){
-                options.push(<option value={subjectsTotal[j]}>{subjectsTotal[j]}</option>)
+        for(var j=0;j<this.props.subjects.length;j++){
+            if(this.props.subjects[j].subject !== ''){
+                options.push(<option value={this.props.subjects[j].subject}>{this.props.subjects[j].subject}</option>)
             }
         }
         var SubjectList = [];
-        for(var i=1;i<=5;i++){
-            var name = 'sub' + i.toString();
+        for(i=0;i<5;i++){
+            // var name = 'sub' + i.toString();
             SubjectList.push(<div className={'form-group nameSubject'}>
-                <select className='form-control-register' /*name={name} onChange={this.handleChange}*/>
-                    <option value='Subject'>Subject</option>
+                <select className='form-control-register' name={`subb`+(i+1)} onChange={this.handleChangeSubject}>
+                    <option value='Subject'>{(subjects[i])?subjects[i]:"Subject"}</option>
                     {options}
                 </select>
             </div>
@@ -183,8 +237,11 @@ class AccountDetail extends React.Component {
         return (
             <div className='AccountCont'>
                 <div className = 'StuImage'>
-                    <img className='Image' src={Demo}></img>
-                    <img className='editImage' src={Edit}></img>
+                    <img className='Image' src={this.props.detail.image}></img>
+                    <input type="file" name="image[photo]" id="thumbnail-img" onChange={this.handleImageChange}/>
+                    <label for="thumbnail-img" class="thumbnailBtn">
+                        <img className='editImage' for="image" src={Edit}></img>
+                    </label>
                 </div>
                 <div className='StuName'>{this.props.detail.student_name}</div>
                 <div className='StuDetail'>
@@ -233,7 +290,7 @@ class AccountDetail extends React.Component {
                             {SubjectList}
                             </div>
                             <div className='form-group SaveBtn subjectSaveBtn'>
-                                <button className=' RegisterBtnBtn'>SAVE CHANGES</button>
+                                <button className=' RegisterBtnBtn' onClick={this.updateSubject}>SAVE CHANGES</button>
                             </div>
                         </div>
                     </div>

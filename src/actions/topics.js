@@ -1,5 +1,5 @@
 import axios from 'axios';
-import {API_URL} from './../statics/constant/api_urls';
+import {API_URL} from '../statics/constant/api_urls';
 
 import {
     TOPIC_LOADING,
@@ -8,18 +8,19 @@ import {
 } from './types'
 
 
-export const getTopic = (Class) => async (dispatch) => {
-    dispatch({type: TOPIC_LOADING });
-    try{
-        const res = await axios.get(`${API_URL}/students/commerce/topic/`)
-        dispatch({
-            type: TOPIC_LOADED,
-            payload: res.data,
-            dataLoaded: true
-        })
-    } catch(err) {
-        dispatch({
-            type: TOPIC_ERROR,
-        })
-    }
+export const getTopic = (subject, Class) => async (dispatch) => {
+        console.log(subject);
+        dispatch({type: TOPIC_LOADING });
+        try{
+            const res = await axios.get(`http://127.0.0.1:8000/students/science/${subject}/`)
+            dispatch({
+                type: TOPIC_LOADED,
+                payload: res.data,
+                dataLoaded: true
+            })
+        } catch(err) {
+            dispatch({
+                type: TOPIC_ERROR,
+            })
+        }
 }

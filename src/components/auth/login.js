@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import { Link, Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { login, logout } from '../../actions/auth';
-import AuthNav from './authNav';
-import history from './../../history'
+// import AuthNav from './authNav';
+// import history from './../../history'
 
 class LoginForm extends Component {
   constructor(props) {

@@ -116,9 +116,9 @@ hr {
 }
 
 .Image {
-    margin-left: 4%;
-    height: fit-content;
+    height: 180px;
     border-radius: 50%;
+    width: 180px;
 }
 
 .StuDetail {
@@ -322,4 +322,13 @@ hr {
 .editHead {
     font-weight: 500;
     font-size: 14px;
+}
+
+#thumbnail-img {
+    display: none;
+    width: 0px;
+}
+
+.thumbnailBtn {
+    width: 0px;
 }

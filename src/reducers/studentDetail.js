@@ -3,7 +3,7 @@ import {
     DETAIL_LOADED,
     DETAIL_FAIL
   } from '../actions/types';
-import action from './../actions/syllabus'
+// import action from './../actions/syllabus'
 
   const initialState = {
     isLoading: false,

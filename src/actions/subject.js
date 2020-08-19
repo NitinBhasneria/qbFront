@@ -8,18 +8,52 @@ import {
 } from './types'
 
 
-export const getSubject = (syllabus_id) => async (dispatch) => {
+export const getSubject = (Class) => async (dispatch) => {
     dispatch({type: SUBJECT_LOADING });
-    try{
-        const res = await axios.get(`${API_URL}/students/subject/1/`)
-        dispatch({
-            type: SUBJECT_LOADED,
-            payload: res.data,
-            dataLoaded: true
-        })
-    } catch(err) {
-        dispatch({
-            type: SUBJECT_ERROR,
-        })
+    if(Class=='class10'){
+        try{    
+            const res = await axios.get(`${API_URL}/students/${Class}/subject/`)
+            console.log(res.data);
+            dispatch({
+                type: SUBJECT_LOADED,
+                payload: res.data,
+                dataLoaded: true
+            })
+        } catch(err) {
+            dispatch({
+                type: SUBJECT_ERROR,
+            })
+        }
+    }
+    else if(Class == 'class12'){console.log(Class);
+
+        try{    
+            const res1 = await axios.get(`${API_URL}/students/science/subject/`)
+            const res2 = await axios.get(`${API_URL}/students/commerce/subject/`)
+            var i = res2.data.length
+            while(i>0){
+                i--;
+                res1.data.push(res2.data[i]);
+            }
+            console.log(res1.data);
+            dispatch({
+                type: SUBJECT_LOADED,
+                payload: res1.data,
+                dataLoaded: true
+            })
+        } catch(err) {
+            dispatch({
+                type: SUBJECT_ERROR,
+            })
+        }
+    }    
+    else {
+
+        try{    
+            const res = await axios.get(`${API_URL}/students/${Class}/subject/`)
+            return res.data
+        } catch(err) {
+            return err;
+        }
     }
 }

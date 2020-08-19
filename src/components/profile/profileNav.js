@@ -1,12 +1,12 @@
 import React from 'react';
-import { Link, Redirect } from 'react-router-dom';
+// import { Link, Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { logout } from './../../actions/auth';
-import history from '../../history';
+// import history from '../../history';
 import {
-    BrowserRouter as Router,
-    Switch,
-    Route,
+    // BrowserRouter ,
+    // Switch,
+    // Route,
     NavLink,
 } from "react-router-dom";
 

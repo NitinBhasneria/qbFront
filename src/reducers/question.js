@@ -1,9 +1,9 @@
 import {
-    TOPIC_ERROR,
-    TOPIC_LOADED,
-    TOPIC_LOADING
+    QUESTION_ERROR,
+    QUESTION_LOADED,
+    QUESTION_LOADING
 } from './../actions/types'
-import action from 'redux-form/lib/actions';
+// import action from 'redux-form/lib/actions';
 
 const initialState = {
     isLoading: false,
@@ -13,18 +13,18 @@ const initialState = {
 
 export default function (state = initialState, action){
     switch(action.type){
-        case TOPIC_LOADING:
+        case QUESTION_LOADING:
             return {
                 ...state,
                 isLoading: true
             }
-        case TOPIC_LOADED:
+        case QUESTION_LOADED:
             return{
                 isLoaded: false,
                 data: action.payload,
                 isDetailLoaded: true
             }
-        case TOPIC_ERROR:
+        case QUESTION_ERROR:
         default:
             return state;
     }
