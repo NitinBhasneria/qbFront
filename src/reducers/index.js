@@ -1,5 +1,5 @@
 import { combineReducers } from 'redux'
-import { LOGOUT_SUCCESS } from './../actions/types'
+import { LOGOUT_SUCCESS, SUB4_LOADING } from './../actions/types'
 import { persistReducer } from 'redux-persist'
 import storage from 'redux-persist/lib/storage';
 
@@ -11,6 +11,9 @@ import subjects from './subjects';
 import years from './years';
 import question from './question';
 import topic from './topic';
+import profile from './profile';
+import bookmark from './bookmark';
+import solved from './solved';
 
 const appReducer = combineReducers({
     auth: auth,
@@ -19,7 +22,10 @@ const appReducer = combineReducers({
     subjects: subjects,
     years: years,
     question: question,
-    topic: topic
+    topic: topic,
+    image: profile,
+    bookmark: bookmark,
+    solved: solved,
   });
   
   const rootPersistConfig = {

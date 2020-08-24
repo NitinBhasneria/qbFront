@@ -26,13 +26,13 @@ class Why extends React.Component {
                 </div>
                 <div className='whyCard'>
                     <div className='Card'>
-                        <div className='cardImage1'></div>
-                        <div className='cardHead'>Every question</div>
+                        <div className='cardImage1 cardImage' ></div>
+                        <div className='cardHead'>Every Question</div>
                         <div className='cardDetail'>Each and every previous year's BOARD EXAM questions at one place.</div>
                     </div>
                     <div className='Card'>
-                        <div className='cardImage2'></div>
-                        <div className='cardHead'>Advanced filters</div>
+                        <div className='cardImage2 cardImage'></div>
+                        <div className='cardHead'>Advanced Filters</div>
                         <div className='cardDetail'>The most advanced Question Bank till date.</div>
                     </div>
                 </div>

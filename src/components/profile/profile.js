@@ -3,13 +3,14 @@ import { Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 import ProfileSideNav from './profileNav';
 import AccountDetail from './accountDetail';
+import Progress from './progress'
 // import history from '../../history';
-// import {
-//     BrowserRouter as Router,
-//     Switch,
-//     Route,
-//     NavLink,
-// } from "react-router-dom";
+import {
+    BrowserRouter as Router,
+    Switch,
+    Route,
+    NavLink,
+} from "react-router-dom";
 import './profile.css';
 
 class Profile extends React.Component {
@@ -27,7 +28,14 @@ class Profile extends React.Component {
         return (
             <div className='ProfileCont'>
                 <ProfileSideNav />
-                <AccountDetail />                
+                <Switch >
+                    <Route exact path = '/progress'>
+                        <Progress />
+                    </Route>
+                    <Route exact path='/profile'>
+                        <AccountDetail />
+                    </Route>
+                </Switch>                  
             </div>
         );
     }

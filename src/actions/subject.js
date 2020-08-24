@@ -10,9 +10,11 @@ import {
 
 export const getSubject = (Class) => async (dispatch) => {
     dispatch({type: SUBJECT_LOADING });
-    if(Class=='class10'){
+
+    console.log(Class)
+    if(Class=='Class 10'){
         try{    
-            const res = await axios.get(`${API_URL}/students/${Class}/subject/`)
+            const res = await axios.get(`${API_URL}/students/class10/subject/`)
             console.log(res.data);
             dispatch({
                 type: SUBJECT_LOADED,
@@ -25,8 +27,8 @@ export const getSubject = (Class) => async (dispatch) => {
             })
         }
     }
-    else if(Class == 'class12'){console.log(Class);
-
+    else if(Class == 'Class 12'){console.log(Class)
+        
         try{    
             const res1 = await axios.get(`${API_URL}/students/science/subject/`)
             const res2 = await axios.get(`${API_URL}/students/commerce/subject/`)

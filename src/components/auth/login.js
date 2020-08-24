@@ -8,7 +8,6 @@ import { login, logout } from '../../actions/auth';
 class LoginForm extends Component {
   constructor(props) {
     super(props);
-    this.props.logout();
     this.state = {
       user: {
           email: '',

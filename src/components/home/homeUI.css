@@ -3,7 +3,9 @@ body {
 }
 
 .homePage {
+    position: relative;
     width: 100vw;
+    top: 10vh;
 }
 
 .footer {
@@ -37,11 +39,23 @@ body {
 .fb{
     background-image: url('./../../statics/images/fb.png');
 }
+
+.fb:hover{
+    background-image: url('./../../statics/images/fbhover.png');
+}
+
 .insta {
     background-image: url('./../../statics/images/insta.png');
 }
+.insta:hover {
+    background-image: url('./../../statics/images/instahover.png');
+}
+
 .youTube {
     background-image: url('./../../statics/images/youtube.png');
+}
+.youTube:hover {
+    background-image: url('./../../statics/images/youtubehover.png');
 }
 .twitter {
     background-image: url('./../../statics/images/twitter.png');
@@ -49,12 +63,16 @@ body {
 .linkdin {
     background-image: url('./../../statics/images/linkdin.png');
 }
+.linkdin:hover {
+    background-image: url('./../../statics/images/linkdinhover.png');
+}
 
 .fb, .insta, .linkdin, .twitter, .youTube {
     background-repeat: no-repeat;
     background-position: left;
     width: 8%;
     margin: 0% 7% 4% 0%;
+    background-size: contain;
     height: 15%;
 }
 
@@ -94,6 +112,13 @@ body {
     flex-wrap: wrap;
 }
 
+.carousel-inner {
+    position: relative;
+    width: 100%;
+    margin: 3% 0%;
+    overflow: hidden;
+}
+
 .whyCard {
     width: 45%;
     margin: 7% 8% 2% 2%;
@@ -129,12 +154,17 @@ body {
     background-repeat: no-repeat;
     background-size: 100% 100%;
     background: linear-gradient(180deg, #3DFAFF 0%, #10C7B7 83%);
-    box-shadow: 0px 2px 32px rgba(0, 0, 0, 0.05);
+    box-shadow: 0px 10px 32px rgba(0, 0, 0, 0.1);
     border-radius: 4px;
     color: white;
 }
+
 .cardImage1 {
     background-image: url('./../../statics/images/EveryQuestion.png');
+
+}
+
+.cardImage {
     border-radius: 4px 4px 0px 0px;
     background-size: 100% 100%;
     width: 100%;
@@ -143,10 +173,6 @@ body {
 
 .cardImage2 {
     background-image: url('./../../statics/images/AdvanceFilter.png');
-    border-radius: 4px 4px 0px 0px;
-    background-size: 100% 100%;
-    width: 100%;
-    height: 60%;
 }
 
 .cardHead {
@@ -235,11 +261,47 @@ body {
     background-image: url('./../../statics/images/about1.png');
 }
 
+.Mathematics {
+    background-image: url('./../../statics/images/Mathematics.png');
+}
+
+.Physics {
+    background-image: url('./../../statics//images/Physics.png');
+}
+
+.Chemistry {
+    background-image: url('./../../statics/images/Chemistry.png');
+}
+
+.BussinessStudies {
+    background-image: url('./../../statics/images/Bussiness\ Studies.png');
+}
+
+.Accountancy {
+    background-image: url('./../../statics/images/Accountancy.png');
+}
+
+.Biology {
+    background-image: url('./../../statics/images/Biology.png');
+}
+
+.Economics {
+    background-image: url('./../../statics/images/Economics.png');
+}
+
+.SocialScience {
+    background-image: url('./../../statics/images/Social\ Science.png');
+}
+
 .cardAboutImage2{
     background-image: url('./../../statics/images/about2.png');
 }
 .cardAboutImage3{
     background-image: url('./../../statics/images/about3.png');
+}
+
+.Science {
+    background-image: url('./../../statics/images/Science.png');
 }
 
 .HeadCont {
@@ -307,14 +369,31 @@ body {
 .carousel-control .glyphicon-chevron-right, .carousel-control .icon-next {
     margin-right: -50px;
 }
+.carousel-control {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 10%;
+    font-size: 20px;
+    color: #fff;
+    text-align: center;
+    text-shadow: 0 1px 2px rgba(0,0,0,.6);
+    background-color: rgba(0,0,0,0);
+    filter: alpha(opacity=50);
+    opacity: .5;
+}
 
 .carousel-control .glyphicon-chevron-left, .carousel-control .icon-prev {
     margin-left: -50px;
 }
 
 .carousel-control.right, .carousel-control.left {
+    height: 100%;
+    background-size: 150% 100%;
+    opacity: 1;
+    margin-bottom: 4em;
     background-color: white !important;
-    background-image: none;
 }
 
 .glyphicon-chevron-left {
@@ -372,9 +451,10 @@ body {
 }
 .QBAVideo3 {
     height: 48%;
+    background-size: 100% 100%;
     margin-left: 1%;
     width: 50%;
-    background-color: red;
+    background-image: url('./../../statics/images/ICSE.png');
 }
 
 .carousel {
@@ -442,7 +522,464 @@ body {
 .speaker-item{
     display: flex;
     justify-content: space-around;
-    margin: 0 2.5em 0 2.5em;
-    margin-top: 5em;
-    margin-bottom: 4em;
+}
+
+.subjectCardCont {
+    height: 80%;
+    width: 100%;
+    display: flex;
+    padding: 1% 5% 9%;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.subjectCardMainPage {
+    width: 15%;
+    height: 100%;
+    display: flex;
+    box-shadow: 0px 10px 32px rgba(0, 0, 0, 0.1);
+    flex-direction: column;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background: linear-gradient(180deg, #3DFAFF 0%, #10C7B7 83%);
+    border-radius: 4px;
+    color: white;
+}
+
+.cardClass {
+    font-family: Montserrat !important;
+    font-style: normal;
+    font-weight: 800;
+    font-size: 16px;
+    line-height: 125%;
+    /* identical to box height, or 20px */
+
+
+    color: rgba(255, 255, 255, 0.7);
+    margin-top: 3%;
+    font-weight: normal;
+    font-size: 14px;
+    width: 88%;
+    margin-left: 6%;
+    margin-right: 6%;
+
+}
+
+.subjectCardHead {
+    font-weight: 600;
+    font-size: 22px;
+    width: 94%;
+    margin-top: 15%;
+    margin-left: 6%;
+}
+
+.subjectCardContHead {
+    font-weight: 600;
+    font-size: 32px;
+    margin-top: auto;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+.subjectHeadCont {
+    width: 100vw;
+    flex-direction: column;
+    display: flex;
+    height: 70vh;
+    background-image: url('./../../statics/images/homebg1.png');
+    background-size: 100% 100%;
+}
+
+
+html, body, #container, .carousel {
+	height:100%;
+	margin: 0;
+	width: 100%;
+}
+
+.image-slide {
+	height: 100%;
+	width: 100%;
+	transition: background-image .3s ease-in-out;
+}
+
+.slide-arrow {
+	cursor:pointer;
+	font-size: 2rem;
+	position: fixed;
+	top: 50%;
+}
+
+.slide-arrow.right {
+	right: 1rem;
+}
+
+.slide-arrow.left {
+	left: 1rem;
+}
+
+.testimonialHead {
+    font-style: normal;
+    font-weight: bold;
+    font-weight: bold;
+    font-size: 32px;
+    color: #000000;
+    text-align: center;
+    width: 100%;
+    margin-top: 3%;
+    margin-bottom: 1%;
+    font-size: 40px;
+}
+
+@media screen and (max-width: 800px) {
+    .HeadCont {
+        height: 75vh;
+        background-size: 230% 100%;
+        display: flex;
+        flex-direction: column;
+    }
+    .laptop {
+        width: 100%;
+        height: 50%;
+        background-image: url(/static/media/laptop.32c4db8e.png);
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+    .SignUp {
+        margin: 10% 10% 0% 8%;
+        width: 90%;
+        height: 40%;
+        color: white;
+    }
+    .Head {
+        text-align: center;
+        font-size: 27px;
+    }
+    .signUpContMobile {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+    .SignUpBtn {
+        font-size: 15px;
+        line-height: 40px;
+        width: 75%;
+    }
+    .aboutHead {
+        font-size: 29px;
+        margin: 4% 0% 0%;
+    }
+    .tqblogoquest {
+        height: 5vh;
+        margin: 3vh;
+        width: 18vh;
+        background: 100%;
+    }
+    .aboutCard {
+        margin-top: -10%;
+        flex-direction: column;
+        height: 85%;
+    }
+    .cardAbout1, .cardAbout2, .cardAbout3 {
+        margin: 0% 12% 0% 12%;
+        display: flex;
+    }
+    .cardAbout1, .cardAbout2, .cardAbout3 {
+        height: 40%;
+        margin-top: 5%;
+        width: 76%;
+    }
+    .about {
+        height: 93vh;
+    }
+    .cardAboutImage1 {
+        background-repeat: no-repeat;
+        height: 100%;
+        width: 60%;
+        background-size: 68%;
+        background-position: center;
+    }
+    .cardAboutImage2 {
+        background-repeat: no-repeat;
+        height: 100%;
+        width: 70%;
+        background-size: 70%;
+        background-position: center;
+    }
+    .cardAboutImage3 {
+        background-repeat: no-repeat;
+        height: 100%;
+        width: 80%;
+        background-size: 70%;
+        background-position: center;
+    }
+    .aboutCardMobileCont {
+        margin: auto;
+    }
+    .aboutCardHead {
+        font-weight: 600;
+        font-size: 17px;
+        text-align: left;
+    }
+    .aboutCardPara {
+        font-weight: normal;
+        margin: 2% 9% 4% 0%;
+        text-align: left;
+        font-size: 11px;
+    }
+    .why {
+        flex-direction: column;
+        height: 115vh;
+    }
+    .WHY {
+        font-weight: bold;
+        font-size: 80px;
+    }
+    .whyQuest {
+        width: 82%;
+        margin: 7% 7% 7% 11%;
+        height: 35%;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    .TheQB {
+        font-weight: bold;
+        font-size: 28px;
+    }
+    .whyPara {
+        font-weight: normal;
+        font-size: 18px;
+    }
+    .whyCard {
+        width: 90%;
+        flex-direction: column;
+        margin: 0% 5% 2% 5%;
+    }
+    .Card {
+        width: 80%;
+        margin: 7% 10% 0% 10%;
+        height: 42%;
+    }
+    .cardDetail {
+        margin-top: 0%;
+        font-weight: normal;
+        font-size: 12px;
+    }
+    .cardHead {
+        font-weight: 600;
+        font-size: 19px;
+        width: 94%;
+        margin-left: 6%;
+    }
+    .cardImage1 {
+        background-image: url('./../../statics/images/EveryQuestionMobile.png');
+    }
+    .cardImage2 {
+        background-image: url('./../../statics/images/AdvanceFilterMobile.png');
+    }
+    .QBAHead {
+        font-size: 30px;
+    }
+    .QBAVideo {
+        height: 85%;
+        margin-left: 0px;
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
+    .QBAVideo1 {
+        height: 31%;
+        width: 100%;
+        margin-bottom: 2%;
+        background-color: #10C7B6;
+    }
+    .QBAVideo2 {
+        height: 31%;
+        margin-bottom: 2%;
+        margin-left: 0%;
+        width: 100%;
+        background-color: #000000;
+    }
+    .QBAVideo3 {
+        height: 31%;
+        background-size: 100% 100%;
+        margin-left: 0%;
+        width: 100%;
+    }
+    .QBACont {
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+        width: 100%;
+    }
+    .glyphicon-chevron-right {
+        width: 8vw !important;
+        height: 10vh !important;
+        background-repeat: no-repeat;
+        background-image: url('./../../statics/images/nextArrowBlack.png');
+    }
+    .glyphicon-chevron-left {
+        margin-left: 0px ;
+        width: 8vw !important;
+        height: 10vh !important;
+        background-repeat: no-repeat;
+        background-image: url('./../../statics/images/previousArrowBlack.png');
+    }
+    .contbox {
+        flex-direction: column;
+        display: flex;
+        width: 60%;
+        height: 91vh;
+        background-color: white;
+        justify-content: space-between;
+    }
+    .carousel-control.right, .carousel-control.left {
+        height: 100%;
+        background-size: 100% 100%;
+        opacity: 1;
+        background-image: none !important;
+        margin-bottom: 4em;
+        background-color: white !important;
+    }
+    .carousel-control .glyphicon-chevron-right, .carousel-control .icon-next {
+        margin-right: 0px;
+    }
+    .carousel-control .glyphicon-chevron-left, .carousel-control .icon-prev {
+        margin-left: 0px;
+    }
+    .testimonialHead {
+        color: #000000;
+        text-align: center;
+        width: 100%;
+        margin-top: 3%;
+        margin-bottom: 1%;
+        font-size: 30px;
+    }
+    .testimonialArrow {
+        margin-top: 4%;
+        width: 15%;
+    }
+    .para {
+        margin: 3vh 0vh 1vh;
+        color: black;
+        text-align: left;
+        font-weight: 500;
+        width: 60vw;
+        font-size: 16px;
+    }
+    .namee {
+        margin-top: 6px;
+        color: black;
+        font-weight: bold;
+        font-size: 25px;
+        text-align: left;
+    }
+    .testimonialContent {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: 65%;
+        justify-content: center;
+    }
+    .purp {
+        font-size: 20px;
+    }
+    .carousel {
+        height: 91vh;
+        margin: 0;
+        width: 100%;
+    }
+    .footer {
+        display: flex;
+        flex-direction: column;
+        width: 100vw;
+        height: 100vh;
+        background-repeat: no-repeat;
+        background-size: 207% 100%;
+    }
+    .contactDetail, .quickLinks {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        width: 84vw;
+        margin: 20vh 8vw 0vh 8vw;
+        height: 50%;
+    }
+    .contactHead, .quickHead {
+        text-align: center;
+        font-size: 22px;
+    }
+    .contact {
+        width: 50%;
+        font-weight: 600;
+        font-size: 15px;
+        text-align: center;
+    }
+    .Num {
+        width: 50%;
+    }
+    .quickLinks {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        width: 84vw;
+        margin: 5vh 8vw 0vh 8vw;
+        height: 50%;
+    }
+    .quick {
+        font-weight: 500;
+        font-size: 17px;
+        color: #000000;
+        text-align: center;
+        width: 100%;
+    }
+    .carousel-control .glyphicon-chevron-left, .carousel-control .glyphicon-chevron-right, .carousel-control .icon-next, .carousel-control .icon-prev {
+        position: absolute;
+        top: 25%;
+        z-index: 5;
+        display: inline-block;
+        margin-top: -10px;
+    }
+    .subjectCardCont {
+        flex-wrap: wrap;
+    }
+    .subjectHeadCont {
+        width: 100vw;
+        flex-direction: column;
+        display: flex;
+        height: 114vh;
+        background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAABaAAAAJ6CAYAAADeouUPAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAB3ASURBVHgB7d0xclvnvcbh70Aaj6gmzArMHVyli+wi6T0pvJO7Be/A2oG5AkFFXINFrkvDO4B3gDQZi5fEF5wDggRIShRJvCRw8DwzMSlStlNZzi9/vV/z519+rgUAAAAAADZsUAAAAAAAIECABgAAAAAgQoAGAAAAACBCgAYAAAAAIEKABgAAAAAgQoAGAAAAACBCgAYAAAAAIEKABgAAAAAgQoAGAAAAACBCgAYAAAAAIEKABgAAAAAgQoAGAAAAACBCgAYAAAAAIEKABgAAAAAgQoAGAAAAACBCgAYAAAAAIEKABgAAAAAgQoAGAAAAACBCgAYAAAAAIEKABgAAAAAgQoAGAAAAACBCgAYAAAAAIEKABgAAAAAgQoAGAAAAACBCgAYAAAAAIEKABgAAAAAgQoAGAAAAACBCgAYAAAAAIEKABgAAAAAgQoAGAAAAACBCgAYAAAAAIEKABgAAAAAgQoAGAAAAACBCgAYAAAAAIEKABgAAAAAgQoAGAAAAACBCgAYAAAAAIEKABgAAAAAgQoAGAAAAACBCgAYAAAAAIEKABgAAAAAgQoAGAAAAACBCgAYAAAAAIEKABgAAAAAgQoAGAAAAACBCgAYAAAAAIEKABgAAAAAgQoAGAAAAACBCgAYAAAAAIEKABgAAAAAgQoAGAAAAACBCgAYAAAAAIEKABgAAAAAgQoAGAAAAACBCgAYAAAAAIEKABgAAAAAgQoAGAAAAACBCgAYAAAAAIEKABgAAAAAgQoAGAAAAACBCgAYAAAAAIEKABgAAAAAgQoAGAAAAACBCgAYAAAAAIEKABgAAAAAgQoAGAAAAACBCgAYAAAAAIEKABgAAAAAgQoAGAAAAACBCgAYAAAAAIEKABgAAAAAgQoAGAAAAACBCgAYAAAAAIEKABgAAAAAgQoAGAAAAACBCgAYAAAAAIEKABgAAAAAgQoAGAAAAACBCgAYAAAAAIEKABgAAAAAgQoAGAAAAACBCgAYAAAAAIEKABgAAAAAgQoAGAAAAACBCgAYAAAAAIEKABgAAAAAgQoAGAAAAACBCgAYAAAAAIEKABgAAAAAgQoAGAAAAACBCgAYAAAAAIEKABgAAAAAgQoAGAAAAACBCgAYAAAAAIEKABgAAAAAgQoAGAAAAACBCgAYAAAAAIEKABgAAAAAgQoAGAAAAACBCgAYAAAAAIEKABgAAAAAgQoAGAAAAACBCgAYAAAAAIEKABgAAAAAgQoAGAAAAACBCgAYAAAAAIEKABgAAAAAgQoAGAAAAACBCgAYAAAAAIEKABgAAAAAgQoAGAAAAACBCgAYAAAAAIEKABgAAAAAgQoAGAAAAACBCgAYAAAAAIEKABgAAAAAgQoAGAAAAACBCgAYAAAAAIEKABgAAAAAgQoAGAAAAACBCgAYAAAAAIEKABgAAAAAgQoAGAAAAACBCgAYAAAAAIEKABgAAAAAgQoAGAAAAACBCgAYAAAAAIEKABgAAAAAgQoAGAAAAACBCgAYAAAAAIEKABgAAAAAgQoAGAAAAACBCgAYAAAAAIEKABgAAAAAgQoAGAAAAACBCgAYAAAAAIEKABgAAAAAgQoAGAAAAACBCgAYAAAAAIEKABgAAAAAgQoAGAAAAACBCgAYAAAAAIEKABgAAAAAgQoAGAAAAACBCgAYAAAAAIEKABgAAAAAgQoAGAAAAACBCgAYAAAAAIEKABgAAAAAgQoAGAAAAACBCgAYAAAAAIEKABgAAAAAgQoAGAAAAACBCgAYAAAAAIEKABgAAAAAgQoAGAAAAACBCgAYAAAAAIEKABgAAAAAgQoAGAAAAACBCgAYAAAAAIEKABgAAAAAgQoAGAAAAACBCgAYAAAAAIEKABgAAAAAgQoAGAAAAACBCgAYAAAAAIEKABgAAAAAgQoAGAAAAACBCgAYAAAAAIEKABgAAAAAgQoAGAAAAACBCgAYAAAAAIEKABgAAAAAgQoAGAAAAACBCgAYAAAAAIEKABgAAAAAgQoAGAAAAACBCgAYAAAAAIEKABgAAAAAgQoAGAAAAACBCgAYAAAAAIEKABgAAAAAgQoAGAAAAACBCgAYAAAAAIEKABgAAAAAgQoAGAAAAACBCgAYAAAAAIEKABgAAAAAgQoAGAAAAACBCgAYAAAAAIEKABgAAAAAgQoAGAAAAACBCgAYAAAAAIEKABgAAAAAgQoAGAAAAACBCgAYAAAAAIEKABgAAAAAgQoAGAAAAACBCgAYAAAAAIEKABgAAAAAgQoAGAAAAACBCgAYAAAAAIEKABgAAAAAgQoAGAAAAACBCgAYAAAAAIEKABgAAAAAgQoAGAAAAACBCgAYAAAAAIEKABgAAAAAgQoAGAAAAACBCgAYAAAAAIEKABgAAAAAgQoAGAAAAACBCgAYAAAAAIEKABgAAAAAgQoAGAAAAACBCgAYAAAAAIEKABgAAAAAgQoAGAAAAACBCgAYAAAAAIEKABgAAAAAgQoAGAAAAACBCgAYAAAAAIEKABgAAAAAgQoAGAAAAACBCgAYAAAAAIEKABgAAAAAgQoAGAAAAACBCgAYAAAAAIEKABgAAAAAgQoAGAAAAACBCgAYAAAAAIEKABgAAAAAgQoAGAAAAACBCgAYAAAAAIEKABgAAAAAgQoAGAAAAACBCgAYAAAAAIEKABgAAAAAgQoAGAAAAACBCgAYAAAAAIEKABgAAAAAgQoAGAAAAACBCgAYAAAAAIEKABgAAAAAgQoAGAAAAACBCgAYAAAAAIEKABgAAAAAgQoAGAAAAACBCgAYAAAAAIEKABgAAAAAgQoAGAAAAACBCgAYAAAAAIEKABgAAAAAgQoAGAAAAACBCgAYAAAAAIEKABgAAAAAgQoAGAAAAACBCgAYAAAAAIEKABgAAAAAgQoAGAAAAACBCgAYAAAAAIEKABgAAAAAgQoAGAAAAACBCgAYAAAAAIEKABgAAAAAgQoAGAAAAACBCgAYAAAAAIEKABgAAAAAgQoAGAAAAACBCgAYAAAAAIEKABgAAAAAgQoAGAAAAACBCgAYAAAAAIEKABgAAAAAgQoAGAAAAACBCgAYAAAAAIEKABgAAAAAgQoAGAAAAACBCgAYAAAAAIEKABgAAAAAgQoAGAAAAACBCgAYAAAAAIEKABgAAAAAgQoAGAAAAACBCgAYAAAAAIEKABgAAAAAgQoAGAAAAACBCgAYAAAAAIEKABgAAAAAgQoAGAAAAACBCgAYAAAAAIEKABgAAAAAgQoAGAAAAACBCgAYAAAAAIEKABgAAAAAgQoAGAAAAACBCgAYAAAAAIEKABgAAAAAgQoAGAAAAACBCgAYAAAAAIEKABgAAAAAgQoAGAAAAACBCgAYAAAAAIEKABgAAAAAgQoAGAAAAACBCgAYAAAAAIEKABgAAAAAgQoAGAAAAACBCgAYAAAAAIEKABgAAAAAgQoAGAAAAACBCgAYAAAAAIEKABgAAAAAgQoAGAAAAACBCgAYAAAAAIEKABgAAAAAgQoAGAAAAACBCgAYAAAAAIEKABgAAAAAgQoAGAAAAACBCgAYAAAAAIEKABgAAAAAgQoAGAAAAACBCgAYAAAAAIEKABgAAAAAgQoAGAAAAACBCgAYAAAAAIEKABgAAAAAgQoAGAAAAACBCgAYAAAAAIEKABgAAAAAgQoAGAAAAACBCgAYAAAAAIEKABgAAAAAgQoAGAAAAACBCgAYAAAAAIEKABgAAAAAgQoAGAAAAACBCgAYAAAAAIEKABgAAAAAgQoAGAAAAACBCgAYAAAAAIEKABgAAAAAgQoAGAAAAACBCgAYAAAAAIEKABgAAAAAgQoAGAAAAACBCgAYAAAAAIEKABgAAAAAgQoAGAAAAACBCgAYAAAAAIEKABgAAAAAgQoAGAAAAACBCgAYAAAAAIEKABgAAAAAgQoAGAAAAACBCgAYAAAAAIEKABgAAAAAgQoAGAAAAACBCgAYAAAAAIEKABgAAAAAgQoAGAAAAACBCgAYAAAAAIEKABgAAAAAgQoAGAAAAACBCgAYAAAAAIEKABgAAAAAgQoAGAAAAACBCgAYAAAAAIEKABgAAAAAgQoAGAAAAACBCgAYAAAAAIEKABgAAAAAgQoAGAAAAACBCgAYAAAAAIEKABgAAAAAgQoAGAAAAACBCgAYAAAAAIEKABgAAAAAgQoCmAAAAAAAkCNAAAAAAAEQI0AAAAAAARAjQAAAAAABECNAAAAAAAEQI0AAAAAAARAjQAAAAAABECNAAAAAAAEQI0AAAAAAARAjQAAAAAABECNAAAAAAAEQI0AAAAAAARAjQAAAAAABECNAAAAAAAEQI0AAAAAAARAjQAAAAAABECNAAAAAAAEQI0AAAAAAARAjQAAAAAABECNAAAAAAAEQI0AAAAAAARAjQAAAAAABECNAAAAAAAEQI0AAAAAAARAjQAAAAAABECNAAAAAAAEQI0AAAAAAARAjQAAAAAABECNAAAAAAAEQI0AAAAAAARAjQAAAAAABECNAAAAAAAEQI0AAAAAAARAjQAAAAAABECNAAAAAAAEQI0AAAAAAARAjQAAAAAABECNAAAAAAAEQI0AAAAAAARAjQAAAAAABECNAAAAAAAEQI0AAAAAAARAjQAAAAAABECNAAAAAAAEQI0AAAAAAARAjQAAAAAABECNAAAAAA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);
+        background-size: 200% 100%;
+    }
+    .subjectCardContHead {
+        font-weight: 600;
+        font-size: 19px;
+        margin-top: 5%;
+        text-align: center;
+        color: #FFFFFF;
+    }
+    .subjectCardCont {
+        height: 87%;
+        width: 100%;
+        display: flex;
+        padding: 1% 5% 9%;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+    .subjectCardHead {
+        font-weight: 600;
+        font-size: 19px;
+        width: 94%;
+        margin-top: 15%;
+        margin-left: 6%;
+    }
+    .subjectCardMainPage {
+        width: 37%;
+        margin-bottom: 7%;
+        height: 31%;
+    }
 }

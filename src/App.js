@@ -29,6 +29,7 @@ function App() {
             <Route exact path='/register_1' component={authNav} />
             <Route exact path='/register_2' component={authNav} />
             <Route exact path='/profile' component={authNav} />
+            <Route exact path='/progress' component={authNav} />
             <Route exact path='/qb' component={authNav} />
           </Switch>
         </Router>

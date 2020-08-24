@@ -6,6 +6,8 @@ import Demo from './../../statics/images/stuImageDemo.png';
 import Edit from './../../statics/images/editImage.png'
 import { getSubject } from './../../actions/subject';
 import { updateDetail } from './../../actions/studentDetail'
+import { updateProfile, CreateProfile, loadProfile } from './../../actions/profile'
+import profileImage from './../../statics/images/profileIcon.png'
 // import {
 //     BrowserRouter as Router,
 //     Switch,
@@ -32,8 +34,8 @@ class AccountDetail extends React.Component {
             editProfile: false,
             editSubject: false
         };
+        this.props.getSubject(this.props.detail.Class)
         this.props.loadDetail(this.props.auth.id);
-        this.syllabusID = this.syllabusID.bind(this);
         this.editProfileBtn = this.editProfileBtn.bind(this);
         this.editSubjectBtn = this.editSubjectBtn.bind(this);
         this.editProfileDetail = this.editProfileDetail.bind(this);
@@ -41,22 +43,44 @@ class AccountDetail extends React.Component {
         this.handleImageChange = this.handleImageChange.bind(this);
         this.handleChangeSubject = this.handleChangeSubject.bind(this);
         this.updateSubject = this.updateSubject.bind(this);
+        this.props.loadProfile(this.props.detail.user);
     }
 
     updateSubject() {
+        var subjects = []    
+        var user = this.props.detail
+        if(!(subjects.includes(user.sub1))&&(user.sub1!=='Subject')){
+            subjects.push(user.sub1);
+        }
+        else subjects.push('');
+        if(!(subjects.includes(user.sub2))&&(user.sub2!=='Subject')){
+            subjects.push(user.sub2);
+        }         else subjects.push('');
+        if(!(subjects.includes(user.sub3))&&(user.sub3!=='Subject')){
+            subjects.push(user.sub3);
+        }        else subjects.push('');
+        if(!(subjects.includes(user.sub4))&&(user.sub4!=='Subject')){
+            subjects.push(user.sub4);
+        }        else subjects.push('');
+        if(!(subjects.includes(user.sub5))&&(user.sub5!=='Subject')){
+            subjects.push(user.sub5);
+        }        else subjects.push(''); 
         this.props.updateDetail(
             this.props.detail.id,
             this.props.detail.student_name,
             this.props.detail.phone,
             this.props.detail.syllabus, 
             this.props.detail.Class,
-            this.state.sub1,
-            this.state.sub2,
-            this.state.sub3,
-            this.state.sub4,
-            this.state.sub5,
+            subjects[0],
+            subjects[1],
+            subjects[2],
+            subjects[3],
+            subjects[4],
             this.props.detail.user,
         )
+        this.setState({
+            editSubject: false,
+        })
     }
 
     handleChangeSubject = (e) => {
@@ -73,21 +97,12 @@ class AccountDetail extends React.Component {
             ...this.state,
           image: e.target.files[0]
         })
-        console.log(e.target.files[0]);
-        this.props.updateDetail(
-            this.props.detail.id,
-            this.props.detail.student_name,
-            this.props.detail.phone,
-            this.props.detail.syllabus, 
-            this.props.detail.Class,
-            this.props.detail.sub1,
-            this.props.detail.sub2,
-            this.props.detail.sub3,
-            this.props.detail.sub4,
-            this.props.detail.sub5,
-            this.props.detail.user,
-            e.target.files[0]
-        )
+        console.log(this.props.image.id);
+        if(this.props.image.id){
+            this.props.updateProfile(this.props.detail.user, e.target.files[0])
+        }
+        else
+            this.props.CreateProfile(this.props.detail.user, e.target.files[0])
     };
 
     handleChangeProfile(event) {
@@ -99,13 +114,6 @@ class AccountDetail extends React.Component {
                 [name]: value
             },
         });
-    }
-
-    syllabusID() {
-        for(var i=0;i<this.props.syllabus.length;i++){
-            if((this.props.syllabus[i].classes === this.props.detail.Class) && (this.props.syllabus[i].syllabus === this.props.detail.syllabus))
-                return this.props.syllabus[i].id;
-        }
     }
 
     editSubjectBtn() {
@@ -237,7 +245,7 @@ class AccountDetail extends React.Component {
         return (
             <div className='AccountCont'>
                 <div className = 'StuImage'>
-                    <img className='Image' src={this.props.detail.image}></img>
+                    <img className='Image' src={(this.props.image.image)?this.props.image.image:profileImage}></img>
                     <input type="file" name="image[photo]" id="thumbnail-img" onChange={this.handleImageChange}/>
                     <label for="thumbnail-img" class="thumbnailBtn">
                         <img className='editImage' for="image" src={Edit}></img>
@@ -307,13 +315,14 @@ const mapStateToProps = state => ({
     auth: state.auth.user.user,
     syllabus: state.syllabus.data,
     detail: state.studentdetail.data,
-    subjects: state.subjects.data
+    subjects: state.subjects.data,
+    image: state.image.data
 });
 
 
 AccountDetail = connect(
     mapStateToProps,
-    {  loadDetail, getSubject, updateDetail  },
+    {  loadDetail, getSubject, updateDetail, updateProfile, CreateProfile, loadProfile},
 )(AccountDetail);
 
 export default AccountDetail;

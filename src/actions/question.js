@@ -7,12 +7,22 @@ import {
     QUESTION_ERROR
 } from './types'
 
+var Commerce = ['Economics', 'Accountancy', 'Business Studies', 'Mathematics']
+var Science = ['Physics', 'Biology', 'Chemistry']
 
 export const getQuestion = (subject, Class) => async (dispatch) => {
-        console.log(subject);
-        dispatch({type: QUESTION_LOADING });
+    if(Class == 'Class 12'){
+        if(Commerce.includes(subject))
+            Class = 'commerce'
+        else if(Science.includes(subject))
+            Class = 'science'
+    }
+    else if(Class = 'Class 10')
+        Class = 'class10'
+    if(subject!=''){
+    dispatch({type: QUESTION_LOADING });
         try{
-            const res = await axios.get(`http://127.0.0.1:8000/students/${subject}/science/`)
+            const res = await axios.get(`http://127.0.0.1:8000/students/${subject}/${Class}/`)
             dispatch({
                 type: QUESTION_LOADED,
                 payload: res.data,
@@ -23,4 +33,5 @@ export const getQuestion = (subject, Class) => async (dispatch) => {
                 type: QUESTION_ERROR,
             })
         }
+    }
 }

@@ -2,15 +2,18 @@ import React, { Component } from 'react';
 import { login, logout } from '../../actions/auth';
 import { connect } from 'react-redux';
 import tqbLogo from './../../statics/images/TQB.png';
+import tqblogoquest from './../../statics/images/tqbQuestLogo.png'
 import profileLogo from './../../statics/images/profile.png'
 import Profile from './../profile/profile';
 import history from './../../history';
+import MediaQuery from 'react-responsive';
 import QB from './../qb/qbHome';
 import {
     BrowserRouter as Router,
     Switch,
     Route,
     NavLink,
+    withRouter
   } from "react-router-dom";
 import './auth.css';
 import LoginForm from './login';
@@ -33,31 +36,71 @@ class AuthNav extends Component {
         return(
             <Router history={history}>
                 <div className='authPage'>
-                    <div className='tqbnavBar'>
-                        <div className='logoCont'>
-                            <img className='logoTQB' src={tqbLogo} alt='Logo'></img>
+                    <div className={'tqbnavBarLogin'}>
+                        <div className={(this.props.history.location.pathname=='/')?'logoCountQuest':'logoCont'} onClick={()=>{this.props.history.push('/')}}>
+                            <img className={(this.props.history.location.pathname=='/')?'tqblogoquest':'logoTQB'} src={(this.props.history.location.pathname=='/')?tqblogoquest:tqbLogo} alt='Logo'></img>
                         </div>
-                        <div className='btnCont'>
+                        <div className={(this.props.history.location.pathname=='/')?'btnContQuest':'btnCont'}>
                             <Switch>
                                 <Route exact path='/'>
-                                    <NavLink className='navAuthBtn' exact to="/"><p className='btnText'>About us</p></NavLink>
-                                    <NavLink className='navAuthBtn' exact to="/login"><p className='btnText'>Login</p></NavLink>
+                                    <MediaQuery query="(max-device-width: 800px)">
+                                        <NavLink className='navAuthBtn' exact to="/"><p className='btnText'>About us</p></NavLink>
+                                        <NavLink className='navAuthBtn' exact to="/login"><p className='btnText'>Login</p></NavLink>
+                                    </MediaQuery>
+                                    <MediaQuery query="(min-device-width: 801px)">
+                                        <NavLink className='navAuthBtn' exact to="/"><p className='btnText'>About us</p></NavLink>
+                                        <NavLink className='navAuthBtn' exact to="/login"><p className='btnText'>Login</p></NavLink>
+                                    </MediaQuery>
                                 </Route>
                                 <Route exact path='/login'>
-                                    <NavLink className='navAuthBtn' exact to="/login"><p className='btnText'>Login</p></NavLink>
-                                    <NavLink className='navAuthBtn' exact to="/register_1"><p className='btnText'>Signup</p></NavLink>
+                                    <MediaQuery query="(max-device-width: 800px)">
+                                        <NavLink className='navAuthBtn' exact to="/"><p className='btnText'>Login</p></NavLink>
+                                        <NavLink className='navAuthBtn' exact to="/login"><p className='btnText'>SignUp</p></NavLink>
+                                    </MediaQuery>
+                                    <MediaQuery query="(min-device-width: 801px)">
+                                        <NavLink className='navAuthBtn' exact to="/"><p className='btnText'>Login</p></NavLink>
+                                        <NavLink className='navAuthBtn' exact to="/login"><p className='btnText'>SignUp</p></NavLink>
+                                    </MediaQuery>
                                 </Route>
                                 <Route exact path='/register_1'>
-                                    <NavLink className='navAuthBtn' exact to="/login"><p className='btnText'>Login</p></NavLink>
-                                    <NavLink className='navAuthBtn' exact to="/register_1"><p className='btnText'>Signup</p></NavLink>
+                                    <MediaQuery query="(max-device-width: 800px)">
+                                        <NavLink className='navAuthBtn' exact to="/"><p className='btnText'>Login</p></NavLink>
+                                        <NavLink className='navAuthBtn' exact to="/login"><p className='btnText'>SignUp</p></NavLink>
+                                    </MediaQuery>
+                                    <MediaQuery query="(min-device-width: 801px)">
+                                        <NavLink className='navAuthBtn' exact to="/"><p className='btnText'>Login</p></NavLink>
+                                        <NavLink className='navAuthBtn' exact to="/login"><p className='btnText'>SignUp</p></NavLink>
+                                    </MediaQuery>
                                 </Route>
                                 <Route exact path='/register_2'>
-                                    <NavLink className='navAuthBtn' exact to="/login"><p className='btnText'>Login</p></NavLink>
-                                    <NavLink className='navAuthBtn' exact to="/register_1"><p className='btnText'>Siggnup</p></NavLink>
+                                    <MediaQuery query="(max-device-width: 800px)">
+                                        <NavLink className='navAuthBtn' exact to="/"><p className='btnText'>Login</p></NavLink>
+                                        <NavLink className='navAuthBtn' exact to="/login"><p className='btnText'>SignUp</p></NavLink>
+                                    </MediaQuery>
+                                    <MediaQuery query="(min-device-width: 801px)">
+                                        <NavLink className='navAuthBtn' exact to="/"><p className='btnText'>Login</p></NavLink>
+                                        <NavLink className='navAuthBtn' exact to="/login"><p className='btnText'>SignUp</p></NavLink>
+                                    </MediaQuery>
                                 </Route> 
                                 <Route exact path='/profile'>
-                                    <NavLink className='navAuthBtn' exact to="/login"><p className='btnText'>Login</p></NavLink>
-                                    <NavLink className='navAuthBtn' exact to="/register_1"><p className='btnText'>Signup</p></NavLink>
+                                    <MediaQuery query="(max-device-width: 800px)">
+                                        <NavLink className='navAuthBtn' exact to="/"><p className='btnText'>Login</p></NavLink>
+                                        <NavLink className='navAuthBtn' exact to="/login"><p className='btnText'>SignUp</p></NavLink>
+                                    </MediaQuery>
+                                    <MediaQuery query="(min-device-width: 801px)">
+                                        <NavLink className='navAuthBtn' exact to="/"><p className='btnText'>Login</p></NavLink>
+                                        <NavLink className='navAuthBtn' exact to="/login"><p className='btnText'>SignUp</p></NavLink>
+                                    </MediaQuery>
+                                </Route> 
+                                <Route exact path='/progress'>
+                                    <MediaQuery query="(max-device-width: 800px)">
+                                        <NavLink className='navAuthBtn' exact to="/"><p className='btnText'>Login</p></NavLink>
+                                        <NavLink className='navAuthBtn' exact to="/login"><p className='btnText'>SignUp</p></NavLink>
+                                    </MediaQuery>
+                                    <MediaQuery query="(min-device-width: 801px)">
+                                        <NavLink className='navAuthBtn' exact to="/"><p className='btnText'>Login</p></NavLink>
+                                        <NavLink className='navAuthBtn' exact to="/login"><p className='btnText'>SignUp</p></NavLink>
+                                    </MediaQuery>
                                 </Route> 
                                 <Route exact path='/qb'>
                                     <img className='logoTQB' src={profileLogo} alt='Logo'></img>
@@ -81,6 +124,9 @@ class AuthNav extends Component {
                         <Route exact path='/profile'>
                             <Profile />
                         </Route>
+                        <Route exact path='/progress'>
+                            <Profile />
+                        </Route>
                         <Route exact path='/qb'>
                             <QB />
                         </Route>
@@ -100,4 +146,4 @@ const mapStateToProps = state => ({
     { login, logout },
   )(AuthNav);
   
-  export default AuthNav;
+  export default withRouter(AuthNav);

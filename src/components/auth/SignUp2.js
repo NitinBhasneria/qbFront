@@ -31,7 +31,9 @@ class SignUp2 extends React.Component {
             error: '',
             submitForm: false
         };
-        this.props.loadDetail(this.props.auth.id);
+        this.props.loadDetail(this.props.auth.id).then(()=>{
+            this.props.getSubject(this.props.detail.Class)
+        })
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
     }
@@ -114,7 +116,7 @@ class SignUp2 extends React.Component {
         const {/*user, submitted,*/ error } = this.state;
         return (
             <Router>
-            <div className='registerPage'>
+            <div className='registerPageOne'>
                 <div className='registerImage'></div>
                 <div className='register_form'>
                     <div className="registerForm">

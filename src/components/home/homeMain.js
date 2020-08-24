@@ -9,7 +9,8 @@ import About from './about';
 import Head from './head';
 import QBA from './QBA';
 import Testimonial from './testimonial';
-import './homeUI.css'
+import './homeUI.css';
+
 // import {
 //     BrowserRouter as Router,
 //     Switch,
@@ -22,15 +23,17 @@ class HomePage extends React.Component {
         super(props);
 
         this.state = {}
+
     }
 
     render() {
         return (
             <div className='homePage'>
+
                 <Head />
-                <About />
-                <Why />
-                <QBA />
+                { !this.props.isAuthenticated && <About />}
+                { !this.props.isAuthenticated && <Why /> }
+                { !this.props.isAuthenticated && <QBA />}
                 <Testimonial />z
                 <Footer />
             </div>

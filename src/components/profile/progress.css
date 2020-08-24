@@ -1,0 +1,64 @@
+.progressSite {
+    width: 80%;
+    margin-top: 14vh;
+    overflow-x: hidden;
+    display: flex;
+    height: max-content;
+    margin-left: 20%;
+    font-family: Montserrat !important;
+    align-items: center;
+    flex-direction: column;
+}
+
+.yearWiseProgessCard{
+    width: 70%;
+    border-radius: 4px;
+    background-color: #F8F8F8;
+    display: flex;
+    height: max-content;
+    flex-direction: column;
+    margin: 3vh 0vh;
+    padding: 5vh;
+}
+
+.progressCardHead {
+    display: flex;
+    justify-content: space-between;
+}
+
+.yearHeadProgress {
+    font-weight: bold;
+    font-size: 24px;
+    color: #10C7B6;
+    font-family: Montserrat !important;
+}
+
+.savedQuestBtn  {
+    background: #F8F8F8;
+    border: 1px solid #10C7B6;
+    box-sizing: border-box;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 150%;
+    padding: 0vh 1vw;
+    color: #10C7B6;
+}
+
+.subjectHeadCard {
+    font-weight: 500;
+    font-size: 22px;
+    line-height: 150%;
+    color: #10C7B6;
+    margin-bottom: inherit;
+}
+
+.subjectWiseProgressCard {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.subjectCard {
+    width: 43%;
+    margin: 2% 3% 0% 3%;
+}
