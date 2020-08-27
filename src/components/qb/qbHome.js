@@ -13,6 +13,7 @@ import { getQuestion } from '../../actions/question'
 import { getSubject } from './../../actions/subject'
 import { createBookmark, getBookmark, deleteBookmark } from './../../actions/bookmark'
 import { getSolved, createSolved } from './../../actions/solved'
+import MediaQuery from 'react-responsive';
 // import question from '../../reducers/question';
 // import { getTopic } from './../../actions/topics';
 // import {
@@ -59,6 +60,7 @@ class SelectDropdown extends React.Component {
           letterSpacing: 0.5,
           fontWeight: 300,
           outline: 'none',
+          marginTop: 0,
           position: 'relative',
           width: '100%',
           display: 'inline-block'
@@ -67,11 +69,12 @@ class SelectDropdown extends React.Component {
           color: '#CCCCCC',
           fontSize: 16,
           transform: 'none',
+          marginLeft:'100px',
           transition: 'all 0.1s ease-in'
         },
         list: {
           background: '#FFFFFF',
-          border: '3px solid #EEEEEE',
+          // border: '3px solid #EEEEEE',
           borderBottom: 'none',
           borderBottomLeftRadius: '3px',
           borderBottomRightRadius: '3px',
@@ -126,10 +129,26 @@ class SelectDropdown extends React.Component {
         },
         selectedOptionLink: {
           color: 'inherit',
-          fontSize: 14
+          fontSize: 14,
+          marginLeft: 0,
         }
       }
-  
+      if(window.innerWidth<=800){
+        styles.list.width = '80%';
+        styles.dropdown.width= '80%';
+        styles.selectedOptionLink.fontSize= 17;
+        styles.selectedOptionLink.marginLeft= '10px';
+        styles.list.marginTop=7;
+        styles.dropdown.marginTop='5px';
+      }
+      if(window.innerWidth>800){
+        styles.list.width = '100%';
+        styles.dropdown.width= '100%';
+        styles.selectedOptionLink.fontSize= 20;
+        styles.selectedOptionLink.marginLeft= 0;
+        styles.list.marginTop=0;
+        styles.dropdown.marginTop=0;
+      }
       return (
         <div style={styles.dropdown} tabIndex={1}>
           <div className={`selectedOption-${showDropdown ? 'down' : 'up'}`} style={styles.selectedOption} onClick={this.toggleDropdown}>
@@ -156,7 +175,7 @@ class QBA extends React.Component {
         super(props);
 
         this.state = {
-            selectedOption: this.props.details.data.sub1,
+            selectedOption: (this.props.location.state.subject!='')? this.props.location.state.subject:this.props.details.data.sub1,
             optionLoaded: false,
             click: true,
             year: 0,
@@ -166,7 +185,9 @@ class QBA extends React.Component {
             activeSolution: '',
             flag: true,
             savedQuestion: false,
-            savedQuestionYear: ''
+            savedQuestionYear: '',
+            questionLoading: false,
+            showFilter: false,
         };
         this.myClick = this.myClick.bind(this);
         this.yearsChange = this.yearsChange.bind(this);
@@ -178,6 +199,25 @@ class QBA extends React.Component {
         this.bookmarkQuestion = this.bookmarkQuestion.bind(this);
         this.useEffect = this.useEffect.bind(this);
         this.myClickSaved = this.myClickSaved.bind(this);
+        this.clearfilter = this.clearfilter.bind(this);
+        this.filterImage = this.filterImage.bind(this);
+    }
+
+    filterImage() {
+      if(this.state.showFilter){
+        document.getElementsByClassName('filterYear')[0].style.display = 'none';
+        document.getElementsByClassName('filterYear')[0].style.opacity = 0;
+        this.setState({
+          showFilter: false,
+        })
+      }
+      else{
+        document.getElementsByClassName('filterYear')[0].style.display = 'flex';
+        document.getElementsByClassName('filterYear')[0].style.opacity = 1;
+        this.setState({
+          showFilter: true,
+        })
+      }
     }
 
     useEffect() {
@@ -197,6 +237,7 @@ class QBA extends React.Component {
         this.props.getBookmark(this.props.auth.user.user.id);
         this.props.getSolved(this.props.auth.user.user.id);
         this.props.loadDetail(this.props.auth.user.user.id);
+        if(this.props.location.state.subject=='')
         this.props.getQuestion(this.props.details.data.sub1, this.props.details.data.Class);
 
         if(this.props.details.data.Class === 'Class 10') {
@@ -206,6 +247,24 @@ class QBA extends React.Component {
           this.props.getYear('science');
         }
 
+      }
+      console.log(this.props.location.state);
+      if(this.props.location.state.subject!=''){
+        this.setState({
+          selectedOption: this.props.location.state.subject,
+          questionLoading: true,
+        })
+        this.props.getQuestion(this.props.location.state.subject, this.props.details.data.Class).then(()=>{
+          this.setState({questionLoading:false})
+        });
+      }
+      else {
+        this.setState({
+          questionLoading: true,
+        })
+        this.props.getQuestion(this.props.details.data.sub1, this.props.details.data.Class).then(()=>{
+          this.setState({questionLoading:false})
+        });
       }
     }
 
@@ -261,6 +320,26 @@ class QBA extends React.Component {
       })
     }
 
+    clearfilter() {
+      console.log('clear');
+      if(document.getElementById(this.state.topic))
+        document.getElementById(this.state.topic).checked = false;
+      if(document.getElementById(this.state.year))
+        document.getElementById(this.state.year).checked = false;
+      this.setState({
+        ...this.state,
+        year: '',
+        topic: '',
+        savedQuestionYear:'',
+        savedQuestion: false,
+        click: false,
+        showQuestion: true
+      })
+      if(document.getElementById('inputSolved'))
+      document.getElementById('inputSolved').checked = false
+      }
+    
+
     questionCard(){
       // console.log(this.state.savedQuestion)
       var qb = []
@@ -268,9 +347,9 @@ class QBA extends React.Component {
       var questionBookmark = [];
       for(var k=0;k<this.props.bookmarks.length;k++)
         questionBookmark.push(this.props.bookmarks[k].qid);
-      if(!this.state.savedQuestion )
+      if(!this.state.savedQuestion && this.state.year==='' && this.state.topic==='' )
         {for(var j=0,i=1;j<quest.length;j++){
-          if((this.state.year==quest[j].year[0])&&(this.state.topic==quest[j].topic)){
+          // if((this.state.year==quest[j].year[0])&&(this.state.topic==quest[j].topic)){
             var bookmarked = (questionBookmark.includes(quest[j].qid) ? Bookmarked:Bookmark)
             qb.push(<div className='questionAnswerCont'>
                                 <div className='questionCard'>
@@ -291,9 +370,37 @@ class QBA extends React.Component {
                                 <hr className='endBar'></hr>
                             </div>)
             i++;
+          // }
+        }
+      }
+      else if(!this.state.savedQuestion)
+        {
+          for(var j=0,i=1;j<quest.length;j++){
+            if((this.state.year==quest[j].year[0])&&(this.state.topic==quest[j].topic)){
+              var bookmarked = (questionBookmark.includes(quest[j].qid) ? Bookmarked:Bookmark)
+              qb.push(<div className='questionAnswerCont'>
+                                  <div className='questionCard'>
+                                      <div className='questionHead'>
+                                          <h1>Question {i}</h1>
+                                          <img onClick={(e)=>this.bookmarkQuestion(e)} id={quest[j].qid} src={bookmarked} className='bookmark' alt={`1`}></img>
+                                      </div>
+                                      <div className='question'>Q{quest[j].question}</div>
+                                  </div>
+                                  <div onClick={(e)=>this.viewSolution(e)} id={quest[j].qid} className='solutionBtn'>VIEW SOLUTION</div>
+                                  <div id={`check${quest[j].qid}`} className='answer'>
+                                      <div className='solutionHead'>
+                                          <h2 className='solutionHead'>SOLUTION</h2>
+                                          <img onClick={(e)=>this.hideSolution(e)} id={quest[j].qid} className='cross' src={Cross}></img>
+                                      </div>
+                                      <div className='solution'>The Beverton-Holt model has been used extensively by fisheries. This model assumes that populations are competing for a single limiting resource and reproduce at discrete moments in time. If we let </div>
+                                  </div>
+                                  <hr className='endBar'></hr>
+                              </div>)
+              i++;
+            }
           }
         }
-      } else if(this.state.savedQuestion && this.state.topic!='') {
+       else if(this.state.savedQuestion && this.state.topic!='') {
         var bookmark = []
         for(var l=0;l<this.props.bookmarks.length;l++){
           if((this.props.bookmarks[l].year == this.state.year)&&(this.props.bookmarks[l].subject == this.state.selectedOption))
@@ -331,31 +438,31 @@ class QBA extends React.Component {
             bookmark.push(this.props.bookmarks[l].qid)
         }
           // bookmark.push(this.props.bookmarks[l].qid)
-        for(var j=0,i=1;j<quest.length;j++){
-          if((this.state.year==quest[j].year[0])&&(bookmark.includes(quest[j].qid))){
-            var bookmarked = (questionBookmark.includes(quest[j].qid) ? Bookmarked:Bookmark)
-            qb.push(<div className='questionAnswerCont'>
-                                <div className='questionCard'>
-                                    <div className='questionHead'>
-                                        <h1>Question {i}</h1>
-                                        <img onClick={(e)=>this.bookmarkQuestion(e)} id={quest[j].qid} src={bookmarked} className='bookmark' alt={`1`}></img>
-                                    </div>
-                                    <div className='question'>Q{quest[j].question}</div>
-                                </div>
-                                <div onClick={(e)=>this.viewSolution(e)} id={quest[j].qid} className='solutionBtn'>VIEW SOLUTION</div>
-                                <div id={`check${quest[j].qid}`} className='answer'>
-                                    <div className='solutionHead'>
-                                        <h2 className='solutionHead'>SOLUTION</h2>
-                                        <img onClick={(e)=>this.hideSolution(e)} id={quest[j].qid} className='cross' src={Cross}></img>
-                                    </div>
-                                    <div className='solution'>The Beverton-Holt model has been used extensively by fisheries. This model assumes that populations are competing for a single limiting resource and reproduce at discrete moments in time. If we let </div>
-                                </div>
-                                <hr className='endBar'></hr>
-                            </div>)
-            i++;
+          for(var j=0,i=1;j<quest.length;j++){
+            if((this.state.year==quest[j].year[0])&&(bookmark.includes(quest[j].qid))){
+              var bookmarked = (questionBookmark.includes(quest[j].qid) ? Bookmarked:Bookmark)
+              qb.push(<div className='questionAnswerCont'>
+                                  <div className='questionCard'>
+                                      <div className='questionHead'>
+                                          <h1>Question {i}</h1>
+                                          <img onClick={(e)=>this.bookmarkQuestion(e)} id={quest[j].qid} src={bookmarked} className='bookmark' alt={`1`}></img>
+                                      </div>
+                                      <div className='question'>Q{quest[j].question}</div>
+                                  </div>
+                                  <div onClick={(e)=>this.viewSolution(e)} id={quest[j].qid} className='solutionBtn'>VIEW SOLUTION</div>
+                                  <div id={`check${quest[j].qid}`} className='answer'>
+                                      <div className='solutionHead'>
+                                          <h2 className='solutionHead'>SOLUTION</h2>
+                                          <img onClick={(e)=>this.hideSolution(e)} id={quest[j].qid} className='cross' src={Cross}></img>
+                                      </div>
+                                      <div className='solution'>The Beverton-Holt model has been used extensively by fisheries. This model assumes that populations are competing for a single limiting resource and reproduce at discrete moments in time. If we let </div>
+                                  </div>
+                                  <hr className='endBar'></hr>
+                              </div>)
+              i++;
+            }
           }
         }
-      }
       return qb;
     }
 
@@ -395,14 +502,20 @@ class QBA extends React.Component {
     }
 
     setOption = (selectedOption) => {
-
+      this.setState({
+        ...this.state,
+        questionLoading: true,
+        showQuestion: false,
+        year: '',
+        topic: ''
+      })
       if(document.getElementById(this.state.topic))
         document.getElementById(this.state.topic).checked = false;
-
+      if(document.getElementById(this.state.year))
+        document.getElementById(this.state.year).checked = false;
       
       if(this.state.savedQuestionYear!=``)
         this.setState({
-          ...this.state,
           selectedOption,
           savedQuestion: false,
           savedQuestionYear: '',
@@ -410,7 +523,12 @@ class QBA extends React.Component {
       else 
         this.setState({ selectedOption,
           savedQuestionYear: '', })
-      this.props.getQuestion(selectedOption, this.props.details.data.Class)
+
+      this.props.getQuestion(selectedOption, this.props.details.data.Class).then(()=>{
+        this.setState({
+          questionLoading: false,
+        })
+      })
     }
 
     myClickSaved(){
@@ -440,6 +558,7 @@ class QBA extends React.Component {
                 showQuestion: false,
             })
     }
+
 
     render() {
         
@@ -478,7 +597,7 @@ class QBA extends React.Component {
           for(var i=0,j=0;i<this.props.question.length;i++,j++){
             if((this.props.question[i].year[0] == this.state.year)&&!(topicAdded.includes(this.props.question[i].topic))){
               topics.push(<div className='topicInput'><input id={this.props.question[i].topic} className='inputSelect' value={this.props.question[i].topic} type="radio" name="topic" onClick={this.topicChange}></input>
-              <p className='year'>{this.props.question[i].topic}</p></div>)
+              <p className='topic'>{this.props.question[i].topic}</p></div>)
               j++;
               topicAdded.push(this.props.question[i].topic);
             }
@@ -499,7 +618,10 @@ class QBA extends React.Component {
                       onChange={this.setOption}
                       options={options}
                       selectedOption={selectedOption}
-                    />           
+                    />
+                    <MediaQuery query='(max-device-width: 800px)'>
+                      <div onClick={this.filterImage} className='imageFilterCont'><div className='imageFilter'></div></div>           
+                    </MediaQuery>
                     <div className='filterYear'>
                         <h1 className='filterHead'>Filters</h1>
                         <h2 className='chooseHead'>Choose by year</h2>
@@ -520,13 +642,19 @@ class QBA extends React.Component {
                             }
                         </div>
                         <div className='applyFilter'>
-                            <button className='applyBtn' onClick={this.applyFilter}>Apply Filters</button>
+                            <button className='clearBtn' onClick={this.clearfilter}>CLEAR FILTERS</button>
+                            <button className='applyBtn' onClick={this.applyFilter}>APPLY FILTERS</button>
                         </div>
                     </div>
                     </div>
                     <div className='questions'>
                       {this.state.showQuestion &&
                       this.questionCard()}
+                      {this.state.questionLoading && <div class="Box">
+                        <span>
+                            <span></span>
+                        </span>
+                      </div>}
                     </div>
                 </div>
             </div>

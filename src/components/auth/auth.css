@@ -8,6 +8,14 @@ body {
     overflow: hidden !important;
 } */
 
+.logoProfileTQB {
+    height: 5vh;
+    margin: 2vh;
+    border-radius: 100px;
+    width: 5vh;
+    background: 100% 100%;
+}
+
 .navBar {
     height: 10vh;
     width: 100vw;
@@ -48,10 +56,9 @@ body {
 .tqblogoquest {
     height: 5vh;
     margin: 2vh;
-    width: 16vh;
+    width: 19vh;
     background: 100% 100%;
 }
-
 .navAuthBtn {
     margin: 0% 1%;
     background-color: #45d0bd;
@@ -337,4 +344,46 @@ a:hover {
     .logoCountQuest {
         width: 40%;
     }
+    .btnCont {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        width: 60%;
+    }
+    .btnContQuest {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        width: 42%;
+    }
+}
+
+@import url('https://fonts.googleapis.com/css?family=Lobster');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
+@keyframes appear {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes slideIn {
+  0% {
+    transform: translateX(-2%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes shrink {
+  0% {
+    width: 95%;
+  }
+  100% {
+    width: 90%;
+  }
 }

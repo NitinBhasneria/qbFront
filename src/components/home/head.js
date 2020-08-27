@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import {loadDetail} from './../../actions/studentDetail'
 import MediaQuery from 'react-responsive';
+import {withRouter} from 'react-router-dom';
 
 // import history from '../../history';
 // import {
@@ -19,7 +20,18 @@ class Head extends React.Component {
         this.state = {}
         this.getSubjectCard = this.getSubjectCard.bind(this);
         if(this.props.isAuthenticated)
-        this.props.loadDetail(this.props.auth.user.user.id)
+        this.props.loadDetail(this.props.auth.user.user.id);
+        this.subjectClick = this.subjectClick.bind(this);
+    }
+
+    subjectClick(e) {
+        var subject= e.target.id.toString()
+        console.log( e.target.id )
+        this.props.history.push({
+            pathname: '/qb',
+            // search: '?query=sub',
+            state: { subject: subject, detail: 0},
+          })
     }
 
     getSubjectCard() {
@@ -30,14 +42,14 @@ class Head extends React.Component {
         subjectList.push(this.props.details.data.sub3)
         subjectList.push(this.props.details.data.sub4)
         subjectList.push(this.props.details.data.sub5)
-        console.log(subjectList)
+        // console.log(subjectList)
         var subjectCard = []
         for(var i=0;i<subjectList.length;i++){
             if(subjectList[i].replace(/\s/g,'')!=''){
-            subjectCard.push(<div className='subjectCardMainPage'>
-                                <div className={`${subjectList[i].replace(/\s/g,'')} cardImage`} ></div>
-                                <div className='subjectCardHead'>{subjectList[i]}</div>
-                                <div className='cardClass'>{this.props.details.data.Class}</div>
+            subjectCard.push(<div onClick={this.subjectClick} id={subjectList[i]} className='subjectCardMainPage'>
+                                <div id={subjectList[i]} className={`${subjectList[i].replace(/\s/g,'')} cardImage`} ></div>
+                                <div id={subjectList[i]} className='subjectCardHead'>{subjectList[i]}</div>
+                                <div  id={subjectList[i]} className='cardClass'>{this.props.details.data.Class}</div>
                             </div>)}
         }
         return subjectCard}
@@ -87,4 +99,4 @@ Head = connect(
     { loadDetail },
 )(Head);
 
-export default Head;
+export default withRouter(Head);

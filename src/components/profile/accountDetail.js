@@ -219,9 +219,14 @@ class AccountDetail extends React.Component {
         var subjectList = [];
         for(var i=0;i<subjects.length;i++){
             if(subjects[i]!==''){
-                subjectList.push(<h2 className='componentDetail'>{subjects[i]}</h2>)
-                if(i!==(subjects.length-1))
-                subjectList.push(<h2 className='componentDetail'>|</h2>)
+                subjectList.push(<h2 className='componentDetailSubject'>{subjects[i]}</h2>)
+                console.log(subjects.length)
+                if(window.innerWidth<=800){
+                    if((subjects[i+1]!=='')&&(i%2==0))
+                        subjectList.push(<h2 className='componentDetailDivider'>|</h2>)
+                }
+                else if(subjects[i+1]!=='')
+                    subjectList.push(<h2 className='componentDetailDivider'>|</h2>)
             }
         }
 

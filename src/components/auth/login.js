@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Link, Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { login, logout } from '../../actions/auth';
+import { loadDetail } from './../../actions/studentDetail'
 // import AuthNav from './authNav';
 // import history from './../../history'
 
@@ -55,7 +56,9 @@ handleSubmit(e) {
     this.setState({ submitted: true });
     const { user } = this.state;
     if (user.email && user.password) {
-        this.props.login(user);
+        this.props.login(user).then(()=>{
+          this.props.loadDetail(user.id);
+        });
     }    
 }
 
@@ -83,7 +86,7 @@ handleSubmit(e) {
                               <div>New here? Create an account</div>
                               <Link to='/register_1' className='btn btn-link'>SignUp</Link>
                             </div>
-                    </div>
+                    </div>  
                     <div className='form-group LoginBtn'>
                         <button className='RegisterBtnBtn' onClick={this.handleSubmit}>LOGIN</button>
                     </div>
@@ -102,7 +105,7 @@ const mapStateToProps = state => ({
 
 LoginForm = connect(
   mapStateToProps,
-  { login, logout },
+  { login, logout, loadDetail },
 )(LoginForm);
 
 export default LoginForm;

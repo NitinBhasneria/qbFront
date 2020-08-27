@@ -82,7 +82,7 @@ class Progress extends React.Component {
         this.props.history.push({
             pathname: '/qb',
             search: '?query=abc',
-            state: { detail: e.target.id },
+            state: { detail: e.target.id, subject:'' },
           })
     }
 

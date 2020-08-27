@@ -10,7 +10,8 @@ import {
     BrowserRouter as Router,
     Switch,
     Route,
-    // NavLink,
+    // NavLink,,
+    withRouter
 } from "react-router-dom";
 import SignUp2 from './SignUp2'
 
@@ -102,16 +103,26 @@ class RegisterPage extends React.Component {
                     if (res){
                         this.props.login(user).then(
                             ()=> {
-                                this.props.CreateStudentProfile(user.student_name, user.phone, user.syllabus, user.Class, res)
-                                var Class;
-                                if(user.Class == 'Class 10')
-                                    Class = 'class10'
-                                else
-                                    Class = 'class12'
-                                this.props.getSubject(Class).then(()=>{
-                                    history.push('./register_2');
-                                    window.location.reload(false);
-                                })
+                                // console.log(user.Class);
+                                if(user.Class == 'Class 12'){this.props.CreateStudentProfile(user.student_name, user.phone, user.syllabus, user.Class, res)
+                                    var Class;
+                                    if(user.Class == 'Class 10')
+                                        Class = 'class10'
+                                    else
+                                        Class = 'class12'
+                                    this.props.getSubject(Class).then(()=>{
+                                        history.push('./register_2');
+                                        window.location.reload(false);
+                                    })}
+                                else if(user.Class==='Class 10'){
+                                    var sub1 = 'Social Science';
+                                    var sub2 = 'Science';
+                                    var sub3 = 'Mathematics';
+                                    this.props.CreateStudentProfile(user.student_name, user.phone, user.syllabus, user.Class, res, sub1, sub2, sub3).then(()=>{
+                                        // this.props.history.push('/');
+                                    })
+                                    
+                                }
                             }
                         );
                     }
@@ -197,4 +208,4 @@ RegisterPage = connect(
     { register, login, CreateStudentProfile, getSubject, loadSyllabus},
 )(RegisterPage);
 
-export default RegisterPage;
+export default withRouter(RegisterPage);

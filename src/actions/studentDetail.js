@@ -72,8 +72,8 @@ export const updateDetail = (id, student_name, phone, syllabus, Class, sub1, sub
   }
 };
 
-export const CreateStudentProfile = (student_name, phone, syllabus, Class, user) => async (dispatch) => {
-  const body = JSON.stringify({student_name, phone, syllabus, Class, user});
+export const CreateStudentProfile = (student_name, phone, syllabus, Class, user, sub1, sub2, sub3, sub4, sub6) => async (dispatch) => {
+  const body = JSON.stringify({student_name, phone, syllabus, Class, user, sub1, sub2, sub3, sub4, sub6});
 
   try {
     const res = await axios.post(`${API_URL}/students/`, body, config);

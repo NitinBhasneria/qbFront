@@ -140,6 +140,14 @@ hr {
     color: rgba(0, 0, 0, 0.87);
 }
 
+.componentDetailSubject {
+    margin: 0% 2%;
+    color: rgba(0, 0, 0, 0.87);
+}
+.componentDetailDivider {
+    margin: 0% 2%;
+    color: rgba(0, 0, 0, 0.87);
+}
 .editBtn {
     cursor: pointer;
     height: 6vh;
@@ -333,4 +341,241 @@ hr {
 
 .thumbnailBtn {
     width: 0px;
+}
+
+@media screen and (max-width: 800px) {
+    .ProfileCont {
+        flex-direction: column;
+    }
+    .profileSideNav {
+        width: 100vw;
+        height: 9vh;
+        box-shadow: none;
+        border-bottom: 1px solid grey;
+        flex-direction: row;
+    }
+    .logout {
+        display: none;
+    }
+    .linksProfile {
+        display: flex;
+        flex-direction: row;
+        margin-top: 0vh;
+        height: 100%;
+        width: 100%;
+    }
+    .accountDetailBtnClick {
+        background-image: none;
+        color: blue;
+    }
+    .progressBtn {
+        background-image: none;
+        width: 50%;
+        background-color: white;
+    }
+    .linkBtnClick {
+        width: 50%;
+        height: 97%;
+        background-color: white;
+    }
+    .linkBtnClick:hover {
+        /* color: white !important; */
+        background-color: white;
+    }
+    .tqbnavBarLogin {
+        height: 9vh;
+        z-index: 10;
+        position: fixed;
+        width: 100vw;
+        box-shadow: 0px 2px 20px rgba(0, 0, 0, 0.15);
+        display: flex;
+        /* box-shadow: 0px 2px 20px rgba(0, 0, 0, 0.15); */
+        flex-direction: row;
+        background-color: #45d0bd;
+    }
+    .btnTextProfile {
+        font-weight: 500;
+        font-size: 17px;
+        padding-top: 1vh;
+        height: 98%;
+        text-align: center;
+        line-height: 8vh !important;
+        margin-left: 0;
+        color: rgba(0, 0, 0, 0.54);
+        /* text-align: left; */
+    }
+    .btnMobileLink {
+        width: 50%;
+        font-size: 16px;
+        color: rgba(0, 0, 0, 0.54);
+        height: 100%;
+        text-align: center;
+        line-height: 9vh;
+    }
+    .btnMobileLinkClick {
+        color: #10C7B6;
+    }
+    .btnMobileLink:focus {
+        outline: none !important;
+        text-decoration: none;
+        color: #10C7B6;
+        outline-offset: 0px;
+    }
+    .btnMobileLink:hover {
+        color: #10C7B6;
+        border-bottom: 2px solid #10C7B6;
+    }
+    .AccountCont {
+        margin-top: 19vh;
+        margin-left: 0%;
+        height: 100%;
+        width: 100%;
+    }
+    .Image {
+        height: 130px;
+        border-radius: 50%;
+        width: 130px;
+    }
+    .editImage {
+        height: -moz-fit-content;
+        height: fit-content;
+        position: relative;
+        right: 60px;
+        top: 77px;
+    }
+    .StuName {
+        font-weight: 600;
+        font-size: 20px;
+        text-align: center;
+    }
+    .componentDetail {
+        margin: 0% 2%;
+        color: rgba(0, 0, 0, 0.87);
+        font-size: 17px;
+    }
+    .editBtn {
+        cursor: pointer;
+        height: 6vh;
+        border-radius: 4px;
+        border: 1px solid #10C7B6;
+        box-sizing: border-box;
+        width: 45%;
+        font-weight: 500;
+        font-size: 13px;
+        color: #10C7B6;
+        background: none;
+    }
+    .Subjects {
+        flex-wrap: wrap;
+        display: flex;
+        justify-content: center;
+    }
+    .componentDetailSubject {
+        margin: 0% 2%;
+        width: 40%;
+        font-size: 16px;
+        text-align: center;
+        color: rgba(0, 0, 0, 0.87);
+    }
+    .componentDetailDivider {
+        font-size: 16px;
+        margin-bottom: 6px;
+    }
+    
+    .progressSite {
+        width: 100%;
+        margin-top: 13vh;
+        overflow-x: hidden;
+        display: flex;
+        height: -webkit-fill-available;
+        margin: 19vh 0% -12% 0%;
+        font-family: Montserrat !important;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .yearWiseProgessCard {
+        width: 90%;
+        border-radius: 4px;
+        background-color: #F8F8F8;
+        display: flex;
+        height: max-content;
+        flex-direction: column;
+        margin: 3vh 0vh;
+        padding: 4vh 3vw;
+    }
+    .subjectHeadCard {
+        font-weight: 500;
+        font-size: 17px;
+        line-height: 150%;
+        color: #10C7B6;
+        margin-bottom: inherit;
+    }
+    .editProfile {
+        height: 100vh;
+    }
+    .editProfileBox {
+        height: 38%;
+        align-self: center;
+        width: 80%;
+    }
+    .formProfile {
+        height: 69%;
+    }
+    .registerHead {
+        font-size: 22px;
+    }
+    .form-control-register {
+        font-size: 16px;
+    }
+    .RegisterBtnBtn {
+        font-size: 17px;
+    }
+    .subjectProfileBox {
+        height: 50% !important;
+    }
+    .formProfile {
+        height: 74%;
+    }
+    .subjectSaveBtn {
+        height: 17%;
+    }
+    .subjectCard {
+        width: 94%;
+        margin: 2% 3% 0% 3%;
+    }
+    progress[value] {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        border: none;
+        width: 100%;
+        height: 10px;
+        border-radius: 6px;
+        position: relative;
+        margin: 0 0 1.5em;
+    }
+    .yearHeadProgress {
+        font-size: 20px;
+    }
+
+    ::-webkit-scrollbar {
+        width: 0px;
+      }
+      
+      /* Track */
+      ::-webkit-scrollbar-track {
+        background: transparent; 
+      }
+       
+      /* Handle */
+      ::-webkit-scrollbar-thumb {
+        background: none;
+      }
+      
+      /* Handle on hover */
+      ::-webkit-scrollbar-thumb:hover {
+        background: #555; 
+      }
+    
 }

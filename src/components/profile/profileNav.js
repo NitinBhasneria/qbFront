@@ -3,6 +3,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { logout } from './../../actions/auth';
 // import history from '../../history';
+import MediaQuery from 'react-responsive';
 import {
     // BrowserRouter ,
     // Switch,
@@ -37,9 +38,15 @@ class ProfileSideNav extends React.Component {
         return (
             <div className='profileSideNav'>
                 <div className='linksProfile'>
-                    <NavLink activeClassName='accountDetailBtnClick linkBtnClick' className='accountDetailBtn linkBtn' exact to="/profile"><p className='btnTextProfile'>Account details</p></NavLink>
-                    {/* <NavLink activeClassName='paymentBtnClick linkBtnClick' className='paymentBtn linkBtn' exact to="/payment"><p className='btnText'>Payment</p></NavLink> */}
-                    <NavLink activeClassName='progressBtnClick linkBtnClick' className='progressBtn linkBtn' exact to="/progress"><p className='btnTextProfile'>Your Progress</p></NavLink>
+                    <MediaQuery query="(min-device-width:801px)">
+                        <NavLink activeClassName='accountDetailBtnClick linkBtnClick' className='accountDetailBtn linkBtn' exact to="/profile"><p className='btnTextProfile'>Account details</p></NavLink>
+                        {/* <NavLink activeClassName='paymentBtnClick linkBtnClick' className='paymentBtn linkBtn' exact to="/payment"><p className='btnText'>Payment</p></NavLink> */}
+                        <NavLink activeClassName='progressBtnClick linkBtnClick' className='progressBtn linkBtn' exact to="/progress"><p className='btnTextProfile'>Your Progress</p></NavLink>
+                    </MediaQuery>
+                    <MediaQuery query="(max-device-width:800px)">
+                        <NavLink activeClassName='btnMobileLinkClick' className="btnMobileLink" exact to='/profile'>Account details</NavLink>
+                        <NavLink activeClassName='btnMobileLinkClick' className="btnMobileLink" exact to='/progress'>Your Progress</NavLink>
+                    </MediaQuery>
                 </div>
                 <div className='logout'>
                     <hr style={{border:" 0.5px solid rgba(0, 0, 0, 0.54)"}}></hr>
