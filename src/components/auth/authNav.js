@@ -45,7 +45,7 @@ class AuthNav extends Component {
                 <div className='authPage'>
                     
                     <div className={'tqbnavBarLogin'}>
-                        <div className={(this.props.history.location.pathname=='/qbFront/')?'logoCountQuest':'logoCont'} onClick={()=>{this.props.history.push('/')}}>
+                        <div className={(this.props.history.location.pathname=='/qbFront/')?'logoCountQuest':'logoCont'} onClick={()=>{this.props.history.push('/qbFront')}}>
                             <img className={(this.props.history.location.pathname=='/qbFront/')?'tqblogoquest':'logoTQB'} src={(this.props.history.location.pathname=='/qbFront/')?tqblogoquest : tqbLogo} alt='Logo'></img>
                         </div>
                         <div className={(this.props.history.location.pathname=='/qbFront/')?'btnContQuestHome':'btnCont'}>
