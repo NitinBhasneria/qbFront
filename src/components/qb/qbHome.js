@@ -14,6 +14,9 @@ import { getSubject } from './../../actions/subject'
 import { createBookmark, getBookmark, deleteBookmark } from './../../actions/bookmark'
 import { getSolved, createSolved } from './../../actions/solved'
 import MediaQuery from 'react-responsive';
+import { createLeftOff, updateLeftOff } from './../../actions/leftOff'
+import { getQuestionImage } from './../../actions/imageQuestion'
+import imageQuestion from '../../reducers/imageQuestion';
 // import question from '../../reducers/question';
 // import { getTopic } from './../../actions/topics';
 // import {
@@ -248,7 +251,7 @@ class QBA extends React.Component {
         }
 
       }
-      console.log(this.props.location.state);
+      // console.log(this.props.location.state);
       if(this.props.location.state.subject!=''){
         this.setState({
           selectedOption: this.props.location.state.subject,
@@ -292,6 +295,7 @@ class QBA extends React.Component {
     viewSolution(i){
       var solve = [];
       var yearSub = this.state.year.toString() + this.state.selectedOption.toString();
+      console.log(yearSub);
       for(var l=0;l<this.props.solved.length;l++){
         solve.push(this.props.solved[l].qid);
       }
@@ -342,13 +346,25 @@ class QBA extends React.Component {
 
     questionCard(){
       // console.log(this.state.savedQuestion)
+      var images = [];
+      for(var i=0;i<this.props.imageQuestion.length;i++)
+        images.push(this.props.imageQuestion[i].qid);
       var qb = []
       var quest = this.props.question;
       var questionBookmark = [];
       for(var k=0;k<this.props.bookmarks.length;k++)
         questionBookmark.push(this.props.bookmarks[k].qid);
       if(!this.state.savedQuestion && this.state.year==='' && this.state.topic==='' )
-        {for(var j=0,i=1;j<quest.length;j++){
+        { 
+          for(var j=0,i=1;j<quest.length;j++){
+            var image = '';
+            if(images.includes(quest[j].qid)){
+              for(var i=0;i<this.props.imageQuestion.length;i++){
+                if(quest[j].qid == this.props.imageQuestion[i].qid)
+                  image = this.props.imageQuestion[i].image
+              }
+            }
+            // console.log(image);
           // if((this.state.year==quest[j].year[0])&&(this.state.topic==quest[j].topic)){
             var bookmarked = (questionBookmark.includes(quest[j].qid) ? Bookmarked:Bookmark)
             qb.push(<div className='questionAnswerCont'>
@@ -358,6 +374,7 @@ class QBA extends React.Component {
                                         <img onClick={(e)=>this.bookmarkQuestion(e)} id={quest[j].qid} src={bookmarked} className='bookmark' alt={`1`}></img>
                                     </div>
                                     <div className='question'>Q{quest[j].question}</div>
+                                    <img className='questionImage' src={image}></img>
                                 </div>
                                 <div onClick={(e)=>this.viewSolution(e)} id={quest[j].qid} className='solutionBtn'>VIEW SOLUTION</div>
                                 <div id={`check${quest[j].qid}`} className='answer'>
@@ -488,6 +505,12 @@ class QBA extends React.Component {
           savedQuestionYear: '',
           savedQuestion: false,
         });
+      var year = e.target.value;
+      this.props.updateLeftOff(this.props.auth.user.user.id, year, this.state.selectedOption).then((res)=>{
+        if(!res){
+          this.props.createLeftOff(this.props.auth.user.user.id, year, this.state.selectedOption)
+        }
+      });
 
     }
 
@@ -502,6 +525,8 @@ class QBA extends React.Component {
     }
 
     setOption = (selectedOption) => {
+      this.props.getQuestionImage(selectedOption, this.props.details.data.Class)
+
       this.setState({
         ...this.state,
         questionLoading: true,
@@ -670,12 +695,13 @@ const mapStateToProps = state => ({
     question: state.question.data,
     topics: state.topic.data,
     bookmarks: state.bookmark.data,
+    imageQuestion: state.imageQuestion.data,
     solved: state.solved.data,
 });
 
 QBA = connect(
     mapStateToProps,
-    { loadDetail, getSubject, getYear, getQuestion, createBookmark, getBookmark, deleteBookmark, getSolved, createSolved },
+    { loadDetail, getSubject, getYear, getQuestion, createBookmark, getBookmark, getQuestionImage, deleteBookmark, getSolved, createSolved, createLeftOff, updateLeftOff },
 )(QBA);
 
 

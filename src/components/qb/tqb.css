@@ -240,6 +240,11 @@ li:focus {
     left: 9vw;
 }
 
+.questionImage {
+    width: 85%;
+    background-size: initial;
+}
+
 .applyFilter {
     height: 6vh;
     width: 100%;

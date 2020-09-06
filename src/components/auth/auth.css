@@ -16,6 +16,16 @@ body {
     background: 100% 100%;
 }
 
+.getStartBtn {
+    background-color: white;
+    color: #10C7B6;
+    height: 50%;
+    margin-top: 15%;
+    line-height: 5vh !important;
+    text-align: center;
+    border-radius: 4px;
+    width: 122%;
+}
 .navBar {
     height: 10vh;
     width: 100vw;
@@ -51,6 +61,13 @@ body {
     flex-direction: row;
     justify-content: flex-end;
     width: 75%;
+}
+
+.btnContQuestHome {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    width: 80%;
 }
 
 .tqblogoquest {

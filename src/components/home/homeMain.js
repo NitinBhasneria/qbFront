@@ -10,6 +10,7 @@ import Head from './head';
 import QBA from './QBA';
 import Testimonial from './testimonial';
 import './homeUI.css';
+import PT from './popularTopics.js';
 
 // import {
 //     BrowserRouter as Router,
@@ -34,6 +35,7 @@ class HomePage extends React.Component {
                 { !this.props.isAuthenticated && <About />}
                 { !this.props.isAuthenticated && <Why /> }
                 { !this.props.isAuthenticated && <QBA />}
+                { this.props.isAuthenticated && <PT />}
                 <Testimonial />z
                 <Footer />
             </div>

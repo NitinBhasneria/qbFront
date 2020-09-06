@@ -30,7 +30,7 @@ export const getSolved = (user) => async (dispatch) => {
 
 export const createSolved = (user, qid, yearsub) => async (dispatch) => {
     const body = JSON.stringify({ user, qid, yearsub });
-
+    console.log(body);
     const config = {
         headers: {
           'Content-Type': 'application/json'

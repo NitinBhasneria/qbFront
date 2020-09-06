@@ -48,12 +48,13 @@ class AuthNav extends Component {
                         <div className={(this.props.history.location.pathname=='/')?'logoCountQuest':'logoCont'} onClick={()=>{this.props.history.push('/')}}>
                             <img className={(this.props.history.location.pathname=='/')?'tqblogoquest':'logoTQB'} src={(this.props.history.location.pathname=='/')?tqblogoquest:tqbLogo} alt='Logo'></img>
                         </div>
-                        <div className={(this.props.history.location.pathname=='/')?'btnContQuest':'btnCont'}>
+                        <div className={(this.props.history.location.pathname=='/')?'btnContQuestHome':'btnCont'}>
                             <Switch>
                                 <Route exact path='/'>
                                     <MediaQuery query="(min-device-width: 801px)">
                                         <NavLink className='navAuthBtn' exact to="/"><p className='btnText'>About us</p></NavLink>
                                         <NavLink className='navAuthBtn' exact to="/login"><p className='btnText'>Login</p></NavLink>
+                                        <NavLink className='navAuthBtn ' exact to="/"><p className='getStartBtn btnText'>GET STARTED</p></NavLink>
                                     </MediaQuery>
                                     
                                 </Route>

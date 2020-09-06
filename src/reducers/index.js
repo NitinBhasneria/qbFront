@@ -14,6 +14,8 @@ import topic from './topic';
 import profile from './profile';
 import bookmark from './bookmark';
 import solved from './solved';
+import leftOff from './leftOff';
+import imageQuestion from './imageQuestion';
 
 const appReducer = combineReducers({
     auth: auth,
@@ -26,6 +28,8 @@ const appReducer = combineReducers({
     image: profile,
     bookmark: bookmark,
     solved: solved,
+    leftOff: leftOff,
+    imageQuestion: imageQuestion
   });
   
   const rootPersistConfig = {

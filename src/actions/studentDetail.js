@@ -36,7 +36,6 @@ export const loadDetail = (id) => async (dispatch) => {
 
 export const updateDetail = (id, student_name, phone, syllabus, Class, sub1, sub2, sub3, sub4, sub5, user, image) => async (dispatch) => {
   var form_data = new FormData();
-  form_data.append('image', image);
   form_data.append('id', id);
   form_data.append('student_name', student_name);
   form_data.append('phone', phone);
@@ -51,7 +50,7 @@ export const updateDetail = (id, student_name, phone, syllabus, Class, sub1, sub
   // for (var pair of form_data.entries()) {
   //   console.log(pair[0]+ ', ' + pair[1]); 
   // }
-
+  console.log(form_data);
   dispatch({ type: DETAIL_LOADING });
   try {
     const res = await axios.put(`${API_URL}/students/detail/${user}`, form_data, {

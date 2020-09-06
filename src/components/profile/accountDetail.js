@@ -220,7 +220,7 @@ class AccountDetail extends React.Component {
         for(var i=0;i<subjects.length;i++){
             if(subjects[i]!==''){
                 subjectList.push(<h2 className='componentDetailSubject'>{subjects[i]}</h2>)
-                console.log(subjects.length)
+                // console.log(subjects.length)
                 if(window.innerWidth<=800){
                     if((subjects[i+1]!=='')&&(i%2==0))
                         subjectList.push(<h2 className='componentDetailDivider'>|</h2>)
