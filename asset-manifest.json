@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/qbFront/static/css/main.8ed9ef08.chunk.css",
-    "main.js": "/qbFront/static/js/main.828e878b.chunk.js",
-    "main.js.map": "/qbFront/static/js/main.828e878b.chunk.js.map",
+    "main.js": "/qbFront/static/js/main.bb9072a1.chunk.js",
+    "main.js.map": "/qbFront/static/js/main.bb9072a1.chunk.js.map",
     "runtime-main.js": "/qbFront/static/js/runtime-main.0321e445.js",
     "runtime-main.js.map": "/qbFront/static/js/runtime-main.0321e445.js.map",
     "static/css/2.829c9cb5.chunk.css": "/qbFront/static/css/2.829c9cb5.chunk.css",
     "static/js/2.09820ab5.chunk.js": "/qbFront/static/js/2.09820ab5.chunk.js",
     "static/js/2.09820ab5.chunk.js.map": "/qbFront/static/js/2.09820ab5.chunk.js.map",
     "index.html": "/qbFront/index.html",
-    "precache-manifest.2c8328b67ccc10894e51794f1a9b4430.js": "/qbFront/precache-manifest.2c8328b67ccc10894e51794f1a9b4430.js",
+    "precache-manifest.7493ab25b29ea117deff1ec034fab6bc.js": "/qbFront/precache-manifest.7493ab25b29ea117deff1ec034fab6bc.js",
     "service-worker.js": "/qbFront/service-worker.js",
     "static/css/2.829c9cb5.chunk.css.map": "/qbFront/static/css/2.829c9cb5.chunk.css.map",
     "static/css/main.8ed9ef08.chunk.css.map": "/qbFront/static/css/main.8ed9ef08.chunk.css.map",
@@ -26,6 +26,6 @@
     "static/css/2.829c9cb5.chunk.css",
     "static/js/2.09820ab5.chunk.js",
     "static/css/main.8ed9ef08.chunk.css",
-    "static/js/main.828e878b.chunk.js"
+    "static/js/main.bb9072a1.chunk.js"
   ]
 }
