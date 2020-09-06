@@ -111,7 +111,7 @@ class RegisterPage extends React.Component {
                                     else
                                         Class = 'class12'
                                     this.props.getSubject(Class).then(()=>{
-                                        history.push('./register_2');
+                                        history.push('./qbFront/register_2');
                                         window.location.reload(false);
                                     })}
                                 else if(user.Class==='Class 10'){
@@ -140,7 +140,7 @@ class RegisterPage extends React.Component {
             <Router>
             <div className='registerPage'>
                 <Switch>
-                    <Route exact path='/register_1'>
+                    <Route exact path='/qbFront/register_1'>
                         <div className='registerImage'></div>
                         <div className='register_form'>
                             <div className="registerForm">
@@ -185,7 +185,7 @@ class RegisterPage extends React.Component {
                             </div>
                         </div>
                     </Route>
-                    <Route exact path = '/register_2'>
+                    <Route exact path = '/qbFront/register_2'>
                         <SignUp2 />
                     </Route>
                 </Switch>
