@@ -23,16 +23,16 @@ class Profile extends React.Component {
 
     render() {
         if (!this.props.isAuthenticated) {
-            return <Redirect to='/login' />;
+            return <Redirect to='/qbFront/login' />;
         }
         return (
             <div className='ProfileCont'>
                 <ProfileSideNav />
                 <Switch >
-                    <Route exact path = '/progress'>
+                    <Route exact path = '/qbFront/progress'>
                         <Progress />
                     </Route>
-                    <Route exact path='/profile'>
+                    <Route exact path='/qbFront/profile'>
                         <AccountDetail />
                     </Route>
                 </Switch>                  

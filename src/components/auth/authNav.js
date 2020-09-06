@@ -50,7 +50,7 @@ class AuthNav extends Component {
                         </div>
                         <div className={(this.props.history.location.pathname=='/')?'btnContQuestHome':'btnCont'}>
                             <Switch>
-                                <Route exact path='/'>
+                                <Route exact path='/qbFront/'>
                                     <MediaQuery query="(min-device-width: 801px)">
                                         <NavLink className='navAuthBtn' exact to="/"><p className='btnText'>About us</p></NavLink>
                                         <NavLink className='navAuthBtn' exact to="/login"><p className='btnText'>Login</p></NavLink>
@@ -58,87 +58,87 @@ class AuthNav extends Component {
                                     </MediaQuery>
                                     
                                 </Route>
-                                <Route exact path='/login'>
+                                <Route exact path='/qbFront/login'>
                                     <MediaQuery query="(min-device-width: 801px)">
                                         <NavLink className='navAuthBtn' exact to="/"><p className='btnText'>Login</p></NavLink>
                                         <NavLink className='navAuthBtn' exact to="/register_1"><p className='btnText'>SignUp</p></NavLink>
                                     </MediaQuery>
                                 </Route>
-                                <Route exact path='/register_1'>
+                                <Route exact path='/qbFront/register_1'>
                                     <MediaQuery query="(min-device-width: 801px)">
                                         <NavLink className='navAuthBtn' exact to="/login"><p className='btnText'>Login</p></NavLink>
                                         <NavLink className='navAuthBtn' exact to="/login"><p className='btnText'>SignUp</p></NavLink>
                                     </MediaQuery>
                                 </Route>
-                                <Route exact path='/register_2'>
+                                <Route exact path='/qbFront/register_2'>
                                     <MediaQuery query="(min-device-width: 801px)">
                                         <NavLink className='navAuthBtn' exact to="/"><p className='btnText'>Login</p></NavLink>
                                         <NavLink className='navAuthBtn' exact to="/login"><p className='btnText'>SignUp</p></NavLink>
                                     </MediaQuery>
                                 </Route> 
-                                <Route exact path='/profile'>
+                                <Route exact path='/qbFront/profile'>
                                     <MediaQuery query="(min-device-width: 801px)">
                                         <NavLink className='navAuthBtn' exact to="/"><p className='btnText'>Login</p></NavLink>
                                         <NavLink className='navAuthBtn' exact to="/login"><p className='btnText'>SignUp</p></NavLink>
                                     </MediaQuery>
                                 </Route> 
-                                <Route exact path='/progress'>
+                                <Route exact path='/qbFront/progress'>
                                     <MediaQuery query="(min-device-width: 801px)">
                                         <NavLink className='navAuthBtn' exact to="/"><p className='btnText'>Login</p></NavLink>
                                         <NavLink className='navAuthBtn' exact to="/login"><p className='btnText'>SignUp</p></NavLink>
                                     </MediaQuery>
                                 </Route> 
-                                <Route exact path='/qb'>
+                                <Route exact path='/qbFront/qb'>
                                     <img className='logoProfileTQB' src={(this.props.image.data.image)?this.props.image.data.image:profileImage} alt='Logo'></img>
                                 </Route> 
                             </Switch>
                         </div>
                         <MediaQuery query = "(max-device-width: 800px)">
                             <Switch>
-                                <Route exact path='/'>
+                                <Route exact path='/qbFront/'>
                                     <Mobile history={this.props.history} first="Signup" firstPath='/register_1' second='login' secondPath='/login' />
                                 </Route>
-                                <Route exact path='/login'>
+                                <Route exact path='/qbFront/login'>
                                     <Mobile first="Signup" firstPath='/register_1' second='login' secondPath='/login' />
                                 </Route>
-                                <Route exact path='/register_1'>
+                                <Route exact path='/qbFront/register_1'>
                                     <Mobile first="Signup" firstPath='/register_1' second='login' secondPath='/login' />
                                 </Route>
-                                <Route exact path='/register_2'>
+                                <Route exact path='/qbFront/register_2'>
                                     <Mobile first="Signup" firstPath='/register_1' second='login' secondPath='/login' />
                                 </Route>
-                                <Route exact path='/profile'>
+                                <Route exact path='/qbFront/profile'>
                                     <Mobile first="Signup" firstPath='/register_1' second='login' secondPath='/login' />
                                 </Route>
-                                <Route exact path='/progress'>
+                                <Route exact path='/qbFront/progress'>
                                     <Mobile first="Signup" firstPath='/register_1' second='login' secondPath='/login' />
                                 </Route>
-                                <Route exact path='/qb'>
+                                <Route exact path='/qbFront/qb'>
                                     <Mobile first="Signup" firstPath='/register_1' second='login' secondPath='/login' />
                                 </Route>
                             </Switch>
                         </MediaQuery>
                     </div>
                     <Switch>
-                        <Route exact path='/login'>
+                        <Route exact path='/qbFront/login'>
                             <LoginForm />
                         </Route>
-                        <Route exact path='/register_1'>
+                        <Route exact path='/qbFront/register_1'>
                             <RegisterPage />
                         </Route>
-                        <Route exact path='/register_2'>
+                        <Route exact path='/qbFront/register_2'>
                             <RegisterPage />
                         </Route>
-                        <Route exact path='/'>
+                        <Route exact path='/qbFront/'>
                             <HomePage />
                         </Route>
-                        <Route exact path='/profile'>
+                        <Route exact path='/qbFront/profile'>
                             <Profile />
                         </Route>
-                        <Route exact path='/progress'>
+                        <Route exact path='/qbFront/progress'>
                             <Profile />
                         </Route>
-                        <Route exact path='/qb'>
+                        <Route exact path='/qbFront/qb'>
                             <QB />
                         </Route>
                     </Switch>

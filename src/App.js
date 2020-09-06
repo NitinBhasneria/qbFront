@@ -24,13 +24,13 @@ function App() {
       <PersistGate loading={null} persistor={persistor}>
       <Router history={history} forceRefresh={true}>
       <Switch>
-            <Route exact path='/' component={authNav} /> // updated
-            <Route exact path='/login' component={authNav} />
-            <Route exact path='/register_1' component={authNav} />
-            <Route exact path='/register_2' component={authNav} />
-            <Route exact path='/profile' component={authNav} />
-            <Route exact path='/progress' component={authNav} />
-            <Route exact path='/qb' component={authNav} />
+            <Route exact path='/qbFront/' component={authNav} /> // updated
+            <Route exact path='/qbFront/login' component={authNav} />
+            <Route exact path='/qbFront/register_1' component={authNav} />
+            <Route exact path='/qbFront/register_2' component={authNav} />
+            <Route exact path='/qbFront/profile' component={authNav} />
+            <Route exact path='/qbFront/progress' component={authNav} />
+            <Route exact path='/qbFront/qb' component={authNav} />
           </Switch>
         </Router>
       </PersistGate>
