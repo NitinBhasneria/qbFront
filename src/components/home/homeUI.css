@@ -776,7 +776,7 @@ html, body, #container, .carousel {
     .laptop {
         width: 100%;
         height: 50%;
-        background-image: url(/static/media/laptop.32c4db8e.png);
+        background-image: url('./../../statics/images/laptop.png');
         background-size: 100%;
         background-repeat: no-repeat;
         background-position: center;
