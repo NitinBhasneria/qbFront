@@ -66,15 +66,15 @@ class Head extends React.Component {
                     </MediaQuery>
                     <MediaQuery query="(min-device-width: 801px">
                         <h2 className='Head'>Practice makes perfect</h2>
-                        <h4 className='headPara'>Practice makes perfect Prepare for you boards like never before</h4>
+                        <h4 className='headPara'>Prepare for your boards like never before</h4>
                     </MediaQuery>
                     <MediaQuery query="(max-device-width: 800px)">
                         <div className='signUpContMobile'>
-                            <Link className='SignUpBtn'>START YOUR FREE TRAIL</Link>
+                            <Link className='SignUpBtn'>START YOUR 7 DAY FREE TRAIL</Link>
                         </div>
                     </MediaQuery>
                     <MediaQuery query="(min-device-width: 801px">
-                        <Link className='SignUpBtn'>Sign Up</Link>
+                        <Link className='SignUpBtn'>START YOUR 7 DAY FREE TRAIL</Link>
                     </MediaQuery>
                 </div>
                 }

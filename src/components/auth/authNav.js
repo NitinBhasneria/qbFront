@@ -88,7 +88,7 @@ class AuthNav extends Component {
                                     <MediaQuery query="(min-device-width: 801px)">
                                         <NavLink className='navAuthBtn' exact to="/qbFront/"><p className='btnText'>About us</p></NavLink>
                                         <NavLink className='navAuthBtn' exact to="/qbFront/login"><p className='btnText'>Login</p></NavLink>
-                                        <NavLink className='navAuthBtn ' exact to="/qbFront/"><p className='getStartBtn btnText'>GET STARTED</p></NavLink>
+                                        <NavLink className='navAuthBtn ' exact to="/qbFront/"><p className='getStartBtn btnText'>SIGN UP</p></NavLink>
                                     </MediaQuery>
                                     
                                 </Route>

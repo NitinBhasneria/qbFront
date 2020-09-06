@@ -18,15 +18,17 @@ body {
 }
 
 .getStartBtn {
+    font-size: 18px;
     background-color: white;
     color: #10C7B6;
     height: 50%;
-    margin-top: 15%;
+    margin-top: 15% !important;
     line-height: 5vh !important;
     text-align: center;
     border-radius: 4px;
-    width: 122%;
+    width: 155%;
 }
+
 .navBar {
     height: 10vh;
     width: 100vw;
@@ -57,18 +59,18 @@ body {
     background: 100% 100%;
 }
 
-.btnContQuest {
+.logoCountQuest {
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
-    width: 75%;
+    width: 17%;
 }
 
 .btnContQuestHome {
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
-    width: 80%;
+    width: 73%;
 }
 
 .tqblogoquest {
@@ -107,6 +109,7 @@ body {
 }
 
 .btnText {
+    margin: 0vw 1vw;
     line-height: 9vh;
 }
 
