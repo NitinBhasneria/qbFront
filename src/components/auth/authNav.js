@@ -45,9 +45,43 @@ class AuthNav extends Component {
                 <div className='authPage'>
                     
                     <div className={'tqbnavBarLogin'}>
-                        <div className={(this.props.history.location.pathname=='/qbFront/')?'logoCountQuest':'logoCont'} onClick={()=>{this.props.history.push('/qbFront')}}>
-                            <img className={(this.props.history.location.pathname=='/qbFront/')?'tqblogoquest':'logoTQB'} src={(this.props.history.location.pathname=='/qbFront/')?tqblogoquest : tqbLogo} alt='Logo'></img>
-                        </div>
+                        <Switch>
+                                <Route exact path='/qbFront/'>
+                                    <div className={'logoCountQuest'} onClick={()=>{this.props.history.push('/qbFront')}}>
+                                        <img className={'tqblogoquest'} src={tqblogoquest} alt='Logo'></img>
+                                    </div>
+                                </Route>
+                                <Route exact path='/qbFront/login'>
+                                    <div className={'logoCont'} onClick={()=>{this.props.history.push('/qbFront')}}>
+                                        <img className={'logoTQB'} src={tqbLogo} alt='Logo'></img>
+                                    </div>
+                                </Route>
+                                <Route exact path='/qbFront/register_1'>
+                                    <div className={'logoCont'} onClick={()=>{this.props.history.push('/qbFront')}}>
+                                        <img className={'logoTQB'} src={tqbLogo} alt='Logo'></img>
+                                    </div>
+                                </Route>
+                                <Route exact path='/qbFront/register_2'>
+                                    <div className={'logoCont'} onClick={()=>{this.props.history.push('/qbFront')}}>
+                                        <img className={'logoTQB'} src={tqbLogo} alt='Logo'></img>
+                                    </div>
+                                </Route>
+                                <Route exact path='/qbFront/profile'>
+                                    <div className={'logoCont'} onClick={()=>{this.props.history.push('/qbFront')}}>
+                                        <img className={'logoTQB'} src={tqbLogo} alt='Logo'></img>
+                                    </div>
+                                </Route>
+                                <Route exact path='/qbFront/progress'>
+                                    <div className={'logoCont'} onClick={()=>{this.props.history.push('/qbFront')}}>
+                                        <img className={'logoTQB'} src={tqbLogo} alt='Logo'></img>
+                                    </div>
+                                </Route>
+                                <Route exact path='/qbFront/qb'>
+                                    <div className={'logoCont'} onClick={()=>{this.props.history.push('/qbFront')}}>
+                                        <img className={'logoTQB'} src={tqbLogo} alt='Logo'></img>
+                                    </div>
+                                </Route>
+                            </Switch>
                         <div className={(this.props.history.location.pathname=='/qbFront/')?'btnContQuestHome':'btnCont'}>
                             <Switch>
                                 <Route exact path='/qbFront/'>
