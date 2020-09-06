@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/qbFront/static/css/main.8ed9ef08.chunk.css",
+    "main.css": "/qbFront/static/css/main.1c42138f.chunk.css",
     "main.js": "/qbFront/static/js/main.99716b5b.chunk.js",
     "main.js.map": "/qbFront/static/js/main.99716b5b.chunk.js.map",
     "runtime-main.js": "/qbFront/static/js/runtime-main.0321e445.js",
@@ -9,10 +9,10 @@
     "static/js/2.548dcb01.chunk.js": "/qbFront/static/js/2.548dcb01.chunk.js",
     "static/js/2.548dcb01.chunk.js.map": "/qbFront/static/js/2.548dcb01.chunk.js.map",
     "index.html": "/qbFront/index.html",
-    "precache-manifest.c81daa3acce36df658ea17684ac2ef88.js": "/qbFront/precache-manifest.c81daa3acce36df658ea17684ac2ef88.js",
+    "precache-manifest.aca15051ef750f8b473e5255e8be7bfd.js": "/qbFront/precache-manifest.aca15051ef750f8b473e5255e8be7bfd.js",
     "service-worker.js": "/qbFront/service-worker.js",
     "static/css/2.829c9cb5.chunk.css.map": "/qbFront/static/css/2.829c9cb5.chunk.css.map",
-    "static/css/main.8ed9ef08.chunk.css.map": "/qbFront/static/css/main.8ed9ef08.chunk.css.map",
+    "static/css/main.1c42138f.chunk.css.map": "/qbFront/static/css/main.1c42138f.chunk.css.map",
     "static/js/2.548dcb01.chunk.js.LICENSE.txt": "/qbFront/static/js/2.548dcb01.chunk.js.LICENSE.txt",
     "static/media/homeUI.css": "/qbFront/static/media/laptop.32c4db8e.png",
     "static/media/profileIcon.png": "/qbFront/static/media/profileIcon.a1a27e3c.png",
@@ -25,7 +25,7 @@
     "static/js/runtime-main.0321e445.js",
     "static/css/2.829c9cb5.chunk.css",
     "static/js/2.548dcb01.chunk.js",
-    "static/css/main.8ed9ef08.chunk.css",
+    "static/css/main.1c42138f.chunk.css",
     "static/js/main.99716b5b.chunk.js"
   ]
 }
