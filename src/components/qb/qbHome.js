@@ -2,7 +2,7 @@ import React from 'react';
 // import { Link, Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 // import history from '../../history';
-import {withRouter} from 'react-router-dom';
+import {withRouter, Redirect} from 'react-router-dom';
 import './tqb.css';
 import Bookmark from './../../statics/images/bookmark.png'
 import Bookmarked from './../../statics/images/bookmarked.png'
@@ -17,6 +17,7 @@ import MediaQuery from 'react-responsive';
 import { createLeftOff, updateLeftOff } from './../../actions/leftOff'
 import { getQuestionImage } from './../../actions/imageQuestion'
 import imageQuestion from '../../reducers/imageQuestion';
+import { REGISTER } from 'redux-persist';
 // import question from '../../reducers/question';
 // import { getTopic } from './../../actions/topics';
 // import {
@@ -628,7 +629,9 @@ class QBA extends React.Component {
             }
           }
         }
-
+        if (!this.props.isAuthenticated) {
+          return <Redirect to='/login/' />;
+       }
         return (
             <div className='TQB'>
                 <div className='tqbNav'>

@@ -1,7 +1,7 @@
 body {
     overflow: hidden; /* Hide scrollbars */
     overflow: hidden;
-    font-family: Montserrat;
+    font-family: SANS-SERIF;
   }
   
 
@@ -105,7 +105,7 @@ body {
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
-    width: 80%;
+    width: 74%;
 }
 
 .btnText {
