@@ -80,7 +80,7 @@ class Progress extends React.Component {
     savedQuestionRoute (e) {
         console.log(e.target.id)
         this.props.history.push({
-            pathname: '/qb',
+            pathname: '/qbFront/qb',
             search: '?query=abc',
             state: { detail: e.target.id, subject:'' },
           })

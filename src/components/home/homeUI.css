@@ -615,7 +615,7 @@ body {
     color: rgba(255, 255, 255, 0.7);
     margin-top: 3%;
     font-weight: normal;
-    font-size: 14px;
+    font-size: 18px;
     width: 88%;
     margin-left: 6%;
     margin-right: 6%;
@@ -624,7 +624,7 @@ body {
 
 .subjectCardHead {
     font-weight: 600;
-    font-size: 22px;
+    font-size: 24px;
     width: 94%;
     margin-top: 15%;
     margin-left: 6%;
@@ -632,7 +632,7 @@ body {
 
 .subjectCardContHead {
     font-weight: 600;
-    font-size: 32px;
+    font-size: 50px;
     margin-top: auto;
     text-align: center;
     color: #FFFFFF;
@@ -732,6 +732,14 @@ html, body, #container, .carousel {
 }
 
 .cardHeadPT {
+    margin-top: 17%;
+    font-weight: 600;
+    font-size: 22px;
+    width: 94%;
+    margin-left: 6%;
+}
+
+.cardHeadPTLeft {
     margin-top: 12%;
     font-weight: 600;
     font-size: 22px;

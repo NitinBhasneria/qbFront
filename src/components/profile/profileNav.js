@@ -39,13 +39,13 @@ class ProfileSideNav extends React.Component {
             <div className='profileSideNav'>
                 <div className='linksProfile'>
                     <MediaQuery query="(min-device-width:801px)">
-                        <NavLink activeClassName='accountDetailBtnClick linkBtnClick' className='accountDetailBtn linkBtn' exact to="/profile"><p className='btnTextProfile'>Account details</p></NavLink>
+                        <NavLink activeClassName='accountDetailBtnClick linkBtnClick' className='accountDetailBtn linkBtn' exact to="/qbFront/profile"><p className='btnTextProfile'>Account details</p></NavLink>
                         {/* <NavLink activeClassName='paymentBtnClick linkBtnClick' className='paymentBtn linkBtn' exact to="/payment"><p className='btnText'>Payment</p></NavLink> */}
-                        <NavLink activeClassName='progressBtnClick linkBtnClick' className='progressBtn linkBtn' exact to="/progress"><p className='btnTextProfile'>Your Progress</p></NavLink>
+                        <NavLink activeClassName='progressBtnClick linkBtnClick' className='progressBtn linkBtn' exact to="/qbFront/progress"><p className='btnTextProfile'>Your Progress</p></NavLink>
                     </MediaQuery>
                     <MediaQuery query="(max-device-width:800px)">
-                        <NavLink activeClassName='btnMobileLinkClick' className="btnMobileLink" exact to='/profile'>Account details</NavLink>
-                        <NavLink activeClassName='btnMobileLinkClick' className="btnMobileLink" exact to='/progress'>Your Progress</NavLink>
+                        <NavLink activeClassName='btnMobileLinkClick' className="btnMobileLink" exact to='/qbFront/profile'>Account details</NavLink>
+                        <NavLink activeClassName='btnMobileLinkClick' className="btnMobileLink" exact to='/qbFront/progress'>Your Progress</NavLink>
                     </MediaQuery>
                 </div>
                 <div className='logout'>

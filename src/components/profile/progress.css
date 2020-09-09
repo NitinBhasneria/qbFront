@@ -28,25 +28,25 @@
 
 .yearHeadProgress {
     font-weight: bold;
-    font-size: 24px;
+    font-size: 28px;
     color: #10C7B6;
     font-family: Montserrat !important;
 }
 
-.savedQuestBtn  {
+.savedQuestBtn {
     background: #F8F8F8;
     border: 1px solid #10C7B6;
     box-sizing: border-box;
     font-weight: 500;
-    font-size: 14px;
+    font-size: 18px;
     line-height: 150%;
-    padding: 0vh 1vw;
+    padding: 1vh 1vw;
     color: #10C7B6;
 }
 
 .subjectHeadCard {
     font-weight: 500;
-    font-size: 22px;
+    font-size: 25px;
     line-height: 150%;
     color: #10C7B6;
     margin-bottom: inherit;

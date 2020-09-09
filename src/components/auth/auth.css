@@ -177,7 +177,8 @@ a:hover {
 .registerHead {
     text-align: center;
     font-weight: bold;
-    font-size: 24px;
+    font-size: 40px;
+    margin-bottom: -3%;
     color: #10C7B6;
     line-height: 150%;
     width: 100%;
@@ -223,7 +224,7 @@ a:hover {
     margin-top: -1%;
     height: 100%;
     background: none;
-    font-size: 18px;
+    font-size: 20px;
     box-shadow: none;
     border-bottom: 0.75px solid rgba(0, 0, 0, 0.54);
     border-radius: 0;
@@ -278,7 +279,7 @@ a:hover {
     font-family: Montserrat;
     font-style: normal;
     font-weight: 600;
-    font-size: 18px;
+    font-size: 24px;
     height: 100%;
     width: 100%;
     background-color: #45d0bd;
@@ -300,10 +301,12 @@ a:hover {
     outline: 0;
     border: 0;
 }
-.btn-link{
+.btn-link {
     color: #45d0bd;
+    font-size: 15px;
     line-height: 10px;
 }
+
 .btn-link:focus{
     box-shadow: none;
 }
@@ -314,7 +317,7 @@ a:hover {
     margin-bottom: auto;
     display: flex;
     height: 0;
-    font-size: 12px
+    font-size: 16px
 }
 .registerImage {
     background-image: url('./../../statics/images/registerImage.png');
@@ -338,7 +341,7 @@ a:hover {
 .loginHead {
     text-align: center;
     font-weight: bold;
-    font-size: 24px;
+    font-size: 40px;
     color: #10C7B6;
     line-height: 150%;
     width: 100%;

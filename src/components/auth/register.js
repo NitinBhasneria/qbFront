@@ -103,13 +103,14 @@ class RegisterPage extends React.Component {
                     if (res){
                         this.props.login(user).then(
                             ()=> {
-                                // console.log(user.Class);
+                                console.log("registered");
                                 if(user.Class == 'Class 12'){this.props.CreateStudentProfile(user.student_name, user.phone, user.syllabus, user.Class, res)
                                     var Class;
                                     if(user.Class == 'Class 10')
                                         Class = 'class10'
                                     else
                                         Class = 'class12'
+                                    console.log(Class);
                                     this.props.getSubject(Class).then(()=>{
                                         history.push('./qbFront/register_2');
                                         window.location.reload(false);
@@ -119,7 +120,7 @@ class RegisterPage extends React.Component {
                                     var sub2 = 'Science';
                                     var sub3 = 'Mathematics';
                                     this.props.CreateStudentProfile(user.student_name, user.phone, user.syllabus, user.Class, res, sub1, sub2, sub3).then(()=>{
-                                        // this.props.history.push('/');
+                                        this.props.history.push('/qbFront');
                                     })
                                     
                                 }

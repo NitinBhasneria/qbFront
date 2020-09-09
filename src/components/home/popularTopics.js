@@ -156,7 +156,7 @@ class PT extends React.Component {
                         <div className='Cardptpt'>
                             <div onClick={this.subjectClick} id={this.props.leftOff.Subject} className='cardImage2 cardImage'></div>
                             <div className='PTPT'>
-                                <div className='cardHeadPT'>Your Progress</div>
+                                <div className='cardHeadPTLeft'>Your Progress</div>
                                 <h4 className='whereLeft'>(where you left off)</h4>
                                 <div className='cardDetailPT'>
                                     <h4 className='classPT'>{(this.props.details.Class)}</h4>

@@ -71,7 +71,7 @@ class SelectDropdown extends React.Component {
         },
         icon: {
           color: '#CCCCCC',
-          fontSize: 16,
+          fontSize: 20,
           transform: 'none',
           marginLeft:'100px',
           transition: 'all 0.1s ease-in'
@@ -107,7 +107,7 @@ class SelectDropdown extends React.Component {
           paddingTop: 15,
           icon: {
             color: '#31D0EC',
-            fontSize: 14
+            fontSize: 22
           }
         },
         selectedOption: {
@@ -120,7 +120,7 @@ class SelectDropdown extends React.Component {
           }),
           cursor: 'pointer',
           color:'white',
-          fontSize: '20px',
+          fontSize: '22px',
           fontWeight: '600',
           display: 'flex',
           background: '#10C7B6',
@@ -133,7 +133,7 @@ class SelectDropdown extends React.Component {
         },
         selectedOptionLink: {
           color: 'inherit',
-          fontSize: 14,
+          fontSize: 22,
           marginLeft: 0,
         }
       }
@@ -148,7 +148,7 @@ class SelectDropdown extends React.Component {
       if(window.innerWidth>800){
         styles.list.width = '100%';
         styles.dropdown.width= '100%';
-        styles.selectedOptionLink.fontSize= 20;
+        styles.selectedOptionLink.fontSize= 22;
         styles.selectedOptionLink.marginLeft= 0;
         styles.list.marginTop=0;
         styles.dropdown.marginTop=0;
@@ -241,9 +241,6 @@ class QBA extends React.Component {
         this.props.getBookmark(this.props.auth.user.user.id);
         this.props.getSolved(this.props.auth.user.user.id);
         this.props.loadDetail(this.props.auth.user.user.id);
-        if(this.props.location.state.subject=='')
-        this.props.getQuestion(this.props.details.data.sub1, this.props.details.data.Class);
-
         if(this.props.details.data.Class === 'Class 10') {
           this.props.getYear('class10');
         }
@@ -266,6 +263,7 @@ class QBA extends React.Component {
         this.setState({
           questionLoading: true,
         })
+        this.props.getQuestionImage(this.props.details.data.sub1, this.props.details.data.Class);
         this.props.getQuestion(this.props.details.data.sub1, this.props.details.data.Class).then(()=>{
           this.setState({questionLoading:false})
         });
