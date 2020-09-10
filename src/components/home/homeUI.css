@@ -13,6 +13,7 @@ body {
     flex-direction: row;
     width: 100vw;
     height: 75vh;
+    margin-top: -10vh;
     background-image: url('./../../statics/images/Footer.png');
     background-repeat: no-repeat;
     background-size: 100% 100%;
@@ -118,16 +119,28 @@ body {
 .why {
     background-color: #10C7B6;
     width: 100%;
-    height: 60vh;
+    height: 75vh;
     display: flex;
 }
 
 .whyQuest {
     width: 35%;
-    margin: 5% 7% 3% 11%;
+    margin: 12vh 0% 3% 13%;
     height: 70%;
     flex-direction: row;
     flex-wrap: wrap;
+}
+
+.whySignUp {
+    font-size: 21px;
+    background-color: white;
+    color: #10C7B6;
+    height: 6vh;
+    margin-top: 15% !important;
+    line-height: 6vh !important;
+    text-align: center;
+    border-radius: 4px;
+    width: 170%;
 }
 
 .carousel-inner {
@@ -139,8 +152,8 @@ body {
 
 .whyCard {
     width: 45%;
-    margin: 7% 8% 2% 2%;
-    height: 60%;
+    margin: 13vh 4% 2% 2%;
+    height: 55%;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -158,16 +171,19 @@ body {
     font-weight: bold;
     font-size: 36px;
     margin-bottom: 3%;
+    margin-top: 3vh;
 }
 .whyPara {
     font-weight: normal;
     font-size: 24px;
     width: 73%;
+    margin-top: 3vh;
+    margin-top: 2vh;
 }
 
 .Card {
     margin-right: auto;
-    width: 35%;
+    width: 37%;
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -188,9 +204,8 @@ body {
     border-radius: 4px 4px 0px 0px;
     background-size: 100% 100%;
     width: 100%;
-    height: 60%;
+    height: 65%;
 }
-
 .cardImage2 {
     background-image: url('./../../statics/images/AdvanceFilter.png');
 }
@@ -213,17 +228,18 @@ body {
 
 .about {
     width: 100%;
-    height: 70vh;
+    height: 75vh;
     display: flex;
+    margin-top: 10vh;
     flex-direction: row;
-    flex-wrap:wrap;
+    flex-wrap: wrap;
 }
 
 .aboutHead {
     width: 100%;
     height: 10%;
     font-weight: bold;
-    font-size: 55px;
+    font-size: 50px;
     text-align: center;
     margin: 4% 0%;
 }
@@ -238,7 +254,7 @@ body {
 
 .cardAbout1, .cardAbout2, .cardAbout3 {
     height: 60%;
-    width: 15% ;
+    width: 17% ;
     background: #FFFFFF;
     border: 1.5px solid rgba(0, 0, 0, 0.1);
     box-sizing: border-box;
@@ -258,7 +274,7 @@ body {
 
 .aboutCardHead {
     font-weight: 600;
-    font-size: 30px;
+    font-size: 27px;
     text-align: center;
 }
 
@@ -266,7 +282,7 @@ body {
     font-weight: normal;
     margin: 4%;
     text-align: center;
-    font-size: 15px;
+    font-size: 14px;
     text-align: center;
 }
 
@@ -372,13 +388,13 @@ body {
     width: 50%;
     height: 100%;
     background-image: url('./../../statics/images/laptop.png');
-    background-size: 90%;
+    background-size: 85%;
     background-repeat: no-repeat;
     background-position: center;
 }
 
 .SignUp {
-    margin: 12% 8% 0% 3%;
+    margin: 23vh 8% 0vh 3%;
     width: 36%;
     height: 70%;
     color: white;
@@ -396,8 +412,8 @@ body {
     margin: 4% 0%;
 }
 .SignUpBtn {
-    height: 14%;
-    line-height: 70px;
+    height: 7vh;
+    line-height: 7vh;
     margin: 8% 0%;
     background: #FFFFFF;
     box-shadow: 0px 2px 32px rgba(0, 0, 0, 0.1);
@@ -470,13 +486,13 @@ body {
 .QBACont {
     display: flex;
     flex-direction: column;
-    height: 70vh;
+    height: 85vh;
     width: 100%;
 }
 
 .QBAHead {
     font-weight: bold;
-    font-size: 55px;
+    font-size: 50px;
     color: #000000;
     text-align: center;
     width: 100%;
@@ -500,7 +516,7 @@ body {
 }
 .QBAVideo2 {
     height: 49%;
-    margin-bottom: 1%;
+    margin-bottom: 2vh;
     margin-left: 1%;
     width: 50%;
     background-color: #000000;
@@ -679,7 +695,7 @@ html, body, #container, .carousel {
     font-style: normal;
     font-weight: bold;
     font-weight: bold;
-    font-size: 55px !important;
+    font-size: 50px !important;
     color: #000000;
     text-align: center;
     width: 100%;

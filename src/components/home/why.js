@@ -20,10 +20,10 @@ class Why extends React.Component {
         return (
             <div className='why'>
                 <div className='whyQuest'>
-                    <h1 className='WHY'>why?</h1>
-                    <h3 className='TheQB'>The Question Bank</h3>
+                    <h1 className='WHY'>why ?</h1>
+                    <h3 className='TheQB'>The QUESTION BANK</h3>
                     <p className='whyPara'>This section talks about the importance of QB, what makes us the best out there, and our unique qualities.</p>
-                    <button className='signUpBtn ' exact to="/qbFront/"><p className='getStartBtn btnText'>SIGN UP</p></button>
+                    <button className='signUpBtn ' exact to="/qbFront/"><p className='whySignUp btnText'>SIGN UP</p></button>
                 </div>
                 <div className='whyCard'>
                     <div className='Card'>
