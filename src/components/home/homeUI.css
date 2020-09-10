@@ -133,14 +133,15 @@ body {
 
 .whySignUp {
     font-size: 21px;
-    background-color: white;
-    color: #10C7B6;
+    background-color: #fff;
+    color: #10c7b6;
     height: 6vh;
-    margin-top: 15% !important;
-    line-height: 6vh !important;
+    margin-top: 15%!important;
+    margin-left: 0;
+    line-height: 6vh!important;
     text-align: center;
     border-radius: 4px;
-    width: 170%;
+    width: 220%;
 }
 
 .whysignUpBtn {
