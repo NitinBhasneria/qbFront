@@ -186,12 +186,13 @@ body {
     margin-bottom: 3%;
     margin-top: 3vh;
 }
+
 .whyPara {
-    font-weight: normal;
+    font-weight: 400;
     font-size: 24px;
     width: 73%;
     margin-top: 3vh;
-    margin-top: 2vh;
+    margin-bottom: 3vh;
 }
 
 .Card {
