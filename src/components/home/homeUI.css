@@ -239,7 +239,7 @@ body {
     width: 100%;
     height: 10%;
     font-weight: bold;
-    font-size: 50px;
+    font-size: 40px;
     text-align: center;
     margin: 4% 0%;
 }
@@ -254,7 +254,7 @@ body {
 
 .cardAbout1, .cardAbout2, .cardAbout3 {
     height: 60%;
-    width: 17% ;
+    width: 16% ;
     background: #FFFFFF;
     border: 1.5px solid rgba(0, 0, 0, 0.1);
     box-sizing: border-box;
@@ -274,21 +274,21 @@ body {
 
 .aboutCardHead {
     font-weight: 600;
-    font-size: 27px;
+    font-size: 24px;
     text-align: center;
 }
 
 .aboutCardPara {
     font-weight: normal;
-    margin: 4%;
+    margin: 6% 8%;
     text-align: center;
-    font-size: 14px;
+    font-size: 13px;
     text-align: center;
 }
 
 .cardAboutImage1, .cardAboutImage2, .cardAboutImage3 {
     background-repeat: no-repeat;
-    height: 50%;
+    height: 55%;
     width: 100%;
     background-position: center;
 }
