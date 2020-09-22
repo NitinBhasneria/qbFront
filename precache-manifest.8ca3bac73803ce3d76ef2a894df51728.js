@@ -1,27 +1,27 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "3bd1e18789511f692aafdb1d8446905c",
+    "revision": "78d612ba01e01c122060f290bcd20a4e",
     "url": "/qbFront/index.html"
   },
   {
-    "revision": "af57a4f4e2927d3d380c",
+    "revision": "c5f6cb1724d2a022846f",
     "url": "/qbFront/static/css/2.829c9cb5.chunk.css"
   },
   {
-    "revision": "737214ebecf4ad27bc09",
-    "url": "/qbFront/static/css/main.97c1741a.chunk.css"
+    "revision": "ee0a4782fa34f9e0f3d1",
+    "url": "/qbFront/static/css/main.bacc2e33.chunk.css"
   },
   {
-    "revision": "af57a4f4e2927d3d380c",
-    "url": "/qbFront/static/js/2.6e5fa468.chunk.js"
+    "revision": "c5f6cb1724d2a022846f",
+    "url": "/qbFront/static/js/2.502f6255.chunk.js"
   },
   {
     "revision": "7e7427604f2a30a1e5ccb774dda109dd",
-    "url": "/qbFront/static/js/2.6e5fa468.chunk.js.LICENSE.txt"
+    "url": "/qbFront/static/js/2.502f6255.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "737214ebecf4ad27bc09",
-    "url": "/qbFront/static/js/main.358f15cc.chunk.js"
+    "revision": "ee0a4782fa34f9e0f3d1",
+    "url": "/qbFront/static/js/main.70b05126.chunk.js"
   },
   {
     "revision": "0d3e5fd6870a2cb3b7d6",
@@ -108,8 +108,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/qbFront/static/media/Science.e9cc9994.png"
   },
   {
-    "revision": "1458646b385f57efc4160314009798ba",
-    "url": "/qbFront/static/media/ScienceBlue.1458646b.png"
+    "revision": "002786ad5ffed119ef035a88d0268235",
+    "url": "/qbFront/static/media/ScienceBlue.002786ad.png"
   },
   {
     "revision": "de0a1601b506fd1fd2d6b0f6f8500438",
@@ -118,6 +118,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "0eafc60092e5d962dc921610978c1ac5",
     "url": "/qbFront/static/media/Social ScienceBlue.0eafc600.png"
+  },
+  {
+    "revision": "c4d497aa13ad2140b235efcd502879f9",
+    "url": "/qbFront/static/media/lap.c4d497aa.png"
   },
   {
     "revision": "32c4db8e4e213d3c0cfb13df8e5296e1",
