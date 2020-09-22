@@ -39,17 +39,17 @@ class ProfileSideNav extends React.Component {
             <div className='profileSideNav'>
                 <div className='linksProfile'>
                     <MediaQuery query="(min-device-width:801px)">
-                        <NavLink activeClassName='accountDetailBtnClick linkBtnClick' className='accountDetailBtn linkBtn' exact to="/qbFront/profile"><p className='btnTextProfile'>Account details</p></NavLink>
+                        <NavLink activeClassName='accountDetailBtnClick linkBtnClick' className='accountDetailBtn linkBtn' exact to="/qbFront/profile"><p className='btnTextProfile'>Account Details</p></NavLink>
                         {/* <NavLink activeClassName='paymentBtnClick linkBtnClick' className='paymentBtn linkBtn' exact to="/payment"><p className='btnText'>Payment</p></NavLink> */}
                         <NavLink activeClassName='progressBtnClick linkBtnClick' className='progressBtn linkBtn' exact to="/qbFront/progress"><p className='btnTextProfile'>Your Progress</p></NavLink>
                     </MediaQuery>
                     <MediaQuery query="(max-device-width:800px)">
-                        <NavLink activeClassName='btnMobileLinkClick' className="btnMobileLink" exact to='/qbFront/profile'>Account details</NavLink>
+                        <NavLink activeClassName='btnMobileLinkClick' className="btnMobileLink" exact to='/qbFront/profile'>Account Details</NavLink>
                         <NavLink activeClassName='btnMobileLinkClick' className="btnMobileLink" exact to='/qbFront/progress'>Your Progress</NavLink>
                     </MediaQuery>
                 </div>
                 <div className='logout'>
-                    <hr style={{border:" 0.5px solid rgba(0, 0, 0, 0.54)"}}></hr>
+                    <hr /*style={{border:" 0.5px solid rgba(0, 0, 0, 0.54)"}}*/></hr>
                     <div className='logoutProfile' onClick={this.logoutProfile}><p className='btnTextProfile'>Logout</p></div>
                 </div>
                 {this.state.logOut && 
@@ -58,7 +58,7 @@ class ProfileSideNav extends React.Component {
                     <div className='logoutProfilePopup'>
                         <div className='editProfileBox logoutProfileBox'>
                             <div className='logoutformProfile'>
-                            <h2 className='registerHead'>Edit profile</h2>
+                            <h2 className='registerHead'>LOGOUT</h2>
                             <div className='form-group name'>
                                 <p className='logoutSure' >Are you sure you want to logout?</p>
                             </div>

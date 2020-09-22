@@ -44,7 +44,7 @@ export const createSolved = (user, qid, yearsub) => async (dispatch) => {
             type: SOLVED_CREATED,
         })
     } catch(err) {
-        console.log(err);
+        // console.log(err);
         dispatch({
             type: SOLVED_CREATE_ERROR,
         })

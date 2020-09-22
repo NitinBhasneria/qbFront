@@ -74,11 +74,12 @@ body {
 }
 
 .tqblogoquest {
-    height: 5vh;
-    margin: 2vh;
-    width: 19vh;
+    height: 50px;
+    margin: 2vh -1vh;
+    width: 23vh;
     background: 100% 100%;
 }
+
 .navAuthBtn {
     margin: 0% 1%;
     background-color: #45d0bd;
@@ -216,19 +217,38 @@ a:hover {
     box-shadow: none;
 }
 
-.form-control-register {
+.form-control-register-lr:focus{
+    outline: none;
+}
+
+.form-control-register-lr {
     padding: 0;
     border: 0;
-    width: 100%;;
+    width: 100%;
     border: none;
     margin-top: -1%;
-    height: 65%;
+    height: 70%;
     background: none;
     font-size: 20px;
     box-shadow: none;
     border-bottom: 0.75px solid rgba(0, 0, 0, 0.54);
     border-radius: 0;
 }
+
+.form-control-register {
+    padding: 0;
+    border: 0;
+    width: 100%;
+    border: none;
+    margin-top: -1%;
+    height: 125%;
+    background: none;
+    font-size: 20px;
+    box-shadow: none;
+    border-bottom: 0.75px solid rgba(0, 0, 0, 0.54);
+    border-radius: 0;
+}
+
 .form-control-register:focus{
     outline: none;
     text-decoration: none;
@@ -306,18 +326,20 @@ a:hover {
     font-size: 15px;
     line-height: 10px;
 }
-
+.form-control.is-invalid, .was-validated .form-control:invalid {
+    background-size: calc(1.255em + .375rem) calc(1.25em + .375rem) !important;
+}
 .btn-link:focus{
     box-shadow: none;
 }
 .btn-link:hover{
     color:#10C7B6
 }
-.already{
+.already {
     margin-bottom: auto;
     display: flex;
-    height: 0;
-    font-size: 16px
+    height: 0%;
+    font-size: 16px;
 }
 .registerImage {
     background-image: url('./../../statics/images/registerImage.png');

@@ -28,7 +28,7 @@ class Head extends React.Component {
         var subject= e.target.id.toString()
         console.log( e.target.id )
         this.props.history.push({
-            pathname: '/qb',
+            pathname: '/qbFront/qb',
             // search: '?query=sub',
             state: { subject: subject, detail: 0},
           })
@@ -47,7 +47,7 @@ class Head extends React.Component {
         for(var i=0;i<subjectList.length;i++){
             if(subjectList[i].replace(/\s/g,'')!=''){
             subjectCard.push(<div onClick={this.subjectClick} id={subjectList[i]} className='subjectCardMainPage'>
-                                <div id={subjectList[i]} className={`${subjectList[i].replace(/\s/g,'')} cardImage`} ></div>
+                                <div id={subjectList[i]} className={`${subjectList[i].replace(/\s/g,'')}Blue cardImage`} ></div>
                                 <div id={subjectList[i]} className='subjectCardHead'>{subjectList[i]}</div>
                                 <div  id={subjectList[i]} className='cardClass'>{this.props.details.data.Class}</div>
                             </div>)}
@@ -62,10 +62,10 @@ class Head extends React.Component {
                 { !this.props.isAuthenticated && 
                 <div className='SignUp'>
                     <MediaQuery query="(max-device-width: 800px)">
-                        <h2 className='Head'>Built for you!<br />Practice makes perfect</h2>
+                        <h2 className='Head'>Built For You!<br />Practice Makes Perfect</h2>
                     </MediaQuery>
                     <MediaQuery query="(min-device-width: 801px">
-                        <h2 className='Head'>Practice makes perfect</h2>
+                        <h2 className='Head'>Practice Makes Perfect</h2>
                         <h4 className='headPara'>Prepare for your boards like never before</h4>
                     </MediaQuery>
                     <MediaQuery query="(max-device-width: 800px)">

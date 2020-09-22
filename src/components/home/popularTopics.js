@@ -26,7 +26,7 @@ class PT extends React.Component {
         var subject= e.target.id.toString()
         console.log( e.target.id )
         this.props.history.push({
-            pathname: '/qb',
+            pathname: '/qbFront/qb',
             // search: '?query=sub',
             state: { subject: subject, detail: 0},
           })

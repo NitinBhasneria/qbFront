@@ -77,10 +77,10 @@ handleSubmit(e) {
                             <div className='text-danger'>{error}</div>
                             <div className='text-danger'>{error}</div>
                             <div className={'form-group name' + (submitted && !user.email ? ' form-control is-invalid' : '')}>
-                                        <input type="text" placeholder='Email-ID' className='form-control-register' name="email" value={user.email} onChange={this.handleChange} />
+                                        <input type="text" placeholder='Email-ID' className='form-control-register-lr' name="email" value={user.email} onChange={this.handleChange} />
                                     </div>
                             <div className={'form-group name' + (submitted && !user.password ? ' form-control is-invalid' : '')}>
-                              <input type="password" placeholder='Password' className='form-control-register' name="password" value={user.password} onChange={this.handleChange} />
+                              <input type="password" placeholder='Password' className='form-control-register-lr' name="password" value={user.password} onChange={this.handleChange} />
                             </div>
                             <div className='form-group already'>
                               <div>New here? Create an account</div>

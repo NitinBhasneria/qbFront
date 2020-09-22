@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import { loadSyllabus } from './../../actions/syllabus'
 import { getSubject } from './../../actions/subject';
 import {  register, login } from '../../actions/auth';
+import {loadDetail} from './../../actions/studentDetail'
 import { CreateStudentProfile } from './../../actions/studentDetail';
 import history from './../../history'
 import {
@@ -120,7 +121,9 @@ class RegisterPage extends React.Component {
                                     var sub2 = 'Science';
                                     var sub3 = 'Mathematics';
                                     this.props.CreateStudentProfile(user.student_name, user.phone, user.syllabus, user.Class, res, sub1, sub2, sub3).then(()=>{
-                                        this.props.history.push('/qbFront');
+                                        this.props.loadDetail(res).then(()=>{
+                                            this.props.history.push('/qbFront');
+                                        });
                                     })
                                     
                                 }
@@ -149,28 +152,28 @@ class RegisterPage extends React.Component {
                                     <h2 className='registerHead'>Register</h2>
                                     <div className='text-danger'>{error}</div>
                                     <div className={'form-group name' + (submitted && !user.student_name ? ' form-control is-invalid' : '')}>
-                                        <input type="text" placeholder='Name' className='form-control-register' name="student_name" value={user.student_name} onChange={this.handleChange} />
+                                        <input type="text" placeholder='Name' className='form-control-register-lr' name="student_name" value={user.student_name} onChange={this.handleChange} />
 
                                     </div>
                                     <div className={'form-group name' + (submitted && !user.email ? ' form-control is-invalid' : '')}>
-                                        <input type="text" placeholder='Email-ID' className='form-control-register' name="email" value={user.email} onChange={this.handleChange} />
+                                        <input type="text" placeholder='Email-ID' className='form-control-register-lr' name="email" value={user.email} onChange={this.handleChange} />
                                     </div>
                                     <div className={'form-group password' + (submitted && !user.password ? ' form-control is-invalid' : '')}>
-                                        <input type="password" placeholder='Password' className='form-control-register' name="password" value={user.password} onChange={this.handleChange} />
+                                        <input type="password" placeholder='Password' className='form-control-register-lr' name="password" value={user.password} onChange={this.handleChange} />
                                     </div>
                                     <div className={'form-group passwordCon' + (submitted && !user.confirmPass ? ' form-control is-invalid' : '')}>
-                                        <input type="password" placeholder='Confrim Password' className='form-control-register' name="confirmPass" value={user.confirmPass} onChange={this.handleChange} />
+                                        <input type="password" placeholder='Confrim Password' className='form-control-register-lr' name="confirmPass" value={user.confirmPass} onChange={this.handleChange} />
                                     </div>
                                     <div className={'form-group name' + (submitted && !user.phone ? ' form-control is-invalid' : '')}>
-                                        <input placeholder='Phone' className='form-control-register' name="phone" value={user.phone} onChange={this.handleChange} />
+                                        <input placeholder='Phone' className='form-control-register-lr' name="phone" value={user.phone} onChange={this.handleChange} />
                                     </div>
                                     <div className={'form-group nameSy'}>
-                                        <select className='form-control-register' name='syllabus' id='Syllabus' onChange={this.handleChange}>
+                                        <select className='form-control-register-lr' name='syllabus' id='Syllabus' onChange={this.handleChange}>
                                             <option value='CBSE'>CBSE</option>
                                         </select>
                                     </div>
                                     <div className={'form-group nameClass'}>
-                                        <select className='form-control-register' name="Class" id="class" onChange={this.handleChange}>
+                                        <select className='form-control-register-lr' name="Class" id="class" onChange={this.handleChange}>
                                             <option value='Class 10'>Class 10</option>
                                             <option value='Class 12'>Class 12</option>
                                         </select>
@@ -206,7 +209,7 @@ const mapStateToProps = state => ({
 
 RegisterPage = connect(
     mapStateToProps,
-    { register, login, CreateStudentProfile, getSubject, loadSyllabus},
+    { register, login, CreateStudentProfile, getSubject, loadSyllabus, loadDetail},
 )(RegisterPage);
 
 export default withRouter(RegisterPage);

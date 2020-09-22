@@ -278,7 +278,7 @@ class AccountDetail extends React.Component {
                     <div className='editProfilePopup'>
                         <div className='editProfileBox'>
                             <div className='formProfile'>
-                            <h2 className='registerHead'>Edit profile</h2>
+                            <h2 className='registerHead'>Edit Profile</h2>
                             <div className='form-group name'>
                                 <input type="text" placeholder='Change Name' className='form-control-register' name="student_name" value={this.state.edit.student_name} onChange={this.handleChangeProfile}/>
                             </div>
