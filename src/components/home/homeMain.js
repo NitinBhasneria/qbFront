@@ -36,7 +36,7 @@ class HomePage extends React.Component {
                 { !this.props.isAuthenticated && <Why /> }
                 { !this.props.isAuthenticated && <QBA />}
                 { this.props.isAuthenticated && <PT />}
-                <Testimonial />z
+                <Testimonial />
                 <Footer />
             </div>
         );

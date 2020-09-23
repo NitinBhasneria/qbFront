@@ -8,6 +8,10 @@ body {
     top: 10vh;
 }
 
+input:focus {
+    outline:  none;
+}
+
 .footer {
     display: flex;
     flex-direction: row;
@@ -132,6 +136,7 @@ body {
 }
 
 .whySignUp {
+    font-weight: 600;
     font-size: 21px;
     background-color: #fff;
     color: #10c7b6;
@@ -408,10 +413,10 @@ body {
 }
 
 .SignUp {
-    margin: 23vh 8% 0vh 3%;
-    width: 36%;
+    margin: 23vh 0% 0 3%;
+    width: 40%;
     height: 70%;
-    color: white;
+    color: #fff;
 }
 
 .Head {
@@ -425,6 +430,7 @@ body {
     width: 70%;
     margin: 4% 0%;
 }
+
 .SignUpBtn {
     height: 7vh;
     line-height: 7vh;
@@ -437,7 +443,7 @@ body {
     display: flex;
     flex-direction: column;
     font-size: 20px;
-    width: 71%;
+    width: 56%;
     text-align: center;
 }
 
@@ -803,6 +809,1048 @@ html, body, #container, .carousel {
     line-height: 125%;
 }
 
+@media screen and (max-height:900px) {
+    .solved {
+        height: 8vh;
+    }
+}
+@media screen and (max-height:800px) {
+    .chooseHead {
+        margin-top: 4vh;
+        margin-bottom: 2vh;
+        margin-left: 2vw;
+    }
+    .solvedinputSelect {
+        top: 4vh;
+    }
+}
+@media screen and (max-height:700px) {
+    .topicList {
+        height: 17vh;
+    }
+}
+@media screen and (max-width:1830px) {
+    .solvedinputSelect {
+        left: 8vw;
+    }   
+}
+@media screen and (max-width:1680px) {
+    .solvedinputSelect {
+        left: 7vw;
+    }   
+}
+@media screen and (max-width:1530px) {
+    .applyBtn {
+        font-size: 15px;
+    }  
+    .clearBtn {
+        font-size: 15px;
+    }
+    .chooseHead {
+        font-size: 18px;
+    }
+    .filterHead {
+        font-size: 28px;
+    }
+    .tqbNavBtn {
+        font-size: 15px;
+    }
+}
+@media screen and (max-width:1380px) {
+    .solvedinputSelect {
+        left: 6vw;
+    }   
+    .year {
+        font-size: 15px;
+    }
+    .topic {
+        font-size: 15px;
+    }
+    .solutionBtn {
+        line-height: 4vh;
+        width: 11vw;
+        height: 4vh;
+        font-size: 14px;
+    }
+}
+@media screen and (max-width: 1675px) and (max-height: 800px) {
+    .Head {
+        font-size: 55px;
+    }
+    .tqblogoquest {
+        height: 50px;
+        margin: 2vh -1vh;
+        width: 25vh;
+        background: 100% 100%;
+    }
+    .headpara {
+        font-size: 34px;
+    }
+    .whyQuest {
+        margin: 11vh 0% 3% 13%;
+    }
+    .WHY {
+        font-size: 130px;
+    }
+    .contact {
+        width: 40%;
+    }
+    .Num {
+        width: 60%;
+    }
+    .fb, .insta, .linkdin, .twitter, .youTube {
+        margin: 0% 8% 4% 0%;
+    }
+}
+@media screen and (min-width: 1500px) {
+    .Head {
+        font-size: 55px;
+    }
+    .headpara {
+        font-size: 34px;
+    }
+}
+@media screen and (max-width: 1700px) {
+    .cardAbout1, .cardAbout2, .cardAbout3 {
+        /* height: 66%; */
+        width: 18%;
+    }
+    .QBACont {
+        height: 75vh;
+    }
+}
+@media screen and (min-width: 1450px) {
+    .whyCard {
+        width: 50%;
+    }
+}
+@media screen and (min-width: 1600px) and (max-height: 750px) {
+    .SignUp {
+        margin: 26vh 0% 0 3%;
+    }
+    .HeadCont {
+        height: 84vh;
+    }
+    .whyPara {
+        margin-bottom: 0vh;
+    }
+}
+@media screen and (min-width: 1720px) and (max-height: 750px) {
+    .HeadCont {
+        height: 87vh;
+    }
+    .cardAbout1, .cardAbout2, .cardAbout3 {
+        height: 66%;
+    }
+    .aboutHead {
+        height: 7%;
+    }
+    .about {
+        height: 80vh;
+        margin-top: 5vh;
+    }
+    .whyCard {
+        height: 62%;
+    }
+    .cardImage {
+        height: 60%;
+    }
+    .why {
+        height: 80vh;
+    }
+}
+@media screen and (max-height: 700px){
+    .tqblogoquest {
+        width: 24vh;
+        height: 42px;
+    }
+}
+@media screen and (max-width: 1720px) and (max-height: 700px) {
+    .about {
+        height: 80vh;
+        margin-top: 5vh;
+    }
+    .whyCard {
+        height: 62%;
+    }
+    .cardImage {
+        height: 60%;
+    }
+    .why {
+        height: 80vh;
+    }
+    .cardAbout1, .cardAbout2, .cardAbout3 {
+        /* height: 60%; */
+        width: 18%;
+    }
+    .tqblogoquest {
+        width: 24vh;
+        height: 42px;
+    }
+}
+
+@media screen and (max-width: 1500px) and (min-height: 750px) {
+    .Head {
+        font-size: 48px;
+    }
+    .headPara {
+        font-size: 31px;
+    }
+    .SignUpBtn{
+        width: 62%;
+        font-size: 19px;
+    }
+    
+    .WHY {
+        font-size: 121px;
+    }
+    .whyPara {
+        font-size: 22px;
+    }
+    .whySignUp {
+        font-size: 20px;
+    }
+    .contact {
+        width: 45%;
+    }
+    .Num {
+        width: 55%;
+    }
+    .Card {
+        width: 40%;
+    }
+}
+@media screen and (max-height: 750px) {
+    .tqblogoquest {
+        width: 25vh;
+    }
+}
+@media screen and (max-width: 1750px) and (max-height: 750px) {
+    .cardAboutImage1, .cardAboutImage2, .cardAboutImage3 {
+        height: 51%;
+    }
+    .tqblogoquest {
+        width: 25vh;
+    }
+    .WHY {
+        font-size: 125px;
+    }
+    .whyQuest {
+        margin: 10vh 0% 3% 13%;
+    }
+    .cardImage {
+        height: 60%;
+    }
+    .whyCard {
+        height: 63%;
+    }
+    .footer {
+        height: 80vh;
+    }
+}
+@media screen and (max-width: 1675px) and (max-height: 750px) {
+    .registerHead {
+        font-size: 36px;
+    }
+    .RegisterBtnBtn {
+        height: 120%;
+    }
+    
+    .cardAboutImage1, .cardAboutImage2, .cardAboutImage3 {
+        height: 51%;
+    }
+    .tqblogoquest {
+        width: 25vh;
+    }
+    .WHY {
+        font-size: 125px;
+    }
+    .whyQuest {
+        margin: 10vh 0% 3% 13%;
+    }
+    .namee {
+        margin-top: 21px;
+        font-size: 29px;
+    }
+    .para {
+        font-size: 18px;
+    }
+    .purp {
+        font-size: 23px;
+    }
+    .why { 
+        height: 80vh;
+    }
+    .cardImage {
+        height: 60%;
+    }
+    .whyCard {
+        height: 63%;
+    }
+    .footer {
+        height: 80vh;
+    }
+}
+@media screen and (max-width: 1500px) and (max-height: 750px) {
+    .Head {
+        font-size: 48px;
+    }
+    .headPara {
+        font-size: 31px;
+    }
+    .subjectCardContHead {
+        font-size: 45px;
+    }
+    .SignUpBtn{
+        width: 62%;
+        font-size: 19px;
+    }
+    .WHY {
+        font-size: 121px;
+    }
+    .whyPara {
+        font-size: 22px;
+    }
+    .whySignUp {
+        font-size: 20px;
+    }
+    .contact {
+        width: 45%;
+    }
+    .Num {
+        width: 55%;
+    }
+    .Card {
+        width: 40%;
+    }
+    .loginForm {
+        height: 44%;
+        margin: 29% 10%;
+    }
+    .loginHead {
+        font-size: 38px;
+    }
+    .form-control-register-lr {
+        font-size: 18px;
+    }
+    .RegisterBtnBtn {
+        font-size: 22px;
+    }
+}
+@media screen and (max-width: 1450px) and (max-height: 600px) {
+    .cardAboutImage1, .cardAboutImage2, .cardAboutImage3 {
+        height: 48%;
+    }
+    .aboutCardHead {
+        font-size: 23px;
+    }
+    .aboutCardPara {
+        font-size: 12px;
+    }
+    .whyPara {
+        font-size: 21px;
+    }
+    .TheQB {
+        font-size: 34px;
+    }
+    .WHY {
+        font-size: 115px;
+    }
+    .whyQuest {
+        margin: 10vh 0% 3% 13%;
+    }
+    .cardAbout1, .cardAbout2, .cardAbout3 {
+        height: 65%;
+        width: 18%;
+    }
+    .aboutHead {
+        margin: 3% 0%;
+    }
+    .why {
+        height: 80vh;
+    }
+}
+
+@media screen and (max-height: 650px) {
+    .tqblogoquest {
+        width: 25vh;
+        height: 41px;
+    }
+}
+@media screen and (min-width: 1350px) and (max-height: 650px) {
+    .tqblogoquest {
+        width: 25vh;
+        height: 41px;
+    }
+    .cardAbout1, .cardAbout2, .cardAbout3 {
+        height: 65%;
+    }
+    .whyPara {
+        font-size: 21px;
+    }
+    .WHY {
+        font-size: 115px;
+    }
+    .cardAbout1, .cardAbout2, .cardAbout3 {
+        height: 65%;
+        width: 18%;
+    }
+}
+@media screen and (min-width: 1500px) and (max-height: 650px) {
+    .HeadCont {
+        height: 85vh;
+    }
+}
+@media screen and (min-width: 1700px) and (max-height: 650px) {
+    .HeadCont {
+        height: 95vh;
+    }
+    .about {
+        height: 90vh;
+        /* margin-top: 5vh; */
+    }
+    .whySignUp {
+        height: 7vh;
+        line-height: 7vh!important;
+    }
+}
+@media screen and (max-width: 1350px) and (min-height: 600px) {
+    .HeadCont {
+        height: 80vh;
+    }
+    .btnTextProfile {
+        font-size: 20px;
+    }
+    .Head {
+        font-size: 45px;
+    }
+    .StuName {
+        font-size: 35px;
+    }
+    .componentDetail {
+        font-size: 20px;
+    }
+    .yearHeadProgress {
+        font-size: 25px;
+    }
+    .subjectHeadCard {
+        font-size: 23px;
+    }
+    .savedQuestBtn {
+        font-size: 16px;
+    }
+    .editBtn {
+        font-size: 16px;
+    }
+    .componentDetailSubject {
+        font-size: 20px;
+    }
+    .Class {
+        font-size: 24px;
+    }
+    .SignUpBtn {
+        width: 62%;
+        font-size: 18px;
+    }
+    .headPara {
+        font-size: 27px;
+    }
+    .cardAbout1, .cardAbout2, .cardAbout3 {
+        /* height: 60%; */
+        height: 65%;
+    }
+    .about {
+        height: 85vh;
+    }
+    .whySignUp {
+        height: 7vh;
+        margin-top: 8%!important;
+        line-height: 7vh!important;
+    }
+    .whyPara {
+        font-size: 20px;
+    }
+    .TheQB {
+        font-size: 34px;
+    }
+    .WHY {
+        font-size: 115px;
+    }
+}
+
+@media screen and (max-width: 1350px) and (min-height: 700px) {
+    .HeadCont {
+        height: 75vh;
+    }
+    .Head {
+        font-size: 50px;
+    }
+    .subjectCardContHead {
+        font-size: 40px;
+    }
+    .SignUpBtn {
+        width: 62%;
+        font-size: 19px;
+    }
+    .headPara {
+        font-size: 28px;
+    }
+    .cardAbout1, .cardAbout2, .cardAbout3 {
+        /* height: 60%; */
+        height: 60%;
+    }
+    .about {
+        height: 80vh;
+    }
+    .whySignUp {
+        height: 6vh;
+        margin-top: 15%!important;
+        line-height: 6vh!important;
+    }
+    .whyPara {
+        font-size: 22px;
+    }
+    .TheQB {
+        font-size: 36px;
+    }
+    .WHY {
+        font-size: 120px;
+    }
+}
+@media screen and (max-width: 1350px) and (min-height: 800px) {
+    .HeadCont {
+        height: 72vh;
+    }
+    .Head {
+        font-size: 50px;
+    }
+    .SignUpBtn {
+        width: 62%;
+        font-size: 19px;
+    }
+    .headPara {
+        font-size: 28px;
+    }
+    .cardAbout1, .cardAbout2, .cardAbout3 {
+        /* height: 60%; */
+        height: 60%;
+        width: 19%;
+    }
+    .about {
+        height: 75vh;
+    }
+    .whySignUp {
+        height: 6vh;
+        margin-top: 15%!important;
+        line-height: 6vh!important;
+    }
+    .whyPara {
+        font-size: 22px;
+    }
+    .TheQB {
+        font-size: 36px;
+    }
+    .WHY {
+        font-size: 120px;
+    }
+}
+@media screen and (max-width: 1250px) and (min-height: 500px) {
+    .HeadCont {
+        height: 80vh;
+    }
+    .btnTextProfile {
+        font-size: 18px;
+    }
+    .yearHeadProgress {
+        font-size: 22px;
+    }
+    .subjectHeadCard {
+        font-size: 20px;
+    }
+    .savedQuestBtn {
+        font-size: 14px;
+    }
+    /* .Head {
+        font-size: 45px;
+    } */
+    .StuName {
+        font-size: 30px;
+    }
+    .componentDetail {
+        font-size: 18px;
+    }
+    .editBtn {
+        font-size: 14px;
+        width: 17%;
+    }
+    .componentDetailSubject {
+        font-size: 18px;
+    }
+    .subjectCardContHead {
+        font-size: 40px;
+    }
+    .cardHeadPT {
+        font-size: 18px;
+    }
+    .subjectPT {
+        font-size: 14px;
+    }
+    .classPT {
+        font-size: 13px;
+    }
+    .cardDetailPT {
+        font-size: 13px;
+        width: 60%;
+    }
+    .loginForm {
+        height: 45%;
+        width: 80%;
+        margin: 35% 10%;
+    }    
+    .loginHead {
+        font-size: 30px;
+    }
+    .form-control-register-lr {
+        font-size: 17px;
+    }
+    .already {
+        font-size: 14px;
+    }
+    .RegisterBtnBtn {
+        font-size: 20px;
+    }
+    .Head {
+        font-size: 42px;
+    }
+    .SignUpBtn {
+        width: 60%;
+        font-size: 16px;
+    }
+    .headPara {
+        font-size: 25px;
+    }
+    .cardAbout1, .cardAbout2, .cardAbout3 {
+        /* height: 60%; */
+        height: 63%;
+        width: 19%;
+    }
+    .about {
+        height: 80vh;
+    }
+    .whySignUp {
+        height: 7vh;
+        margin-top: 8%!important;
+        line-height: 7vh!important;
+    }
+    .whyPara {
+        font-size: 19px;
+    }
+    .TheQB {
+        font-size: 32px;
+    }
+    .WHY {
+        font-size: 110px;
+    }
+    .cardHead {
+        font-size: 22px;
+    }
+    .cardDetail {
+        font-size: 13px;
+    }
+    .para {
+        font-size: 18px;
+    }
+    .namee {
+        margin-top: 30px;
+        font-size: 30px;
+    }
+    .purp {
+        font-size: 22px;
+    }
+}
+@media screen and (max-width: 1250px) and (min-height: 700px) {
+    .HeadCont {
+        height: 72vh;
+    }
+    .Head {
+        font-size: 42px;
+    }
+    .SignUpBtn {
+        width: 60%;
+        font-size: 16px;
+    }
+    .headPara {
+        font-size: 25px;
+    }
+    .cardAbout1, .cardAbout2, .cardAbout3 {
+        /* height: 60%; */
+        height: 62%;
+        width: 19%;
+    }
+    .about {
+        height: 73vh;
+    }
+    .whySignUp {
+        height: 7vh;
+        margin-top: 8%!important;
+        line-height: 7vh!important;
+    }
+    .why {
+        height: 75vh;
+    }
+    .Card {
+        width: 45%;
+    }
+    .quick {
+        font-size: 18px;
+    }
+    .contact {
+        font-size: 18px;
+    }
+    .contactHead, .quickHead {
+        font-size: 32px;
+    }    
+}
+@media screen and (max-width: 1250px) and (min-height: 800px) {
+    .HeadCont {
+        height: 66vh;
+    }
+    .Head {
+        font-size: 42px;
+    }
+    .SignUpBtn {
+        width: 60%;
+        font-size: 16px;
+    }
+    .why {
+        height: 70vh;
+    }
+    .cardAbout1, .cardAbout2, .cardAbout3 {
+        /* height: 60%; */
+        height: 63%;
+        width: 22%;
+    }
+    .about {
+        height: 70vh;
+    }
+    .whySignUp {
+        height: 6vh;
+        margin-top: 8%!important;
+        line-height: 6vh!important;
+    }
+    .loginForm {
+        height: 35%;
+        margin: 47% 10%;
+    }
+}
+
+@media screen and (max-width: 1150px) and (min-height: 500px) {
+    .HeadCont {
+        height: 70vh;
+    }
+    .navAuthBtn {
+        margin: 1% 1%;
+        font-size: 18px;
+        line-height: 20px;
+    }
+    .tqblogoquest {
+        width: 24vh;
+        margin: 2vh -7vh;
+        height: 41px;
+    }
+    .getStartBtn {
+        font-size: 16px;
+        margin-top: 15% !important;
+        border-radius: 4px;
+        width: 133%;
+    }
+    .Head {
+        font-size: 36px;
+    }
+    .SignUpBtn {
+        width: 60%;
+        font-size: 14px;
+    }
+    .headPara {
+        font-size: 22px;
+    }
+    .cardAbout1, .cardAbout2, .cardAbout3 {
+        /* height: 60%; */
+        height: 63%;
+        width: 22%;
+    }
+    .about {
+        height: 80vh;
+    }
+    .why {
+        height: 75vh;
+    }
+    .Card {
+        width: 45%;
+    }
+    .whySignUp {
+        height: 7vh;
+        margin-top: 8%!important;
+        line-height: 7vh!important;
+    }
+    .whyPara {
+        font-size: 17px;
+    }
+    .TheQB {
+        font-size: 30px;
+    }
+    .WHY {
+        font-size: 105px;
+    }
+    .cardHead {
+        font-size: 20px;
+    }
+    .cardDetail {
+        font-size: 12px;
+    }
+    .para {
+        font-size: 16px;
+    }
+    .namee {
+        margin-top: 28px;
+        font-size: 28px;
+    }
+    .purp {
+        font-size: 20px;
+    }
+    .quick {
+        font-size: 18px;
+    }
+    .contact {
+        font-size: 18px;
+    }
+    .contactHead, .quickHead {
+        font-size: 32px;
+    }  
+}
+@media screen and (max-width: 1150px) and (min-height: 700px) {
+    .HeadCont {
+        height: 63vh;
+    }
+    .SignUp {
+        margin: 20vh 0% 0 3%;
+    }
+    .about {
+        margin-top: 4vh;
+        height: 70vh;
+    }
+    .cardAbout1, .cardAbout2, .cardAbout3 {
+        /* height: 60%; */
+        height: 63%;
+        width: 22%;
+    }
+    .whySignUp {
+        height: 6vh;
+        margin-top: 8%!important;
+        line-height: 6vh!important;
+    }
+    .why {
+        height: 65vh;
+    }
+}
+@media screen and (max-width: 1150px) and (min-height: 800px) {
+    .HeadCont {
+        height: 60vh;
+    }
+    .tqblogoquest {
+        width: 21vh;
+        margin: 3vh -9vh;
+        height: 43px;
+    }
+    .SignUp {
+        margin: 18vh 0% 0 3%;
+    }
+    .about {
+        margin-top: 3vh;
+        height: 65vh;
+    }
+    .cardAbout1, .cardAbout2, .cardAbout3 {
+        /* height: 60%; */
+        height: 63%;
+        width: 22%;
+    }
+    .whySignUp {
+        height: 5vh;
+        margin-top: 4%!important;
+        line-height: 5vh!important;
+    }
+    .why {
+        height: 60vh;
+    }
+    .cardAboutImage1, .cardAboutImage2, .cardAboutImage3 {
+        height: 52%;
+    }
+    .SignUpBtn {
+        height: 6vh;
+        line-height: 6vh;
+    }
+}
+@media screen and (max-width: 950px) and (min-height: 500px) {
+    .HeadCont {
+        height: 65vh;
+    }
+    .Head {
+        font-size: 29px;
+    }
+    .SignUpBtn {
+        width: 60%;
+        font-size: 13px;
+    }
+    .headPara {
+        font-size: 20px;
+    }
+    .aboutHead {
+        font-size: 36px;
+    }
+    .cardAbout1, .cardAbout2, .cardAbout3 {
+        /* height: 60%; */
+        height: 63%;
+        width: 24%;
+    }
+    .cardAboutImage1, .cardAboutImage2, .cardAboutImage3 {
+        height: 47%;
+    }
+    .about {
+        height: 75vh;
+    }
+    .aboutCardHead {
+        font-size: 22px;
+    }
+    .aboutCardPara {
+        font-size: 12px;
+    }
+    .why {
+        height: 65vh;
+    }
+    .Card {
+        width: 45%;
+    }
+    .whySignUp {
+        height: 6vh;
+        margin-top: 4%!important;
+        line-height: 6vh!important;
+        font-size: 18px;
+    }
+    .whyPara {
+        font-size: 15px;
+    }
+    .TheQB {
+        font-size: 25px;
+    }
+    .WHY {
+        font-size: 90px;
+    }
+    .cardHead {
+        font-size: 18px;
+    }
+    .cardDetail {
+        font-size: 12px;
+    }
+    .QBAHead {
+        font-size: 36px;
+    }
+    .QBACont {
+        height: 74vh;
+    }
+    .para {
+        font-size: 15px;
+    }
+    .namee {
+        margin-top: 26px;
+        font-size: 26px;
+    }
+    .purp {
+        font-size: 18px;
+    }
+    .quick {
+        font-size: 16px;
+    }
+    .contact {
+        font-size: 16px;
+        width: 50%;
+    }
+    .Num {
+        width: 50%;
+    }
+    .contactHead, .quickHead {
+        font-size: 30px;
+    }  
+}
+@media screen and (max-width: 950px) and (min-height: 700px) {
+    .HeadCont {
+        height: 45vh;
+    }
+    .cardAbout1, .cardAbout2, .cardAbout3 {
+        /* height: 60%; */
+        height: 63%;
+        width: 24%;
+    }
+    .SignUp {
+        margin: 13vh 0% 0 3%;
+    }
+    .SignUpBtn {
+        height: 4vh;
+        line-height: 4vh;
+    }
+    .cardAboutImage1, .cardAboutImage2, .cardAboutImage3 {
+        height: 47%;
+    }
+    .about {
+        height: 55vh;
+    }
+    .why {
+        height: 60vh;
+    }
+    .Card {
+        width: 45%;
+    }
+    .whySignUp {
+        height: 5vh;
+        margin-top: 4%!important;
+        line-height: 5vh!important;
+        font-size: 18px;
+    }
+    .QBACont {
+        height: 65vh;
+    }
+    .QBAVideo3 {
+        height: 49%;
+    }
+    .QBAVideo2 {
+        height: 48%;
+        margin-bottom: 1vh;
+    }
+    .QBACont {
+        height: 45vh;
+    }
+    .testimonialImage {
+        height: 31vh;
+    }
+    .carousel-control.right, .carousel-control.left {
+        height: 69%;
+        z-index: 2;
+    }
+    .testimonialContent {
+        height: 73%;
+    }
+    .footer {
+        margin-top: -22vh;
+        height: 55vh;
+    }
+    .contactDetail, .quickLinks {
+        margin: 21vh 6vw 7vh 8vw;
+    }
+    .carousel {
+        height: 60vh;
+        margin: 0;
+        z-index: -1;
+    }
+}
 @media screen and (max-width: 800px) {
     .HeadCont {
         height: 75vh;
