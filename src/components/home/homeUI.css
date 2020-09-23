@@ -924,6 +924,11 @@ html, body, #container, .carousel {
         width: 50%;
     }
 }
+@media screen and  (max-width:1280px) {
+    .registerForm {
+        width: 69%;
+    }
+}
 @media screen and (min-width: 1600px) and (max-height: 750px) {
     .SignUp {
         margin: 26vh 0% 0 3%;
