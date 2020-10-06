@@ -878,8 +878,8 @@ html, body, #container, .carousel {
         font-size: 55px;
     }
     .tqblogoquest {
-        height: 50px;
-        margin: 2vh -1vh;
+        height: 38px;
+        margin: 2.5vh -1vh;
         width: 25vh;
         background: 100% 100%;
     }
@@ -1917,12 +1917,11 @@ html, body, #container, .carousel {
         margin: 4% 0% 0%;
     }
     .tqblogoquest {
-        height: 5vh;
-        margin: 3vh -2vw 0vh 4vw;
+        height: 42px;
+        margin: 2.5vh -2vw 0vh 4vw;
         width: 38vw;
         background: 100%;
     }
-    
     .aboutCard {
         margin-top: -10%;
         flex-direction: column;

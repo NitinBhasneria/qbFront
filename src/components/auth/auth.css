@@ -22,7 +22,7 @@ body {
     background-color: white;
     color: #10C7B6;
     height: 50%;
-    margin-top: 15% !important;
+    margin-top: 20% !important;
     line-height: 5vh !important;
     text-align: center;
     border-radius: 4px;
@@ -53,8 +53,8 @@ body {
 }
 
 .logoTQB {
-    height: 5vh;
-    margin: 2.5vh 5vw 0vh 7vw;
+    height: 42px;
+    margin: 3vh 5vw 0vh 7vw;
     width: 29vw;
     background: 100%;
 }
@@ -78,12 +78,11 @@ body {
     }
 }
 .tqblogoquest {
-    height: 50px;
-    margin: 2.1vh -1vh;
-    width: 24vh;
+    height: 42px;
+    margin: 3vh 11vh;
+    width: 18vh;
     background: 100% 100%;
 }
-
 .navAuthBtn {
     margin: 0% 1%;
     background-color: #45d0bd;
@@ -115,7 +114,8 @@ body {
 
 .btnText {
     margin: 0vw 1vw;
-    line-height: 9vh;
+    font-size: 16px;
+    line-height: 10vh;
 }
 
 a:hover {
