@@ -54,9 +54,9 @@ body {
 
 .logoTQB {
     height: 5vh;
-    margin: 2.5vh;
-    width: 6vh;
-    background: 100% 100%;
+    margin: 3vh 5vw 0vh 7vw;
+    width: 29vw;
+    background: 100%;
 }
 
 .logoCountQuest {
@@ -66,6 +66,8 @@ body {
     width: 17%;
 }
 
+
+
 .btnContQuestHome {
     display: flex;
     flex-direction: row;
@@ -73,6 +75,11 @@ body {
     width: 73%;
 }
 
+@media screen and (max-width: 800px) {
+    .btnContQuestHome{
+        width: 44% !important;
+    }
+}
 .tqblogoquest {
     height: 50px;
     margin: 2.1vh -1vh;
@@ -381,6 +388,7 @@ a:hover {
         width: 80%;
     }
     .logoCont {
+        margin-right: 20vw;
         width: 20%;
     }
     .loginForm {

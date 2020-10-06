@@ -1815,9 +1815,9 @@ html, body, #container, .carousel {
         width: 45%;
     }
     .whySignUp {
-        height: 6vh;
+        height: 5vh;
         margin-top: 4%!important;
-        line-height: 6vh!important;
+        line-height: 5vh!important;
         font-size: 18px;
     }
     .QBACont {
@@ -1906,9 +1906,9 @@ html, body, #container, .carousel {
     }
     .SignUpBtn {
         font-size: 15px;
-        line-height: 46px;
+        line-height: 41px;
         width: 75%;
-        height: 6vh;
+        height: 5vh;
     }
     .aboutHead {
         font-size: 29px;
@@ -1916,10 +1916,11 @@ html, body, #container, .carousel {
     }
     .tqblogoquest {
         height: 5vh;
-        margin: 3vh;
-        width: 18vh;
+        margin: 3vh 5vw 0vh 4vw;
+        width: 29vw;
         background: 100%;
     }
+    
     .aboutCard {
         margin-top: -10%;
         flex-direction: column;
