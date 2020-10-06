@@ -6,6 +6,14 @@
     top: 10vh;
 }
 
+.credit {
+    position: relative;
+    top: -34px;
+    color: grey;
+    left: 48vw;
+    font-size: 12px;
+}
+
 .clearBtn {
     border: none;
     margin: 0% 2% 0% 2%;

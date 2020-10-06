@@ -360,6 +360,7 @@ class QBA extends React.Component {
       for(var i=0;i<this.props.imageQuestion.length;i++)
         images.push(this.props.imageQuestion[i].qid);
       var qb = []
+      // console.log(this.props.details.data.Class);
       var quest = this.props.question;
       var questionBookmark = [];
       for(var k=0;k<this.props.bookmarks.length;k++)
@@ -387,6 +388,7 @@ class QBA extends React.Component {
                                     <img className='questionImage' src={image}></img>
                                 </div>
                                 <div onClick={(e)=>this.viewSolution(e)} id={quest[j].qid} className='solutionBtn'>VIEW SOLUTION</div>
+                                <div className='credit' >Credits: CBSE {this.props.details.data.Class} Board Paper.<br></br>Subject-{this.state.selectedOption}. Year-{quest[j].year[0]}</div>
                                 <div id={`check${quest[j].qid}`} className='answer'>
                                     <div className='solutionHead'>
                                         <h2 className='solutionHead'>SOLUTION</h2>
@@ -423,6 +425,44 @@ class QBA extends React.Component {
                                       <img className='questionImage' src={image}></img>
                                   </div>
                                   <div onClick={(e)=>this.viewSolution(e)} id={quest[j].qid} className='solutionBtn'>VIEW SOLUTION</div>
+                                  <div className='credit' >Credits: CBSE {this.props.details.data.Class} Board Paper. Subject-{this.state.selectedOption}. Year-{quest[j].year[0]}</div>
+                                  <div id={`check${quest[j].qid}`} className='answer'>
+                                      <div className='solutionHead'>
+                                          <h2 className='solutionHead'>SOLUTION</h2>
+                                          <img onClick={(e)=>this.hideSolution(e)} id={quest[j].qid} className='cross' src={Cross}></img>
+                                      </div>
+                                      <div className='solution'>The Beverton-Holt model has been used extensively by fisheries. This model assumes that populations are competing for a single limiting resource and reproduce at discrete moments in time. If we let </div>
+                                  </div>
+                                  <hr className='endBar'></hr>
+                              </div>)
+              i++;
+            }
+          }
+        }
+        else if(!this.state.savedQuestion && this.year.length===0 )
+          { 
+            for(var j=0,i=1;j<quest.length;j++){
+              var image = '';
+              if(images.includes(quest[j].qid)){
+                for(var i=0;i<this.props.imageQuestion.length;i++){
+                  if(quest[j].qid == this.props.imageQuestion[i].qid)
+                    image = this.props.imageQuestion[i].image
+                }
+              }
+              console.log(this.topic);
+            if(this.topic.includes(quest[j].topic)){
+              var bookmarked = (questionBookmark.includes(quest[j].qid) ? Bookmarked:Bookmark)
+              qb.push(<div className='questionAnswerCont'>
+                                  <div className='questionCard'>
+                                      <div className='questionHead'>
+                                          <h1>Question {i}</h1>
+                                          <img onClick={(e)=>this.bookmarkQuestion(e)} id={quest[j].qid} src={bookmarked} className='bookmark' alt={`1`}></img>
+                                      </div>
+                                      <div className='question'>Q{quest[j].question}</div>
+                                      <img className='questionImage' src={image}></img>
+                                  </div>
+                                  <div onClick={(e)=>this.viewSolution(e)} id={quest[j].qid} className='solutionBtn'>VIEW SOLUTION</div>
+                                  <div className='credit' >Credits: CBSE {this.props.details.data.Class} Board Paper. Subject-{this.state.selectedOption}. Year-{quest[j].year[0]}</div>
                                   <div id={`check${quest[j].qid}`} className='answer'>
                                       <div className='solutionHead'>
                                           <h2 className='solutionHead'>SOLUTION</h2>
@@ -458,6 +498,7 @@ class QBA extends React.Component {
                                       <img className='questionImage' src={image}></img>
                                   </div>
                                   <div onClick={(e)=>this.viewSolution(e)} id={quest[j].qid} className='solutionBtn'>VIEW SOLUTION</div>
+                                  <div className='credit' >Credits: CBSE {this.props.details.data.Class} Board Paper. Subject-{this.state.selectedOption}. Year-{quest[j].year[0]}</div>
                                   <div id={`check${quest[j].qid}`} className='answer'>
                                       <div className='solutionHead'>
                                           <h2 className='solutionHead'>SOLUTION</h2>
@@ -496,8 +537,9 @@ class QBA extends React.Component {
                                     </div>
                                     <div className='question'>Q{quest[j].question}</div>
                                     <img className='questionImage' src={image}></img>
-                                </div>
+                                </div>length
                                 <div onClick={(e)=>this.viewSolution(e)} id={quest[j].qid} className='solutionBtn'>VIEW SOLUTION</div>
+                                <div className='credit' >Credits: CBSE {this.props.details.data.Class} Board Paper. Subject-{this.state.selectedOption}. Year-{quest[j].year[0]}</div>
                                 <div id={`check${quest[j].qid}`} className='answer'>
                                     <div className='solutionHead'>
                                         <h2 className='solutionHead'>SOLUTION</h2>
@@ -537,6 +579,7 @@ class QBA extends React.Component {
                                       <img className='questionImage' src={image}></img>
                                   </div>
                                   <div onClick={(e)=>this.viewSolution(e)} id={quest[j].qid} className='solutionBtn'>VIEW SOLUTION</div>
+                                  <div className='credit' >Credits: CBSE {this.props.details.data.Class} Board Paper. Subject-{this.state.selectedOption}. Year-{quest[j].year[0]}</div>
                                   <div id={`check${quest[j].qid}`} className='answer'>
                                       <div className='solutionHead'>
                                           <h2 className='solutionHead'>SOLUTION</h2>
@@ -604,7 +647,6 @@ class QBA extends React.Component {
           this.props.createLeftOff(this.props.auth.user.user.id, year, this.state.selectedOption)
         }
       });
-
     }
 
     topicChange(e){
@@ -740,7 +782,14 @@ class QBA extends React.Component {
         var topics = []
         if(this.state.selectedOption!='Subject'){
           for(var i=0,j=0;i<this.props.question.length;i++,j++){
-            if((this.year.includes(this.props.question[i].year[0]))&&!(topicAdded.includes(this.props.question[i].topic))){
+            if(this.year.length==0&&!(topicAdded.includes(this.props.question[i].topic))){
+                topics.push(<div className='topicInput'><input id={this.props.question[i].topic} className='inputSelect' value={this.props.question[i].topic} type="radio" name={this.props.question[i].topic} onClick={this.topicChange}></input>
+                <p className='topic'>{this.props.question[i].topic}</p></div>)
+                j++;
+                topicAdded.push(this.props.question[i].topic);
+            }
+            else if((this.year.includes(this.props.question[i].year[0]))&&!(topicAdded.includes(this.props.question[i].topic))){
+              console.log('hello');
               topics.push(<div className='topicInput'><input id={this.props.question[i].topic} className='inputSelect' value={this.props.question[i].topic} type="radio" name={this.props.question[i].topic} onClick={this.topicChange}></input>
               <p className='topic'>{this.props.question[i].topic}</p></div>)
               j++;
@@ -748,6 +797,7 @@ class QBA extends React.Component {
             }
           }
         }
+        // console.log(topicAdded);
         if (!this.props.isAuthenticated) {
           return <Redirect to='/login/' />;
        }

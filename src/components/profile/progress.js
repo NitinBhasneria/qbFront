@@ -42,6 +42,9 @@ class Progress extends React.Component {
       }
 
     subjectCard (year) {
+        var total=30;
+        if(year > 2017 && this.props.details.data.Class === 'Class 10')
+            total = 26;
         var subjectList = []
         subjectList.push(this.props.details.data.sub1);
         subjectList.push(this.props.details.data.sub2);
@@ -58,7 +61,7 @@ class Progress extends React.Component {
                     count++;
             }
             var result = (count == 0)? '' : Math.floor(count);
-            var width = Math.floor((count/30)*100)
+            var width = Math.floor((count/total)*100)
             if(subjectList[i]!='')
                 subject.push(
                                 <div className='subjectCard'>
@@ -70,7 +73,7 @@ class Progress extends React.Component {
                                             <div className='midEleCont'>
                                                 <div className='progress-mid-ele' style={{"width": `${width}%`}}>{result}</div>
                                             </div>
-                                            <span className='progress-mid-ele' >30</span>
+                                            <span className='progress-mid-ele' >{total}</span>
                                         </div>
                                 </div>)
         }

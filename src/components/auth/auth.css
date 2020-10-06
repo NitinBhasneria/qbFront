@@ -394,7 +394,7 @@ a:hover {
         display: flex;
         flex-direction: row;
         justify-content: flex-end;
-        width: 60%;
+        width: 40%;
     }
     .btnContQuest {
         display: flex;
