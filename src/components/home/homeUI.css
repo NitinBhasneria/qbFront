@@ -1943,21 +1943,21 @@ html, body, #container, .carousel {
         background-repeat: no-repeat;
         height: 100%;
         width: 60%;
-        background-size: 68%;
+        background-size: 60%;
         background-position: center;
     }
     .cardAboutImage2 {
         background-repeat: no-repeat;
         height: 100%;
         width: 70%;
-        background-size: 70%;
+        background-size: 60%;
         background-position: center;
     }
     .cardAboutImage3 {
         background-repeat: no-repeat;
         height: 100%;
         width: 80%;
-        background-size: 70%;
+        background-size: 60%;
         background-position: center;
     }
     .aboutCardMobileCont {
