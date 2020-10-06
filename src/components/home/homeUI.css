@@ -1916,8 +1916,8 @@ html, body, #container, .carousel {
     }
     .tqblogoquest {
         height: 5vh;
-        margin: 3vh 5vw 0vh 4vw;
-        width: 29vw;
+        margin: 3vh -2vw 0vh 4vw;
+        width: 38vw;
         background: 100%;
     }
     
