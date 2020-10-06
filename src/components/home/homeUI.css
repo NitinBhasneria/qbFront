@@ -729,12 +729,12 @@ html, body, #container, .carousel {
     width: 100%;
     height: 10%;
     font-weight: bold;
-    font-size: 40px;
+    font-size: 36px;
     text-align: center;
     margin: 4% 0% -8%;
 }
 .PTCard {
-    height: 61%;
+    height: 84%;
     width: 100vw;
     display: flex;
     margin: auto;
@@ -1395,13 +1395,15 @@ html, body, #container, .carousel {
         font-size: 40px;
     }
     .cardHeadPT {
-        font-size: 18px;
+        font-size: 16px;
+        margin-top: 18%;
     }
     .subjectPT {
         font-size: 14px;
     }
     .classPT {
         font-size: 13px;
+        width: 54%;
     }
     .cardDetailPT {
         font-size: 13px;
@@ -1868,7 +1870,7 @@ html, body, #container, .carousel {
         font-weight: 800;
         font-size: 16px;
         line-height: 125%;
-        left: 19%;
+        left: 46%;
         width: 71%;
         text-align: right;
     }
@@ -1877,7 +1879,7 @@ html, body, #container, .carousel {
         font-weight: 800;
         font-size: 16px;
         line-height: 125%;
-        left: 19%;
+        left: 30%;
         width: 50%;
         text-align: right;
     }
@@ -1890,7 +1892,7 @@ html, body, #container, .carousel {
         background-position: center;
     }
     .SignUp {
-        margin: 10% 10% 0% 8%;
+        margin: 10% 5% 0% 5%;
         width: 90%;
         height: 40%;
         color: white;
@@ -1936,7 +1938,7 @@ html, body, #container, .carousel {
         width: 76%;
     }
     .about {
-        height: 93vh;
+        height: 65vh;
     }
     .cardAboutImage1 {
         background-repeat: no-repeat;
@@ -2034,6 +2036,10 @@ html, body, #container, .carousel {
         margin-top: -8vh;
         height: 55vh;
     }
+    .footer {
+        margin-top: -2vh;
+        height: 55vh;
+    }
     .QBAVideo {
         height: 85%;
         margin-left: 0px;
@@ -2072,6 +2078,15 @@ html, body, #container, .carousel {
         height: 10vh !important;
         background-repeat: no-repeat;
         background-image: url('./../../statics/images/nextArrowBlack.png');
+        
+    }
+    .glyphiconpt-chevron-right {
+        width: 8vw !important;
+        height: 10vh !important;
+        background-position-y: center;
+        background-repeat: no-repeat;
+        margin-left: -32px;
+        top: 146px;
     }
     .glyphicon-chevron-left {
         margin-left: 0px ;
@@ -2142,7 +2157,15 @@ html, body, #container, .carousel {
     .carousel {
         height: 91vh;
         margin: 0;
+        z-index: 10000;
         width: 100%;
+    }
+    .popularCardPT {
+        position: relative;
+        width: 56%;
+        height: 60%;
+        margin: 3% 22%;
+        overflow: hidden;
     }
     .footer {
         display: flex;
@@ -2204,34 +2227,38 @@ html, body, #container, .carousel {
         width: 100vw;
         flex-direction: column;
         display: flex;
-        height: 114vh;
+        height: 94vh;
         background-image: url('./../../statics/images/homebg1.png');
         background-size: 200% 100%;
     }
-    .Cardptpt {
-        cursor: pointer;
-        width: 80% !important;
-        margin-left: 10%;
-        height: 91%;
-        display: flex;
-        flex-direction: column;
-        background-repeat: no-repeat;
-        background-size: 100% 100%;
-        background: linear-gradient(180deg, #3DFAFF 0%, #10C7B7 83%);
-        box-shadow: none;
-        border-radius: 4px;
-        color: white;
-    }
+    .PT {
+        font-size: 28px;
+        }
+        .Cardptpt {
+            cursor: pointer;
+            width: 100% !important;
+            margin-left: 0%;
+            height: 73%;
+            display: flex;
+            flex-direction: column;
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+            background: linear-gradient(180deg, #3DFAFF 0%, #10C7B7 83%);
+            box-shadow: none;
+            border-radius: 4px;
+            color: white;
+        }
     .subjectCardContHead {
         font-weight: 600;
         font-size: 19px;
-        margin-top: 5%;
+        margin-top: 11%;
         text-align: center;
         color: #FFFFFF;
     }
     .subjectCardCont {
-        height: 87%;
+        height: 84%;
         width: 100%;
+        margin-top: auto;
         display: flex;
         padding: 1% 5% 9%;
         flex-direction: row;
@@ -2239,20 +2266,34 @@ html, body, #container, .carousel {
     }
     .subjectCardHead {
         font-weight: 600;
-        font-size: 19px;
+        font-size: 16px;
         width: 94%;
         margin-top: 15%;
         margin-left: 6%;
     }
+    .cardClass {
+        font-family: Montserrat !important;
+        font-style: normal;
+        font-weight: 800;
+        font-size: 16px;
+        line-height: 125%;
+        color: rgba(255, 255, 255, 0.7);
+        margin-top: 3%;
+        font-weight: normal;
+        font-size: 14px;
+        width: 88%;
+        margin-left: 6%;
+        margin-right: 6%;
+    }
     .subjectCardMainPage {
-        width: 37%;
+        width: 44%;
         margin-bottom: 7%;
-        height: 31%;
+        height: 40%;
     }
     .glyphiconpt-chevron-left {
         width: 8vw !important;
         height: 10vh !important;
-        margin-left: 10px;
+        margin-left: 35px;
         top: 146px;
         background-position-y: center;
         background-repeat: no-repeat;
@@ -2263,7 +2304,7 @@ html, body, #container, .carousel {
         height: 10vh !important;
         background-position-y: center;
         background-repeat: no-repeat;
-        margin-left: 10px;
+        margin-left: -32px;
         top: 146px;
         background-image: url('./../../statics/images/right.png');
     }

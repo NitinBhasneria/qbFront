@@ -167,7 +167,7 @@ class PT extends React.Component {
                         {this.giveTopics()}
                     </MediaQuery>
                     <MediaQuery query='(max-device-width:800px)'>
-                    <div id="carousel-example" class="carousel slide" data-ride="carousel">
+                    <div id="carouseltopic" class="carousel slide" data-ride="carousel">
 
                         <div class="carousel-inner popularCardPT">
                             <div className='Cardptpt item active'>
@@ -176,7 +176,7 @@ class PT extends React.Component {
                                     <div className='cardHeadPT'>Your Progress</div>
                                     <h4 className='whereLeft'>(where you left off)</h4>
                                     <div className='cardDetailPT'>
-                                        <h4 className='classPT'>{(this.props.details.Class)}</h4>
+                                        <h4 className='classPT'>{(this.props.details.Class=='Class 10')?"Class 10":"Class 12"}</h4>
                                         <h4 className='firstsubjectPT'>{this.props.leftOff.Subject}</h4>
                                     </div>
                                 </div>
@@ -198,10 +198,10 @@ class PT extends React.Component {
                             </div> */}
                         </div>
 
-                        <a class="left carousel-control" href="#carousel-example" data-slide="prev">
+                        <a class="left carousel-control" href="#carouseltopic" data-slide="prev">
                             <span class="glyphicon glyphiconpt-chevron-left"></span>
                         </a>
-                        <a class="right carousel-control" href="#carousel-example" data-slide="next">
+                        <a class="right carousel-control" href="#carouseltopic" data-slide="next">
                             <span class="glyphicon glyphiconpt-chevron-right"></span>
                         </a>
                     </div>

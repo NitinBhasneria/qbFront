@@ -44,7 +44,7 @@ class Testimonial extends React.Component {
                                     </a>
                                 </MediaQuery>
                                 <MediaQuery query="(max-device-width: 800px)">
-                                    <a className="left carousel-control car-control previousBackground" href="#myCarousel1" data-slide="prev">
+                                <a className="left carousel-control car-control previousBackground" style = {{'backgroundImage': `linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${imageEle[imageEle.length-1]})`}} href="#myCarousel1" data-slide="prev">
                                         <span className="glyphicon glyphicon-chevron-left control-but"></span>
                                         <span className="sr-only">Previous</span>
                                     </a>

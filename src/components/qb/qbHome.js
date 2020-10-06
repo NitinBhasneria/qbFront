@@ -381,7 +381,7 @@ class QBA extends React.Component {
             qb.push(<div className='questionAnswerCont'>
                                 <div className='questionCard'>
                                     <div className='questionHead'>
-                                        <h1>Question {i}</h1>
+                                        <h1 className='Qhead'>Question {i}</h1>
                                         <img onClick={(e)=>this.bookmarkQuestion(e)} id={quest[j].qid} src={bookmarked} className='bookmark' alt={`1`}></img>
                                     </div>
                                     <div className='question'>Q{quest[j].question}</div>
@@ -418,7 +418,7 @@ class QBA extends React.Component {
               qb.push(<div className='questionAnswerCont'>
                                   <div className='questionCard'>
                                       <div className='questionHead'>
-                                          <h1>Question {i}</h1>
+                                          <h1 className='Qhead'>Question {i}</h1>
                                           <img onClick={(e)=>this.bookmarkQuestion(e)} id={quest[j].qid} src={bookmarked} className='bookmark' alt={`1`}></img>
                                       </div>
                                       <div className='question'>Q{quest[j].question}</div>
@@ -455,7 +455,7 @@ class QBA extends React.Component {
               qb.push(<div className='questionAnswerCont'>
                                   <div className='questionCard'>
                                       <div className='questionHead'>
-                                          <h1>Question {i}</h1>
+                                          <h1 className='Qhead'>Question {i}</h1>
                                           <img onClick={(e)=>this.bookmarkQuestion(e)} id={quest[j].qid} src={bookmarked} className='bookmark' alt={`1`}></img>
                                       </div>
                                       <div className='question'>Q{quest[j].question}</div>
@@ -491,7 +491,7 @@ class QBA extends React.Component {
               qb.push(<div className='questionAnswerCont'>
                                   <div className='questionCard'>
                                       <div className='questionHead'>
-                                          <h1>Question {i}</h1>
+                                          <h1 className='Qhead'>Question {i}</h1>
                                           <img onClick={(e)=>this.bookmarkQuestion(e)} id={quest[j].qid} src={bookmarked} className='bookmark' alt={`1`}></img>
                                       </div>
                                       <div className='question'>Q{quest[j].question}</div>
@@ -532,7 +532,7 @@ class QBA extends React.Component {
             qb.push(<div className='questionAnswerCont'>
                                 <div className='questionCard'>
                                     <div className='questionHead'>
-                                        <h1>Question {i}</h1>
+                                        <h1 className='Qhead'>Question {i}</h1>
                                         <img onClick={(e)=>this.bookmarkQuestion(e)} id={quest[j].qid} src={bookmarked} className='bookmark' alt={`1`}></img>
                                     </div>
                                     <div className='question'>Q{quest[j].question}</div>
@@ -572,7 +572,7 @@ class QBA extends React.Component {
               qb.push(<div className='questionAnswerCont'>
                                   <div className='questionCard'>
                                       <div className='questionHead'>
-                                          <h1>Question {i}</h1>
+                                          <h1 className='Qhead'>Question {i}</h1>
                                           <img onClick={(e)=>this.bookmarkQuestion(e)} id={quest[j].qid} src={bookmarked} className='bookmark' alt={`1`}></img>
                                       </div>
                                       <div className='question'>Q{quest[j].question}</div>
