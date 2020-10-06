@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.css": "/qbFront/static/css/main.43209aec.chunk.css",
-    "main.js": "/qbFront/static/js/main.9c954f03.chunk.js",
-    "main.js.map": "/qbFront/static/js/main.9c954f03.chunk.js.map",
+    "main.css": "/qbFront/static/css/main.4f43211a.chunk.css",
+    "main.js": "/qbFront/static/js/main.c563c7bf.chunk.js",
+    "main.js.map": "/qbFront/static/js/main.c563c7bf.chunk.js.map",
     "runtime-main.js": "/qbFront/static/js/runtime-main.0321e445.js",
     "runtime-main.js.map": "/qbFront/static/js/runtime-main.0321e445.js.map",
     "static/css/2.829c9cb5.chunk.css": "/qbFront/static/css/2.829c9cb5.chunk.css",
-    "static/js/2.502f6255.chunk.js": "/qbFront/static/js/2.502f6255.chunk.js",
-    "static/js/2.502f6255.chunk.js.map": "/qbFront/static/js/2.502f6255.chunk.js.map",
+    "static/js/2.cd93f078.chunk.js": "/qbFront/static/js/2.cd93f078.chunk.js",
+    "static/js/2.cd93f078.chunk.js.map": "/qbFront/static/js/2.cd93f078.chunk.js.map",
     "index.html": "/qbFront/index.html",
-    "precache-manifest.d61e938f8e249788156a08eed78aff01.js": "/qbFront/precache-manifest.d61e938f8e249788156a08eed78aff01.js",
+    "precache-manifest.e27c62283cad689301e91397edb20d6e.js": "/qbFront/precache-manifest.e27c62283cad689301e91397edb20d6e.js",
     "service-worker.js": "/qbFront/service-worker.js",
     "static/css/2.829c9cb5.chunk.css.map": "/qbFront/static/css/2.829c9cb5.chunk.css.map",
-    "static/css/main.43209aec.chunk.css.map": "/qbFront/static/css/main.43209aec.chunk.css.map",
-    "static/js/2.502f6255.chunk.js.LICENSE.txt": "/qbFront/static/js/2.502f6255.chunk.js.LICENSE.txt",
+    "static/css/main.4f43211a.chunk.css.map": "/qbFront/static/css/main.4f43211a.chunk.css.map",
+    "static/js/2.cd93f078.chunk.js.LICENSE.txt": "/qbFront/static/js/2.cd93f078.chunk.js.LICENSE.txt",
     "static/media/homeUI.css": "/qbFront/static/media/laptop.32c4db8e.png",
     "static/media/profileIcon.png": "/qbFront/static/media/profileIcon.a1a27e3c.png",
     "static/media/profile.css": "/qbFront/static/media/progressClick.95b8921c.zip",
@@ -24,8 +24,8 @@
   "entrypoints": [
     "static/js/runtime-main.0321e445.js",
     "static/css/2.829c9cb5.chunk.css",
-    "static/js/2.502f6255.chunk.js",
-    "static/css/main.43209aec.chunk.css",
-    "static/js/main.9c954f03.chunk.js"
+    "static/js/2.cd93f078.chunk.js",
+    "static/css/main.4f43211a.chunk.css",
+    "static/js/main.c563c7bf.chunk.js"
   ]
 }
