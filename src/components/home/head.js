@@ -70,7 +70,7 @@ class Head extends React.Component {
                     </MediaQuery>
                     <MediaQuery query="(max-device-width: 800px)">
                         <div className='signUpContMobile'>
-                            <Link className='SignUpBtn'>START YOUR 7 DAY FREE TRAIL</Link>
+                            <Link className='SignUpBtn'>START YOUR 7 DAY FREE TRIAL</Link>
                         </div>
                     </MediaQuery>
                     <MediaQuery query="(min-device-width: 801px">

@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { login, logout } from '../../actions/auth';
 import { connect } from 'react-redux';
-import tqbLogo from './../../statics/images/TQB.png';
-import tqblogoquest from './../../statics/images/tqbQuestLogo.png'
+import tqbLogo from './../../statics/images/TQB.svg';
+import tqblogoquest from './../../statics/images/TQBLOGO.svg'
 import profileLogo from './../../statics/images/profile.png'
 import Profile from './../profile/profile';
 import history from './../../history';
@@ -130,25 +130,25 @@ class AuthNav extends Component {
                         <MediaQuery query = "(max-device-width: 800px)">
                             <Switch>
                                 <Route exact path='/qbFront/'>
-                                    <Mobile history={this.props.history} first="Signup" firstPath='/register_1' second='login' secondPath='/login' />
+                                    <Mobile history={this.props.history} first="Signup" firstPath='/qbFront/register_1' second='login' secondPath='/qbFront/login' />
                                 </Route>
                                 <Route exact path='/qbFront/login'>
-                                    <Mobile first="Signup" firstPath='/qbFront/register_1' second='login' secondPath='/login' />
+                                    <Mobile first="Signup" firstPath='/qbFront/register_1' second='login' secondPath='/qbFront/login' />
                                 </Route>
                                 <Route exact path='/qbFront/register_1'>
-                                    <Mobile first="Signup" firstPath='/qbFront/register_1' second='login' secondPath='/login' />
+                                    <Mobile first="Signup" firstPath='/qbFront/register_1' second='login' secondPath='/qbFront/login' />
                                 </Route>
                                 <Route exact path='/qbFront/register_2'>
-                                    <Mobile first="Signup" firstPath='/qbFront/register_1' second='login' secondPath='/login' />
+                                    <Mobile first="Signup" firstPath='/qbFront/register_1' second='login' secondPath='/qbFront/login' />
                                 </Route>
                                 <Route exact path='/qbFront/profile'>
-                                    <Mobile first="Signup" firstPath='/qbFront/register_1' second='login' secondPath='/login' />
+                                    <Mobile first="Signup" firstPath='/qbFront/register_1' second='login' secondPath='/qbFront/login' />
                                 </Route>
                                 <Route exact path='/qbFront/progress'>
-                                    <Mobile first="Signup" firstPath='/qbFront/register_1' second='login' secondPath='/login' />
+                                    <Mobile first="Signup" firstPath='/qbFront/register_1' second='login' secondPath='/qbFront/login' />
                                 </Route>
                                 <Route exact path='/qbFront/qb'>
-                                    <Mobile first="Signup" firstPath='/qbFront/register_1' second='login' secondPath='/login' />
+                                    <Mobile first="Signup" firstPath='/qbFront/register_1' second='login' secondPath='/qbFront/login' />
                                 </Route>
                             </Switch>
                         </MediaQuery>

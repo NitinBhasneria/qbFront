@@ -34,7 +34,7 @@ class Footer extends React.Component {
                     <h2 className='contact Num'>contactus@tqb.com</h2>
                 </div>
                 <div className='quickLinks'>
-                    <h1 className='contactHead'>QUICKLINKS</h1>
+                    <h1 className='contactHead'>QUICK LINKS</h1>
                     <Link className='quick'>Profile</Link>
                     <Link className='quick'>About Us</Link>
                     <Link className='quick'>Testimonial</Link>
