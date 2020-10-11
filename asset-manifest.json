@@ -1,23 +1,25 @@
 {
   "files": {
-    "main.css": "/qbFront/static/css/main.4f6d588b.chunk.css",
-    "main.js": "/qbFront/static/js/main.2ac8d871.chunk.js",
-    "main.js.map": "/qbFront/static/js/main.2ac8d871.chunk.js.map",
+    "main.css": "/qbFront/static/css/main.b749ed20.chunk.css",
+    "main.js": "/qbFront/static/js/main.d5e0c01b.chunk.js",
+    "main.js.map": "/qbFront/static/js/main.d5e0c01b.chunk.js.map",
     "runtime-main.js": "/qbFront/static/js/runtime-main.0321e445.js",
     "runtime-main.js.map": "/qbFront/static/js/runtime-main.0321e445.js.map",
     "static/css/2.829c9cb5.chunk.css": "/qbFront/static/css/2.829c9cb5.chunk.css",
     "static/js/2.cd93f078.chunk.js": "/qbFront/static/js/2.cd93f078.chunk.js",
     "static/js/2.cd93f078.chunk.js.map": "/qbFront/static/js/2.cd93f078.chunk.js.map",
     "index.html": "/qbFront/index.html",
-    "precache-manifest.25962f9c83aae8700340ec0360272f0e.js": "/qbFront/precache-manifest.25962f9c83aae8700340ec0360272f0e.js",
+    "precache-manifest.cfdfd2e6d708168b345208886f43693f.js": "/qbFront/precache-manifest.cfdfd2e6d708168b345208886f43693f.js",
     "service-worker.js": "/qbFront/service-worker.js",
     "static/css/2.829c9cb5.chunk.css.map": "/qbFront/static/css/2.829c9cb5.chunk.css.map",
-    "static/css/main.4f6d588b.chunk.css.map": "/qbFront/static/css/main.4f6d588b.chunk.css.map",
+    "static/css/main.b749ed20.chunk.css.map": "/qbFront/static/css/main.b749ed20.chunk.css.map",
     "static/js/2.cd93f078.chunk.js.LICENSE.txt": "/qbFront/static/js/2.cd93f078.chunk.js.LICENSE.txt",
-    "static/media/homeUI.css": "/qbFront/static/media/laptop.32c4db8e.png",
+    "static/media/homeUI.css": "/qbFront/static/media/laptop.9ed41ca7.png",
+    "static/media/TQB.svg": "/qbFront/static/media/TQB.d8f54538.svg",
+    "static/media/TQBLOGO.svg": "/qbFront/static/media/TQBLOGO.66f8fd03.svg",
     "static/media/profileIcon.png": "/qbFront/static/media/profileIcon.a1a27e3c.png",
     "static/media/profile.css": "/qbFront/static/media/progressClick.95b8921c.zip",
-    "static/media/auth.css": "/qbFront/static/media/registerImage.a0724341.png",
+    "static/media/auth.css": "/qbFront/static/media/registerImage.3b7ad83b.svg",
     "static/media/stuImageDemo.png": "/qbFront/static/media/stuImageDemo.230dbc53.png",
     "static/media/testimonial1.png": "/qbFront/static/media/testimonial1.a4bda70a.png"
   },
@@ -25,7 +27,7 @@
     "static/js/runtime-main.0321e445.js",
     "static/css/2.829c9cb5.chunk.css",
     "static/js/2.cd93f078.chunk.js",
-    "static/css/main.4f6d588b.chunk.css",
-    "static/js/main.2ac8d871.chunk.js"
+    "static/css/main.b749ed20.chunk.css",
+    "static/js/main.d5e0c01b.chunk.js"
   ]
 }

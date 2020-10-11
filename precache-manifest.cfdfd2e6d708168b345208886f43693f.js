@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "40fdf3caacf4f61a8bef666b04fd9f82",
+    "revision": "ac10e8afc2f80fe34a378c7a73add5af",
     "url": "/qbFront/index.html"
   },
   {
@@ -8,8 +8,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/qbFront/static/css/2.829c9cb5.chunk.css"
   },
   {
-    "revision": "734cbefc6201a7309f57",
-    "url": "/qbFront/static/css/main.4f6d588b.chunk.css"
+    "revision": "330d731cfeb436b0ba57",
+    "url": "/qbFront/static/css/main.b749ed20.chunk.css"
   },
   {
     "revision": "daf39dba6bde92aacc1b",
@@ -20,8 +20,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/qbFront/static/js/2.cd93f078.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "734cbefc6201a7309f57",
-    "url": "/qbFront/static/js/main.2ac8d871.chunk.js"
+    "revision": "330d731cfeb436b0ba57",
+    "url": "/qbFront/static/js/main.d5e0c01b.chunk.js"
   },
   {
     "revision": "0d3e5fd6870a2cb3b7d6",
@@ -84,8 +84,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/qbFront/static/media/EveryQuestionMobile.3cb3fa4e.png"
   },
   {
-    "revision": "e384b81110129aaccbcba675350b99a6",
-    "url": "/qbFront/static/media/ICSE.e384b811.png"
+    "revision": "0710e0130228a311831f6ce346bae107",
+    "url": "/qbFront/static/media/ICSE.0710e013.png"
   },
   {
     "revision": "d25c117edfad28aaf6dc8da07cfd24ab",
@@ -120,12 +120,20 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/qbFront/static/media/Social ScienceBlue.0eafc600.png"
   },
   {
+    "revision": "d8f54538ecc90fc1bc82f4af432ecfa2",
+    "url": "/qbFront/static/media/TQB.d8f54538.svg"
+  },
+  {
+    "revision": "66f8fd03d7f8cf9a53831f5a4e8ece13",
+    "url": "/qbFront/static/media/TQBLOGO.66f8fd03.svg"
+  },
+  {
     "revision": "c4d497aa13ad2140b235efcd502879f9",
     "url": "/qbFront/static/media/lap.c4d497aa.png"
   },
   {
-    "revision": "32c4db8e4e213d3c0cfb13df8e5296e1",
-    "url": "/qbFront/static/media/laptop.32c4db8e.png"
+    "revision": "9ed41ca76dd69700434f17c085ad31f8",
+    "url": "/qbFront/static/media/laptop.9ed41ca7.png"
   },
   {
     "revision": "a1a27e3cf8e7c85af25e49d53ee21571",
@@ -136,8 +144,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/qbFront/static/media/progressClick.95b8921c.zip"
   },
   {
-    "revision": "a0724341baabc9332b1858cf5653c899",
-    "url": "/qbFront/static/media/registerImage.a0724341.png"
+    "revision": "3b7ad83b1ae98098a2cac93865c94e7b",
+    "url": "/qbFront/static/media/registerImage.3b7ad83b.svg"
   },
   {
     "revision": "230dbc53c5d078335fa75b94e5338960",
