@@ -12,7 +12,7 @@ export const getTopic = (subject, Class) => async (dispatch) => {
         console.log(subject);
         dispatch({type: TOPIC_LOADING });
         try{
-            const res = await axios.get(`http://127.0.0.1:8000/students/science/${subject}/`)
+            const res = await axios.get(`${API_URL}/students/science/${subject}/`)
             dispatch({
                 type: TOPIC_LOADED,
                 payload: res.data,

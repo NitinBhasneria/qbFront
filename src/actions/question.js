@@ -22,7 +22,7 @@ export const getQuestion = (subject, Class) => async (dispatch) => {
     if(subject!=''){
     dispatch({type: QUESTION_LOADING });
         try{
-            const res = await axios.get(`http://127.0.0.1:8000/students/${subject}/${Class}/`)
+            const res = await axios.get(`${API_URL}/${subject}/${Class}/`)
             dispatch({
                 type: QUESTION_LOADED,
                 payload: res.data,
