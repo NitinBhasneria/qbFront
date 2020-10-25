@@ -1,5 +1,5 @@
 body {
-    overflow: hidden; /* Hide scrollbars */
+    overflow-x: hidden; /* Hide scrollbars */
     overflow: hidden;
     font-family: SANS-SERIF;
   }
@@ -39,6 +39,13 @@ body {
 }
 
 .logoCont {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    width: 10%;
+}
+
+.logoCount {
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
@@ -386,6 +393,18 @@ a:hover {
     .logoCont {
         margin-right: 20vw;
         width: 20%;
+    }
+    .logoCount {
+        margin-right: 20vw;
+        width: 20%;
+    }
+    @-moz-document url-prefix() {
+        .logoCount {
+            display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        width: 10%;
+        }
     }
     .loginForm {
         width: 80%;

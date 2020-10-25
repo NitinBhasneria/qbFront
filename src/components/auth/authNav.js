@@ -52,7 +52,7 @@ class AuthNav extends Component {
                                     </div>
                                 </Route>
                                 <Route exact path='/qbFront/login'>
-                                    <div className={'logoCont'} onClick={()=>{this.props.history.push('/qbFront')}}>
+                                    <div className={'logoCount'} onClick={()=>{this.props.history.push('/qbFront')}}>
                                         <img className={'logoTQB'} src={tqbLogo} alt='Logo'></img>
                                     </div>
                                 </Route>

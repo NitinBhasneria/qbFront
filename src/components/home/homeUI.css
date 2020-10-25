@@ -6,6 +6,7 @@ body {
     position: relative;
     width: 100vw;
     top: 10vh;
+    overflow-x: hidden;
 }
 
 input:focus {
@@ -301,7 +302,7 @@ input:focus {
     font-weight: normal;
     margin: 6% 8%;
     text-align: center;
-    font-size: 14px;
+    font-size: 12px;
     text-align: center;
 }
 
@@ -1521,6 +1522,25 @@ html, body, #container, .carousel {
     .HeadCont {
         height: 66vh;
     }
+    .testimonialImage {
+        height: 45vh;
+    }
+    .carousel-control.right, .carousel-control.left {
+        height: 90%;
+        background-size: 150% 100%;
+        opacity: 1;
+        margin-bottom: 4em;
+        background-color: white !important;
+    }
+    .testimonialContent {
+        display: flex;
+        flex-direction: column;
+        width: 55%;
+        margin-right: 11%;
+        margin-left: 5%;
+        height: 100%;
+        justify-content: center;
+    }
     .Head {
         font-size: 42px;
     }
@@ -1995,7 +2015,7 @@ html, body, #container, .carousel {
     }
     .whyPara {
         font-weight: normal;
-        font-size: 18px;
+        font-size: 14px;
     }
     .whyCard {
         width: 90%;
